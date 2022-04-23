@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Landing from "./Components/Landing/Landing";
+import Navbar from "./Components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Footer from "./Components/Footer";
+import ColorsContext from "./Contexts/ColorsContext";
 function App() {
+  var colors = {
+    darkGrey: "#29335c",
+    lightGrey: "#d6df5a",
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ColorsContext.Provider value={{ colors }}>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Landing />}></Route>
+        </Routes>
+
+        <Footer />
+      </Router>
+    </ColorsContext.Provider>
   );
 }
 
