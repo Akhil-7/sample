@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Poppins:wght@400;500;700&display=swap');
 :root{
-    --light-green: #d6df5a;
-    --dark-grey: #29335c;
+    --primary: #d6df5a;
+    --secondary: #29335c;
 }
 *{
     margin: 0;

@@ -103,7 +103,7 @@ const HeroSectionContent = styled.div`
   }
 `;
 const CardsContainer = styled.div`
-  background-color: var(--dark-grey);
+  background-color: var(--secondary);
   height: 390px;
   font-family: "Poppins";
   font-style: normal;
@@ -138,7 +138,7 @@ const Card = styled.div`
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-color: var(--light-green);
+    background-color: var(--primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,14 +164,14 @@ const Card = styled.div`
   }
 
   &:hover {
-    background-color: var(--light-green);
+    background-color: var(--primary);
 
     .circle {
-      background-color: var(--dark-grey);
+      background-color: var(--secondary);
     }
     .title,
     .sub-title {
-      color: var(--dark-grey);
+      color: var(--secondary);
     }
   }
 `;
