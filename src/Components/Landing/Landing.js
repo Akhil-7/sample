@@ -4,7 +4,7 @@ import Gallery from "./Gallery";
 import HeroSection from "./HeroSection";
 import LiveProjects from "./LiveProjects";
 import PopularProjects from "./PopularProjects";
-
+import Contact from "./Contact";
 function Landing() {
   return (
     <LandingContainer>
@@ -12,6 +12,7 @@ function Landing() {
       {/* <PopularProjects /> */}
       <Gallery />
       <LiveProjects />
+      <Contact />
     </LandingContainer>
   );
 }

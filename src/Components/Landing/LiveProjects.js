@@ -33,7 +33,7 @@ const LiveProjectsContainer = styled.div`
   background-color: #f1f1f1;
   width: 100%;
   position: relative;
-  padding: 100px 0;
+  padding-top: 100px;
 `;
 const Upper = styled.div`
   display: flex;
