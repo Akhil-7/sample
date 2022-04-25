@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=IM+Fell+Double+Pica&display=swap');
+:root{
+    --primary: #d6df5a;
+    --secondary: #29335c;
+    --dark-secondary: #1D1E2C;
+}
+
+/* font-family: 'Cardo', serif; */
+/* font-family: 'IM Fell Double Pica', serif; */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Cardo', serif;
+}
