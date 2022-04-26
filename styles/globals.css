@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=IM+Fell+Double+Pica&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Quicksand:wght@400;500;600&display=swap');
+
 :root {
   --primary: #d6df5a;
   --secondary: #29335c;
@@ -12,7 +14,198 @@
   padding: 0;
   font-family: "Cardo", serif;
 }
+
 p {
   margin: 0% !important;
   padding: 4px;
+}
+
+.corporate__bg-img {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background-image: url(../public/assets/images/corporate-page-img.png);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  background-position-x: center;
+  object-fit: fill;
+  position: relative;
+  z-index: 111;
+}
+
+.corporate__bg-bg {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  background-image: url(../public/assets/images/corporate-page-bg.png);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  background-position-x: center;
+  object-fit: fill;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 140px
+}
+
+
+
+.corporate__bg-title {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 1111;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px 30px 40px 30px;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.corporate__description {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -100px;
+}
+
+.corporate__description-wrapper p {
+  font-family: 'Poppins', sans-serif;
+  color: #3B3B46;
+}
+
+.corporate__description-wrapper p::first-letter {
+  font-size: 36px;
+
+}
+
+.portfolio-wrapper {
+  margin-top: 50px;
+}
+
+.portfolio__title-wrapper {
+  display: flex;
+}
+
+.portfolio-title {
+  font-size: 40px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 800;
+  line-height: 3rem;
+  letter-spacing: 2px;
+  color: #3B3B46;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.portfolio-title::before {
+  content: '';
+  width: 250px;
+  border-bottom: 1px solid black;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+
+}
+
+.portfolio-title::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  top: 46%;
+  left: 100%;
+  margin-left: 250px;
+  border-radius: 50%;
+
+}
+
+.portfolio__data-wrapper {
+  background-color: #3B3B46;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 30px 20px;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.portfolio__data-wrapper ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.portfolio__data-wrapper ul li {
+  list-style-type: none;
+  display: block;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+
+.portfolio__data-btn {
+  background-color: #D0C1C1;
+  color: #3B3B46;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+  .corporate__bg-bg {
+
+    top: 75px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .corporate__bg-title {
+    transform: translate(0, 0);
+    left: 0;
+    right: 0;
+    font-size: 22px;
+    padding: 10px 20px 30px 20px;
+    margin: 0 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .portfolio-title::before {
+    content: '';
+    width: 250px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .portfolio-title::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    left: 0px;
+    bottom: -4%;
+    top: unset;
+    border-radius: 50%;
+
+  }
+
 }

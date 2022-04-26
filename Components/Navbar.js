@@ -80,12 +80,12 @@ const NavbarOuterContainer2 = styled.div`
   flex-direction: column;
 `;
 const NavbarOuterContainer = styled.div`
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   height: 140px;
   color: #fff;
-  z-index: 99;
+  z-index: 9999;
   background: #000;
   border-bottom: 1px solid white;
   @media (max-width: 992px) {
