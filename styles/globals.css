@@ -16,3 +16,206 @@ p {
   margin: 0% !important;
   padding: 4px;
 }
+
+.about {
+}
+.home {
+  width: 100%;
+  height: 100vh;
+  background-color: #29335c;
+  background-image: url(../public/assets/images/Rectangle\ 728.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.data {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 35%;
+  background: #e39774;
+  width: 80%;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.l_heding {
+  position: relative;
+  left: 25%;
+  z-index: 99;
+}
+.l_subheding {
+  position: relative;
+  left: 25%;
+  z-index: 99;
+}
+.l_img {
+  position: absolute;
+  left: 30%;
+  z-index: 99;
+  bottom: 4%;
+}
+.r_box {
+  position: relative;
+  right: 30%;
+}
+.bg-w {
+  width: 372px;
+  height: 408px;
+  background: #fff8f0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.bg-w p {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+}
+/* Facts */
+.Facts {
+  background-color: #5c9ead;
+}
+
+.main_row {
+  transform: translateY(-45px);
+}
+.card_text {
+  text-align: center;
+  color: #fff;
+}
+.image-Our-Capabilities {
+  width: 226px;
+  height: 211px;
+  background-color: #1d1e2c;
+  border-radius: 10px;
+}
+/* Capabilities */
+.Capabilities_main {
+  background: #fff8f0;
+}
+.Capabilities {
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+/* Our_story */
+.Our_story {
+  width: 100%;
+  height: auto;
+  background-color: #29335c;
+  background-image: url(../public/assets/images/Rectangle\ 742.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 50px;
+}
+.Our_story_sub {
+  width: 80%;
+  margin: auto;
+}
+.card_Our_story {
+  background: #fff8f0;
+  border-radius: 17px;
+  padding: 10px 14px;
+  margin: 14px 0px;
+}
+.card_Our_story p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: justify;
+  letter-spacing: 0.05em;
+}
+.card_Our_story_line {
+  background-color: #000;
+  height: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card_Our_story_line div {
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.Our_story_bottom_div {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  color: #fff;
+  padding: 20px 26px;
+  border-radius: 30px;
+  width: 50%;
+}
+@media (max-width: 1200px) {
+  .data {
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+  }
+  .l_img {
+    position: absolute;
+    left: 20%;
+    bottom: 5%;
+    z-index: 99;
+  }
+  .bg-w {
+    width: auto;
+  }
+  .bg-w p {
+    position: absolute;
+    left: 30%;
+    font-size: 10px;
+    width: auto;
+  }
+  .l_heding {
+    position: relative;
+    left: 0%;
+  }
+  .l_subheding {
+    position: relative;
+    left: 0%;
+  }
+}
+@media (max-width: 600px) {
+  .data {
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+  }
+  .l_img {
+    position: absolute;
+    left: 5%;
+    bottom: 3%;
+    z-index: 99;
+    width: 50%;
+  }
+  .bg-w {
+    width: 125%;
+  }
+  .bg-w p {
+    position: absolute;
+    left: 30%;
+    font-size: 10px;
+    width: auto;
+  }
+  .main_row {
+    transform: translateY(0px);
+  }
+  .Our_story_bottom_div {
+    width: 100% !important;
+    background: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    color: #fff;
+    padding: 20px 26px;
+    border-radius: 30px;
+  }
+}
