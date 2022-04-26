@@ -7,7 +7,8 @@ import { BiMenu } from "react-icons/bi";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { CgMenuRightAlt } from "react-icons/cg";
 import Image from "next/image";
-import $ from 'jquery';
+import $ from "jquery";
+import Link from "next/link";
 
 function Navbar() {
   const [menu, setmenu] = useState(false);
@@ -17,31 +18,42 @@ function Navbar() {
 
   const navToggle = () => {
     ToggleMenu === false ? setToggleMenu(true) : setToggleMenu(false);
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', (e) => {
+    window.addEventListener("scroll", (e) => {
       window.scrollY > 100 ? setScroll(true) : setScroll(false);
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <>
-      <NavbarOuterContainer id="nav-bar" className={scroll === true ? 'nav-active' : ''}>
+      <NavbarOuterContainer
+        id="nav-bar"
+        className={scroll === true ? "nav-active" : ""}
+      >
         <NavItemsContainer_main>
           <NavbarContainer className="d-flex justify-content-between">
-            <Image className="logo" src={scroll === true ? logoDark : logoLight} alt="" />
+            <Image
+              className="logo"
+              src={scroll === true ? logoDark : logoLight}
+              alt=""
+            />
             <div className="">
               <button
                 className="btn d-flex d-lg-none"
                 onClick={() => setmenu(!menu)}
               >
-                <CgMenuRightAlt className={scroll === true ? 'text-dark' : 'text-light'} />
+                <CgMenuRightAlt
+                  className={scroll === true ? "text-dark" : "text-light"}
+                />
               </button>
             </div>
           </NavbarContainer>
           <NavItemsContainer className="d-none d-lg-flex nav-active-items">
-            <NavItems>Home</NavItems>
+            <NavItems>
+              <Link href={"/"}>Home</Link>
+            </NavItems>
             <NavItems>
               Courses <BiChevronDown />
             </NavItems>
@@ -60,7 +72,9 @@ function Navbar() {
       </NavbarOuterContainer>
       {menu && (
         <NavbarOuterContainer2>
-          <NavItems>Home</NavItems>
+          <NavItems>
+            <Link href="/">Home</Link>
+          </NavItems>
           <NavItems>
             Courses <BiChevronDown />
           </NavItems>
@@ -99,7 +113,7 @@ const NavbarOuterContainer = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 140px;
+  // height: 140px;
   color: #fff;
   z-index: 9999;
   background: transperent;
@@ -140,14 +154,21 @@ const NavItems = styled.li`
   display: flex;
   cursor: pointer;
   font-size: 20px;
-  align-items: center
-
-  input {
+  align-items: center input {
     border: none;
     outline: none;
     background-color: transparent;
     border-bottom: 3px solid white;
     margin-right: 10px;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    
+    :hover {
+      color: inherit;
+      text-decoration: none;
+    }
   }
   .search-button {
     background-color: #7c7c7c;

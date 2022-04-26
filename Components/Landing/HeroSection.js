@@ -92,7 +92,7 @@ const Hero = styled.div`
   min-height: 100vh;
 `;
 const HeroSectionContent = styled.div`
-  max-width: 50%;
+  max-width: 60%;
   font-family: "Poppins";
   font-style: normal;
   padding-top: 15%;
@@ -105,6 +105,7 @@ const HeroSectionContent = styled.div`
     letter-spacing: 0.19em;
     font-family: "IM Fell Double Pica", serif;
   }
+
   @media (max-width: 992px) {
     max-width: 100%;
     padding-top: 0%;
@@ -133,12 +134,13 @@ const HeroSectionContent = styled.div`
     font-family: "IM Fell Double Pica", serif;
   }
   .button {
-    margin-top: 50px;
+    margin-top: 30px !important;
     padding: 10px 60px;
     background-color: #ffffff;
     width: fit-content;
     display: flex;
     cursor: pointer;
+    border: none;
     span {
       display: flex;
       align-items: center;
@@ -187,7 +189,7 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 20px;
     position: relative;
   }
   .image-container {

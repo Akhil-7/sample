@@ -19,22 +19,22 @@ function GalleryComp() {
       <Row className="g-3 mt-1">
         <Col xs={12} md={6}>
           <div className="gallery__slider-img">
-            <Image src={gallerySlider1} layout="responsive" />
+            <Image src={gallerySlider1} layout="responsive" alt="" />
           </div>
         </Col>
         <Col xs={12} md={6}>
           <Row className="g-3">
             <Col xs={6}>
-              <Image src={img1} layout="responsive" />
+              <Image src={img1} layout="responsive" alt="" />
             </Col>
             <Col xs={6}>
-              <Image src={img2} layout="responsive" />
+              <Image src={img2} layout="responsive" alt="" />
             </Col>
             <Col xs={6}>
-              <Image src={img3} layout="responsive" />
+              <Image src={img3} layout="responsive" alt="" />
             </Col>
             <Col xs={6}>
-              <Image src={img4} layout="responsive" />
+              <Image src={img4} layout="responsive" alt="" />
             </Col>
           </Row>
         </Col>
@@ -43,16 +43,16 @@ function GalleryComp() {
         <Col xs={12} md={6}>
           <Row className="g-3">
             <Col xs={6}>
-              <Image src={img5} layout="responsive" />
+              <Image src={img5} layout="responsive" alt="" />
             </Col>
             <Col xs={6}>
-              <Image src={img6} layout="responsive" />
+              <Image src={img6} layout="responsive" alt="" />
             </Col>
             <Col xs={6}>
-              <Image src={img7} layout="responsive" />
+              <Image src={img7} layout="responsive" alt="" />
             </Col>
             <Col xs={6}>
-              <Image src={img8} layout="responsive" />
+              <Image src={img8} layout="responsive" alt="" />
             </Col>
           </Row>
         </Col>

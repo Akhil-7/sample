@@ -11,7 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
 function PopularProjects() {
   const [section, setSection] = useState("career");
@@ -41,8 +41,8 @@ function PopularProjects() {
             <p className="card-title">{data.title}</p>
           </div>
           <div className="footer">
-            <p className="px-4">Lecture by {data.teacher}</p>
             <div className="footer-inner">
+              <p className="">Lecture by {data.teacher}</p>
               <div className="">
                 <p>
                   {data.numberOfLect} lectures ({data.hours} Hours)
@@ -161,7 +161,7 @@ function PopularProjects() {
             {swiperData.map((data, index) => {
               return (
                 <SwiperSlide slidesPerView={1} key={index}>
-                  <SwiperCard data={data} className='' />
+                  <SwiperCard data={data} className="" />
                 </SwiperSlide>
               );
             })}
@@ -218,6 +218,7 @@ const SliderContainer = styled.div`
   .mySwiper {
     max-width: 75vw;
     margin: 50px auto;
+    height: 450px;
   }
   .view-all {
     padding: 5px 15px;
@@ -231,7 +232,7 @@ const SliderContainer = styled.div`
   }
 `;
 const SwiperCardContainer = styled.div`
-  width: 75%;
+  width: 80%;
   @media (max-width: 700px) {
     width: 100%;
   }
@@ -243,7 +244,7 @@ const SwiperCardContainer = styled.div`
   .back {
     background-color: var(--primary);
     height: 400px;
-    width: 70%;
+    width: 80%;
     margin-left: auto;
     .back-innercontainer {
       width: 50%;
@@ -252,18 +253,21 @@ const SwiperCardContainer = styled.div`
       .about-title {
         padding-top: 20px;
         font-weight: bold;
+        margin-left: 10px !important;
       }
       .description {
         margin-top: 20px;
         width: 90%;
+        margin-left: 10px !important;
       }
       .learn-more {
-        // position: absolute;
+        position: absolute;
         bottom: 50px;
         color: white;
         right: 50px;
         font-weight: bold;
         cursor: pointer;
+        margin-left: 10px !important;
       }
     }
   }
@@ -286,7 +290,7 @@ const SwiperCardContainer = styled.div`
         padding: 5px;
       }
       .card-title {
-        margin-left: 40px;
+        margin-left: 20px !important;
         text-align: left;
         font-size: 17px;
       }
@@ -299,16 +303,16 @@ const SwiperCardContainer = styled.div`
       font-size: 13px;
       background-color: var(--dark-secondary);
       .footer-inner {
-        padding: 10px 20px;
+        padding: 10px 20px 20px 10px;
       }
-      // .rating {
-      //   position: absolute;
-      //   right: 10%;
-      //   bottom: 10px;
-      //   display: flex;
-      //   align-items: center;
-      //   gap: 5px;
-      // }
+      .rating {
+        position: absolute;
+        right: 10%;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
     }
   }
 `;

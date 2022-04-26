@@ -1,19 +1,20 @@
 import React from "react";
 import Image from "next/image";
-import img7 from "../public/unsplash_FHnnjk1Yj7Y.png";
-import img8 from "../public/Vector (8).png";
+import img7 from "../public/assets/images/course-detials-bg.svg";
+import img8 from "../public/assets/images/Vector (8).png";
+import styled from "styled-components";
 
 function course_details() {
   return (
-    <div>
+    <CourseDetails>
       <div className="img_con"></div>
       <div className="row  main_course_details m-0">
-        <div className="col-4 bg-light p-0">
+        <div className="part1 col-4 p-0">
           <h1 className="heding_text_tally">
             <b>Tally </b>
           </h1>
           <h1 className="heding_text_Workshop">Workshop</h1>
-          <div className="p-0 p-sm-4">
+          <div className="part1-content p-0 p-sm-4">
             <p className="heding_tex_we">We Offer You </p>
             <p className="heding_tex_we_sub">Online Class</p>
             <p className="heding_tex_we_sub">Group Classes</p>
@@ -21,14 +22,16 @@ function course_details() {
             <p className="heding_tex_we_sub">Experienced Faculty</p>
           </div>
         </div>
-        <div className="col-4 p-0">
+        <div className="part2 col-4 p-0">
           <div className="back">{/* <Image src={img7} alt="" /> */}</div>
         </div>
-        <div className="col-4 bg-dark p-0 pt-5">
+        <div className="part3 col-4 p-2 pt-5">
           <div className="book_div mx-auto mt-5">
-            <Image src={img8} />
+            <Image src={img8} alt="" />
           </div>
-          <h4 className="text-center text-light pt-3"><b>About the course</b></h4>
+          <h4 className="text-center text-light pt-3">
+            <b>About the course</b>
+          </h4>
           <p className="text-light heding_tex_we_sub py-2">
             About the course Lorem ipsum dolor sit amet, consectetur adipiscing
             elit. Sed fermentum in consectetur amet lacus sit gravida.
@@ -40,8 +43,43 @@ function course_details() {
           </p>
         </div>
       </div>
-    </div>
+    </CourseDetails>
   );
 }
 
 export default course_details;
+const CourseDetails = styled.div`
+  row {
+    min-height: 150vh !important;
+  }
+  .part1 {
+    background-color: #153955 !important;
+    color: #fff;
+    h1 {
+      font-family: "IM Fell Double Pica", serif;
+    }
+    .heding_text_Workshop {
+      color: #784638;
+    }
+    .part1-content {
+      margin-left: 80px !important;
+      .heding_tex_we {
+        padding-top: 100px !important;
+        font-family: "IM Fell Double Pica", serif;
+      }
+      .heding_tex_we_sub {
+        font-size: 23px;
+      }
+    }
+  }
+  .part3 {
+    background-color: #784638;
+    color: #fff;
+    h4 {
+      font-family: "IM Fell Double Pica", serif;
+    }
+    p {
+      font-size: 23px;
+    }
+  }
+`;

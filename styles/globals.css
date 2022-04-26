@@ -517,7 +517,7 @@ p {
 }
 
 .back {
-  background: url(../public/Rectangle\ 783.png);
+  background: url(../public/assets/images/Rectangle\ 783.png);
   background-repeat: space;
   background-size: contain;
   height: 100%;
@@ -526,7 +526,7 @@ p {
 .img_con {
   height: 80vh;
   width: 100%;
-  background: url(../public/unsplash_FHnnjk1Yj7Y.png);
+  background: url(../public/assets/images/course-detials-bg.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -548,7 +548,7 @@ p {
   bottom: 0%;
   height: 40vh;
   width: 80% !important;
-  background: url(../public/unsplash_FHnnjk1Yj7Y.png);
+  background: url(../public/assets/images/course-detials-bg.svg);
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
