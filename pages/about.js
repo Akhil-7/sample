@@ -15,7 +15,6 @@ import "slick-carousel/slick/slick-theme.css";
 import $ from 'jquery';
 
 export default function about() {
-  const [Loaded, setLoaded] = useState(false);
 
 
   const settings = {

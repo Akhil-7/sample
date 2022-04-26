@@ -17,10 +17,10 @@ function Navbar() {
             <Image className="logo" src={logo} alt="" />
             <div className="">
               <button
-                className="d-flex d-lg-none"
+                className="btn d-flex d-lg-none"
                 onClick={() => setmenu(!menu)}
               >
-                <CgMenuRightAlt />
+                <CgMenuRightAlt className="text-light"/>
               </button>
             </div>
           </NavbarContainer>
