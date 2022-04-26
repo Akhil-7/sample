@@ -157,12 +157,9 @@ p {
   margin-top: 10px;
 }
 
-
-
 .main_row_containt {
   width: 75%;
 }
-
 @media screen and (max-width: 992px) {
   .corporate__bg-bg {
     top: 75px;
@@ -179,7 +176,6 @@ p {
     margin: 0 20px;
     text-align: center;
   }
-
   .main_row_containt {
     width: 100% !important;
   }
@@ -194,7 +190,6 @@ p {
     bottom: 0;
     left: 0;
   }
-
   .bg-w {
     width: 372px;
     height: auto;
@@ -203,7 +198,6 @@ p {
     display: flex;
     align-items: center;
   }
-
   .portfolio-title::after {
     content: "";
     width: 10px;
@@ -215,7 +209,6 @@ p {
     top: unset;
     border-radius: 50%;
   }
-
   .data {
     position: absolute;
     left: 10%;
@@ -257,45 +250,38 @@ p {
   align-items: center;
   flex-direction: column;
 }
-
 .btn {
   outline: none;
   border: none;
   background: transparent;
   font-size: medium;
 }
-
 .btn:focus {
   outline: 0;
   box-shadow: none !important;
 }
-
 .title_ {
   font-size: 40px;
   letter-spacing: 5px;
   font-family: "IM Fell Double Pica", serif;
 }
-
 .subtitle_ {
   margin-top: 20px;
   font-size: 15px;
   line-height: 20px;
   max-width: 600px;
 }
-
 .l_heding {
   position: relative;
   left: 25%;
   z-index: 99;
 }
-
 .buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
-
 .button {
   font-size: 17px;
   border: 1px solid black;
@@ -304,7 +290,6 @@ p {
   cursor: pointer;
   transition: all 0.3s;
 }
-
 .view-all {
   padding: 5px 15px;
   background-color: var(--secondary);
@@ -315,12 +300,10 @@ p {
   font-size: 14px;
   cursor: pointer;
 }
-
 .button:hover {
   background-color: var(--secondary);
   color: #fff;
 }
-
 .l_subheding {
   position: relative;
   left: 25%;
@@ -349,11 +332,10 @@ p {
 }
 
 .bg-w .l_img {
-  position: relative;
-  right: 35%;
-  bottom: -25%;
+  position: absolute;
+  left: -24%;
+  bottom: -17%;
 }
-
 .bg-w p {
   position: absolute;
   left: 50%;
@@ -363,6 +345,12 @@ p {
 /* Facts */
 .Facts {
   background-color: #5c9ead;
+}
+.LEFT_TEXT {
+  position: absolute;
+  top: 18%;
+  left: 50px;
+  z-index: 99;
 }
 
 .main_row {
@@ -413,55 +401,25 @@ p {
 .card_Our_story {
   background: #fff8f0;
   border-radius: 17px;
-  padding: 20px 14px;
-}
-
-.card_Our_story::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  width: 100%;
-  border: 1px solid black;
-}
-
-.card_Our_story::before {
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background-color: white;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.slick-track {
-  display: flex !important;
-  align-items: flex-end !important;
+  padding: 10px 14px;
+  margin: 14px 0px;
 }
 
 .card_Our_story p {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.3rem;
+  font-size: 18px;
+  line-height: 25px;
   text-align: justify;
-  /* letter-spacing: 0.05em; */
-  color: #000;
+  letter-spacing: 0.05em;
 }
 
-.slick-dots {
-  bottom: -35px !important;
-}
-
-.slick-dots li button::before {
-  font-size: 10px !important;
-}
-
-.slick-dots li.slick-active button:before {
-  color: white !important;
-
+.card_Our_story_line {
+  background-color: #000;
+  height: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card_Our_story_line div {
@@ -477,8 +435,7 @@ p {
   color: #fff;
   padding: 20px 26px;
   border-radius: 30px;
-  margin-top: 50px;
-  display: flex;
+  width: 50%;
 }
 
 .main_course_details {
@@ -491,11 +448,9 @@ p {
   text-align: center;
   font-style: italic;
 }
-
 .heding_tex_we {
   font-size: 50px;
 }
-
 .swiper-pagination {
   position: absolute;
   text-align: center;
@@ -503,16 +458,14 @@ p {
   transform: translate3d(0, 0, 0);
   z-index: 10;
 }
-
-.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  bottom: -7px !important;
+  bottom: -5px !important;
   left: 0;
   width: 100%;
 }
-
 .heding_tex_we_sub {
   font-size: 30px;
   padding: 10px;
@@ -676,6 +629,9 @@ p {
 }
 
 @media (max-width: 992px) {
+  .LEFT_TEXT {
+    display: none !important;
+  }
   .main_course_details {
     height: 100% !important;
   }
@@ -706,17 +662,15 @@ p {
     justify-content: center;
     align-items: center;
   }
-
   .bg-w {
     width: 602px;
-    height: 508px;
+    height: 370px;
     background: #fff8f0;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .bg-w .l_img {
     /* display: contents; */
     position: relative;
@@ -727,7 +681,6 @@ p {
     bottom: -15%;
     width: 100%; */
   }
-
   .bg-w p {
     position: relative;
     left: 0;
@@ -763,18 +716,10 @@ p {
     right: 0%;
   }
 
-  .l_img {
-    width: 90%;
-    position: absolute;
-    left: 5%;
-    right: 5%;
-  }
-
   .bg-w {
     width: 90%;
-    height: 450px;
+    height: 370px;
   }
-
   /* .bg-w {
     width: 125%;
   }

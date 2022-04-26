@@ -54,12 +54,12 @@ export default function about() {
     <div className="about">
       <div className="home">
         <div className="data py-4">
-          {/* <div className="">
+          <div className="LEFT_TEXT">
             <h1 className="">
             ABOUT <br /> THE LCC
             </h1>
             <p className="py-1">An ISO 9001:2015 Certified Company</p>
-          </div> */}
+          </div>
           <div className="bg-w">
             <div className="l_img">
               <Image src={img10} alt="" />
@@ -110,8 +110,8 @@ export default function about() {
       </div>
       {/*Facts  & Figures */}
       <div className="Facts py-5 px-0 px-sm-4">
-        <div className="pl-5 ml-5">
-          <h1 className="text-md-start text-center text-light">Facts & Figures</h1>
+        <div className="Facts2 pl-5 ml-5">
+          <h1 className="text-md-start text-center text-light px-lg-5 mx-lg-5">Facts & Figures</h1>
           <div className="">
             <div
               className="main_row_containt"
@@ -360,7 +360,7 @@ export default function about() {
               </div>
             </div>
           </div> */}
-          <div className="Our_story_bottom_div ">
+          <div className="Our_story_bottom_div mx-auto">
             Come join us and innovate to multiply world’s Technology by your
             skill, who knows, tomorrow we might get a chance to teach your
             invention!
