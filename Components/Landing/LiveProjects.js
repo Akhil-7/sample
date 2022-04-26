@@ -7,7 +7,7 @@ function LiveProjects() {
     <div className="" style={{ backgroundcolor: "#f1f1f1" }}>
       <LiveProjectsContainer>
         <div className="row m-0">
-          <div className="col-12 col-lg-6">
+          <div className="col-12">
             <Upper className="d-block d-xl-flex">
               <div className="col-12 col-xl-6">
                 <div className="title text-center text-lg-start">
@@ -22,11 +22,11 @@ function LiveProjects() {
                   nullam. Donec aliquet rhoncus leo neque tortor, faucibus amet
                   egestas.{" "}
                 </p>
-                <p className="button">More Info</p>
+                <p className="button mx-auto mt-2">More Info</p>
               </div>
             </Upper>
           </div>
-          <div className="col-12 col-lg-6">
+          <div className="col-12">
             <Lower>
               <div className="bar"></div>
               <div className="image-container">

@@ -5,7 +5,7 @@ export default function HomeGallery() {
     return (
         <>
             <div className="gallery__wrapper">
-                <div className="gallery__container">
+                <div className="gallery__container2">
                     <div className="gallery-title">Gallery</div>
 
                     <GalleryComp />

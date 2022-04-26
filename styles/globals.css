@@ -225,7 +225,7 @@ p {
   }
   .bg-w {
     width: 372px;
-    height: auto;
+    height: 425px !important;
     background: #fff8f0;
     position: relative;
     display: flex;
@@ -608,6 +608,11 @@ p {
   padding: 140px 0;
 }
 
+@media (max-width: 1600px) {
+  .main_course_details{
+    height: 100% !important;
+  }
+}
 @media (max-width: 1200px) {
   .heding_text_tally {
     font-size: 60px;
