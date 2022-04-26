@@ -9,18 +9,36 @@ import icon4 from "../public/assets/images/Vector (3).png";
 import icon5 from "../public/assets/images/Vector (4).png";
 import icon6 from "../public/assets/images/Vector (5).png";
 import icon7 from "../public/assets/images/Vector (6).png";
-//
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function about() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    // vertical: true,
+    verticalSwiping: true,
+    beforeChange: function (currentSlide, nextSlide) {
+      console.log("before change", currentSlide, nextSlide);
+    },
+    afterChange: function (currentSlide) {
+      console.log("after change", currentSlide);
+    },
+  };
   return (
     <div className="about">
       <div className="home">
         <div className="data py-4">
-          <div className="">
+          {/* <div className="">
             <h1 className="">
               ABOUT <br /> THE LCC
             </h1>
             <p className="py-1">An ISO 9001:2015 Certified Company</p>
-          </div>
+          </div> */}
           <div className="bg-w">
             <div className="l_img">
               <Image src={img10} alt="" />
@@ -71,15 +89,15 @@ function about() {
       </div>
 
       {/*Facts  & Figures */}
-      <div className="Facts py-5">
+      <div className="Facts py-5 px-0 px-sm-4">
         <div className="pl-5 ml-5">
           <h1 className="text-start text-light">Facts & Figures</h1>
           <div className="">
             <div
-              className="w-75"
+              className="main_row_containt"
               style={{ background: "#1D1E2C", marginLeft: "auto" }}
             >
-              <div className="row main_row m-0 px-5 py-3">
+              <div className="row main_row m-0">
                 <div className="col-3  d-flex flex-column justify-content-center align-items-center py-2">
                   <div className="h-50">
                     <Image src={icon1} alt="" />
@@ -184,7 +202,27 @@ function about() {
       <div className="Our_story">
         <div className="Our_story_sub">
           <h1 className="text-light text-center py-5 my-4">Our story</h1>
-          <div className="row m-0 h-75">
+          <div>
+            <h2>Vertical Mode</h2>
+            <Slider {...settings}>
+              <div>
+                <h3>1</h3>
+              </div>
+              <div>
+                <h3>2</h3>
+              </div>
+              <div>
+                <h3>3</h3>
+              </div>
+              <div>
+                <h3>4</h3>
+              </div>
+              {/* <div>
+                <h3>5</h3>
+              </div> */}
+            </Slider>
+          </div>
+          {/* <div className="row m-0 h-75">
             <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center align-items-end">
               <div className="card_Our_story">
                 <p>
@@ -235,8 +273,8 @@ function about() {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="row mx-3 my-4 d-none d-md-flex">
+          </div> */}
+          {/* <div className="row mx-3 my-4 d-none d-md-flex">
             <div className="col-4 p-0 d-flex justify-content-center align-items-end">
               <div className="card_Our_story_line">
                 <div className=""></div>
@@ -252,7 +290,7 @@ function about() {
                 <div className=""></div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="Our_story_bottom_div m-auto">
             Come join us and innovate to multiply world’s Technology by your
             skill, who knows, tomorrow we might get a chance to teach your

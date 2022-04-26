@@ -245,7 +245,7 @@ const SwiperCardContainer = styled.div`
       .learn-more {
         position: absolute;
         height: 5%;
-        bottom: 40px;
+        bottom: px;
         color: white;
         right: 50px;
         font-weight: bold;
