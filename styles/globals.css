@@ -35,6 +35,45 @@ p {
   z-index: 111;
 }
 
+.nav-active {
+  background-color: white;
+  transition: transform 0.5s ease-in-out;
+  position: fixed;
+  top: -150px;
+  transform: translateY(150px);
+}
+
+.nav-active .nav-active-items li {
+  color: black;
+
+}
+
+.nav-active .nav-active-items li input {
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: transparent;
+
+}
+
+.nav-active-items li input {
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+
+}
+
+.nav-active-items li input:focus {
+  outline: none;
+
+}
+
+.nav-active .nav-active-items li .search-button {
+
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+
 .corporate__bg-bg {
   width: 100%;
   height: 100vh;
