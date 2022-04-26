@@ -217,9 +217,6 @@ function about() {
               <div>
                 <h3>4</h3>
               </div>
-              {/* <div>
-                <h3>5</h3>
-              </div> */}
             </Slider>
           </div>
           {/* <div className="row m-0 h-75">

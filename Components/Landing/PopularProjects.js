@@ -8,6 +8,11 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
 function PopularProjects() {
   const [section, setSection] = useState("career");
   const popularProjects = React.useContext(PopularProjectsContext);
@@ -37,12 +42,13 @@ function PopularProjects() {
           </div>
           <div className="footer">
             <p className="px-4">Lecture by {data.teacher}</p>
-            <div className="footer-inner d-block d-lg-flex justify-content-between">
+            <div className="footer-inner">
               <div className="">
                 <p>
                   {data.numberOfLect} lectures ({data.hours} Hours)
                 </p>
               </div>
+
               <p className="rating">
                 <BsFillStarFill />
                 {data.ratingStar} ({data.ratingNumber})
@@ -130,7 +136,12 @@ function PopularProjects() {
           </p>
         </div>
         <div className="d-none d-lg-block">
-          <Swiper className="mySwiper" slidesPerView={2}>
+          <Swiper
+            className="mySwiper"
+            slidesPerView={2}
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            pagination={{ clickable: true }}
+          >
             {swiperData.map((data, index) => {
               return (
                 <SwiperSlide slidesPerView={2} key={index}>
@@ -141,7 +152,12 @@ function PopularProjects() {
           </Swiper>
         </div>
         <div className="d-block d-lg-none">
-          <Swiper className="mySwiper" slidesPerView={1}>
+          <Swiper
+            className="mySwiper"
+            slidesPerView={1}
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            pagination={{ clickable: true }}
+          >
             {swiperData.map((data, index) => {
               return (
                 <SwiperSlide slidesPerView={1} key={index}>
@@ -215,7 +231,7 @@ const SliderContainer = styled.div`
   }
 `;
 const SwiperCardContainer = styled.div`
-  width: 85%;
+  width: 75%;
   @media (max-width: 700px) {
     width: 100%;
   }
@@ -240,12 +256,10 @@ const SwiperCardContainer = styled.div`
       .description {
         margin-top: 20px;
         width: 90%;
-        height: 95%;
       }
       .learn-more {
-        position: absolute;
-        height: 5%;
-        bottom: px;
+        // position: absolute;
+        bottom: 50px;
         color: white;
         right: 50px;
         font-weight: bold;

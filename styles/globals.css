@@ -157,9 +157,7 @@ p {
   margin-top: 10px;
 }
 
-
-
-.main_row_containt{
+.main_row_containt {
   width: 75%;
 }
 @media screen and (max-width: 992px) {
@@ -252,13 +250,60 @@ p {
   align-items: center;
   flex-direction: column;
 }
-
+.btn {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: medium;
+}
+.btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+.title_ {
+  font-size: 40px;
+  letter-spacing: 5px;
+  font-family: "IM Fell Double Pica", serif;
+}
+.subtitle_ {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 20px;
+  max-width: 600px;
+}
 .l_heding {
   position: relative;
   left: 25%;
   z-index: 99;
 }
-
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.button {
+  font-size: 17px;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.view-all {
+  padding: 5px 15px;
+  background-color: var(--secondary);
+  border-radius: 6px;
+  color: #fff;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: var(--secondary);
+  color: #fff;
+}
 .l_subheding {
   position: relative;
   left: 25%;
@@ -397,11 +442,24 @@ p {
   text-align: center;
   font-style: italic;
 }
-
 .heding_tex_we {
   font-size: 50px;
 }
-
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: -7px !important;
+  left: 0;
+  width: 100%;
+}
 .heding_tex_we_sub {
   font-size: 30px;
   padding: 10px;
@@ -461,7 +519,6 @@ p {
 .gallery__container {
   width: 80%;
   margin: 0 auto;
-
 }
 
 .gallery__slider-img {
@@ -482,17 +539,15 @@ p {
 
 .gallery__btn-wrapper a {
   border-radius: 5px;
-  color: #1D1E2C;
-  background-color: #FFF8F0;
+  color: #1d1e2c;
+  background-color: #fff8f0;
   padding: 2px 20px;
   font-weight: 600;
   text-decoration: none;
-
 }
 
 .gallery__btn-wrapper a:hover {
   color: inherit;
-
 }
 
 .gallery__btn-wrapper {
@@ -503,13 +558,12 @@ p {
 
 /* gallery page css */
 .gallery__heading {
-  background-color: #56566F;
+  background-color: #56566f;
   color: white;
   text-align: center;
   font-size: 46px;
   padding: 100px 0;
 }
-
 
 @media (max-width: 1200px) {
   .heding_text_tally {
@@ -556,7 +610,7 @@ p {
   }
 
   } */
-  
+
   .l_heding {
     position: relative;
     left: 0%;

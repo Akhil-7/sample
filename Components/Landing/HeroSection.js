@@ -11,7 +11,7 @@ function HeroSection() {
   return (
     <HeroSectionContainer>
       <Hero bg={heroImg}>
-        <HeroSectionContent>
+        <HeroSectionContent className="d-none d-lg-block">
           <p className="title">#WE HELP YOU BUILD YOUR CAREER!</p>
           <p className="sub-title">
             Choose a career you love & you will never have to work again in your
@@ -25,6 +25,21 @@ function HeroSection() {
           </p>
         </HeroSectionContent>
       </Hero>
+      <HeroSectionContent className="d-block d-lg-none">
+        <p className="title text-center w-100">
+          #WE HELP YOU BUILD YOUR CAREER!
+        </p>
+        <p className="sub-title text-center">
+          Choose a career you love & you will never have to work again in your
+          life.
+        </p>
+        <p className="button mx-auto">
+          Choose the Program
+          <span>
+            <AiOutlineArrowRight />
+          </span>
+        </p>
+      </HeroSectionContent>
       <CardsContainer>
         <CardsInnerContainer className="row mx-auto py-5">
           <div className="col-12 col-lg-4">
@@ -90,17 +105,20 @@ const HeroSectionContent = styled.div`
     letter-spacing: 0.19em;
     font-family: "IM Fell Double Pica", serif;
   }
-  @media (max-width: 700px) {
+  @media (max-width: 992px) {
+    max-width: 100%;
+    padding-top: 0%;
+    padding: 15% 0%;
     .title {
       font-size: 20px;
       line-height: 31px;
-      margin-top: 100px !important;
+      margin-top: 0% !important;
     }
     .sub-title {
       font-size: 14px !important;
       line-height: 20px !important;
       letter-spacing: 0.05em;
-      margin: 30px 0px !important;
+      max-width: 100% !important;
     }
     .button {
       padding: 10px 20px !important;
