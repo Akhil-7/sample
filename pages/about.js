@@ -15,7 +15,28 @@ function about() {
     <div className="about">
       <div className="home">
         <div className="data py-4">
-          <div className="row w-100">
+          <div className="">
+            <h1 className="">
+              ABOUT <br /> THE LCC
+            </h1>
+            <p className="py-1">An ISO 9001:2015 Certified Company</p>
+          </div>
+          <div className="bg-w">
+            <div className="l_img">
+              <Image src={img10} alt="" />
+            </div>
+            <p className="">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti
+              maecenas ipsum ultricies est, mattis nisl faucibus ut sed. Et
+              consectetur suscipit lectus gravida faucibus et vitae arcu, cras.
+              Laoreet orci turpis elit lobortis facilisi orci. Elit nec quis
+              libero, odio. Neque, facilisis dui dolor augue est eget purus
+              enim. Eget quis risus integer massa netus. Blandit rutrum nunc
+              magna lorem. Dictumst sagittis velit habitasse ac nisl viverra vel
+              ultricies.
+            </p>
+          </div>
+          {/* <div className="row w-100">
             <div className="col-6">
               <div className="">
                 <h1 className="l_heding py-1">
@@ -45,56 +66,55 @@ function about() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/*Facts  & Figures */}
       <div className="Facts py-5">
         <div className="pl-5 ml-5">
-          <h1 className="px-5 mx-4 text-light">
-            Facts
-            <br /> & <br />
-            Figures
-          </h1>
-          <div className="w-75" style={{ marginLeft: "auto" }}>
-            <div className="" style={{ background: "#1D1E2C" }}>
-              <div className="row main_row m-0">
-                <div className="col-12 col-md-6 col-lg-3  d-flex flex-column justify-content-center align-items-center py-2">
-                  <div className="">
+          <h1 className="text-start text-light">Facts & Figures</h1>
+          <div className="">
+            <div
+              className="w-75"
+              style={{ background: "#1D1E2C", marginLeft: "auto" }}
+            >
+              <div className="row main_row m-0 px-5 py-3">
+                <div className="col-3  d-flex flex-column justify-content-center align-items-center py-2">
+                  <div className="h-50">
                     <Image src={icon1} alt="" />
                   </div>
-                  <p className="card_text">
+                  <p className="card_text h-50">
                     5000+ <br />
                     <span>
                       <b>Students</b>
                     </span>
                   </p>
                 </div>
-                <div className="col-12 col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center py-2">
-                  <div className="">
+                <div className="col-3 d-flex flex-column justify-content-center align-items-center py-2">
+                  <div className="h-50">
                     <Image src={icon2} alt="" />
                   </div>
-                  <p className="card_text">
+                  <p className="card_text h-50">
                     100+ <br />
                     <span>
                       <b>Courses</b>
                     </span>
                   </p>
                 </div>
-                <div className="col-12 col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center py-2">
-                  <div className="">
+                <div className="col-3 d-flex flex-column justify-content-center align-items-center py-2">
+                  <div className="h-50">
                     <Image src={icon3} alt="" />
                   </div>
-                  <p className="card_text">
+                  <p className="card_text h-50">
                     <b>Graduates</b>
                   </p>
                 </div>
-                <div className="col-12 col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center py-2">
-                  <div className="">
+                <div className="col-3 d-flex flex-column justify-content-center align-items-center py-2">
+                  <div className="h-50">
                     <Image src={icon4} alt="" />
                   </div>
-                  <p className="card_text">
+                  <p className="card_text h-50">
                     100% <br />
                     <span>
                       <b>Satisfaction</b>
@@ -109,7 +129,7 @@ function about() {
       {/* Our Capabilities */}
       <div className="Capabilities_main">
         <div className="Capabilities m-auto">
-          <h1 className="text-center py-5 my-5">Our Capabilities</h1>
+          <h1 className="text-center py-5">Our Capabilities</h1>
           <p>
             LCC’s advisory committee of IT professionals studies the hot market
             trends consulting with leading computer technology providers in

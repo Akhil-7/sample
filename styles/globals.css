@@ -41,6 +41,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  flex-direction: column;
 }
 .l_heding {
   position: relative;
@@ -153,7 +155,77 @@ p {
   border-radius: 30px;
   width: 50%;
 }
+.main_course_details {
+  height: 100vh !important;
+}
+.heding_text_tally {
+  font-size: 90px;
+  padding-top: 140px;
+  text-align: center;
+  font-style: italic;
+}
+.heding_tex_we {
+  font-size: 50px;
+}
+.heding_tex_we_sub {
+  font-size: 30px;
+  padding: 10px;
+  text-align: justify;
+}
+.heding_text_Workshop {
+  font-size: 90px;
+  font-style: italic;
+  margin-left: 340px;
+}
+.back {
+  background: url(../public/Rectangle\ 783.png);
+  background-repeat: space;
+  background-size: contain;
+  height: 100%;
+}
+.img_con {
+  height: 80vh;
+  width: 100%;
+  background: url(../public/unsplash_FHnnjk1Yj7Y.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.book_div {
+  height: 200px;
+  width: 190px;
+  background: #fff;
+  border-radius: 50% 50% 0% 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img_con2 {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0%;
+  height: 40vh;
+  width: 80% !important;
+  background: url(../public/unsplash_FHnnjk1Yj7Y.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+}
 @media (max-width: 1200px) {
+  .heding_text_tally {
+    font-size: 60px;
+  }
+  .heding_text_Workshop {
+    font-size: 60px;
+    margin-left: 40%;
+  }
+  .heding_tex_we {
+    font-size: 45px;
+  }
+  .heding_tex_we_sub {
+    font-size: 30px;
+  }
+
   .data {
     width: 100%;
     position: absolute;
@@ -184,7 +256,46 @@ p {
     left: 0%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 992px) {
+  .main_course_details {
+    height: 100% !important;
+  }
+  .heding_text_tally {
+    font-size: 40px;
+  }
+  .heding_text_Workshop {
+    font-size: 40px;
+    margin-left: 40%;
+  }
+  .heding_tex_we {
+    font-size: 30px;
+  }
+  .heding_tex_we_sub {
+    font-size: 24px;
+  }
+  .book_div {
+    height: 110px;
+    width: 100px;
+    background: #fff;
+    border-radius: 50% 50% 0% 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .heding_text_tally {
+    font-size: 25px;
+  }
+  .heding_text_Workshop {
+    font-size: 25px;
+  }
+  .heding_tex_we_sub {
+    font-size: 16px;
+  }
+  .heding_tex_we {
+    font-size: 20px;
+  }
   .data {
     width: 100%;
     position: absolute;
@@ -221,5 +332,15 @@ p {
   .Our_story_sub {
     width: 100% !important;
     margin: auto;
+  }
+}
+@media (max-width: 576px) {
+  .heding_tex_we{
+    font-size: 16px;
+  }
+  .heding_tex_we_sub {
+    font-size: 10px;
+    display: flex;
+    text-align: justify;
   }
 }
