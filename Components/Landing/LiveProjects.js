@@ -4,50 +4,59 @@ import img from "../../public/assets/images/live-projects.svg";
 import Image from "next/image";
 function LiveProjects() {
   return (
-    <LiveProjectsContainer>
-      <Upper>
-        <div className="title">
-          Live <div>Projects</div>
+    <div className="" style={{ backgroundcolor: "#f1f1f1" }}>
+      <LiveProjectsContainer>
+        <div className="row m-0">
+          <div className="col-12 col-lg-6">
+            <Upper className="d-block d-xl-flex">
+              <div className="col-12 col-xl-6">
+                <div className="title text-center text-lg-start">
+                  Live <div>Projects</div>
+                </div>
+              </div>
+              <div className="col-12 col-xl-6">
+                <p className="para">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo
+                  sit porta mauris bibendum suspendisse felis, non et cursus.
+                  Vestibulum nulla non interdum amet, ornare lacinia sagittis,
+                  nullam. Donec aliquet rhoncus leo neque tortor, faucibus amet
+                  egestas.{" "}
+                </p>
+                <p className="button">More Info</p>
+              </div>
+            </Upper>
+          </div>
+          <div className="col-12 col-lg-6">
+            <Lower>
+              <div className="bar"></div>
+              <div className="image-container">
+                <Image src={img} alt="" />
+              </div>
+            </Lower>
+          </div>
         </div>
-        <div className="content">
-          <p className="para">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo sit
-            porta mauris bibendum suspendisse felis, non et cursus. Vestibulum
-            nulla non interdum amet, ornare lacinia sagittis, nullam. Donec
-            aliquet rhoncus leo neque tortor, faucibus amet egestas.{" "}
-          </p>
-          <p className="button">More Info</p>
-        </div>
-      </Upper>
-      <Lower>
-        <div className="bar"></div>
-        <div className="image-container">
-          <Image src={img} alt="" />
-        </div>
-      </Lower>
-    </LiveProjectsContainer>
+      </LiveProjectsContainer>
+    </div>
   );
 }
 export default LiveProjects;
 
 const LiveProjectsContainer = styled.div`
-  background-color: #f1f1f1;
-  width: 100%;
+  width: 90%;
+  margin: auto;
   position: relative;
   padding-top: 100px;
 `;
 const Upper = styled.div`
-  display: flex;
   width: 80%;
   margin: 0 auto;
   .title {
-    font-size: 70px;
-    min-width: 50%;
+    font-size: 50px;
     letter-spacing: 10px;
     font-family: "IM Fell Double Pica", serif;
   }
   .content {
-    width: 450px;
+    width: 100%;
   }
   .para {
     width: 100%;

@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import PopularProjectsContext from "../public/Contexts/PopularProjectsContext";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MyApp({ Component, pageProps }) {
   const popularProjectsData = {

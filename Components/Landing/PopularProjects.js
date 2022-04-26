@@ -36,11 +36,13 @@ function PopularProjects() {
             <p className="card-title">{data.title}</p>
           </div>
           <div className="footer">
-            <div className="footer-inner">
-              <p>Lecture by {data.teacher}</p>
-              <p>
-                {data.numberOfLect} lectures ({data.hours} Hours)
-              </p>
+            <p className="px-4">Lecture by {data.teacher}</p>
+            <div className="footer-inner d-block d-lg-flex justify-content-between">
+              <div className="">
+                <p>
+                  {data.numberOfLect} lectures ({data.hours} Hours)
+                </p>
+              </div>
               <p className="rating">
                 <BsFillStarFill />
                 {data.ratingStar} ({data.ratingNumber})
@@ -76,7 +78,7 @@ function PopularProjects() {
               setSection("career");
             }}
           >
-            Career & Short term
+            Career & Shortterm
           </p>
           <p
             className="button"
@@ -92,7 +94,7 @@ function PopularProjects() {
               setSection("accounting");
             }}
           >
-            Basic & Accounting
+            Basic&Accounting
           </p>
           <p
             className="button"
@@ -127,16 +129,29 @@ function PopularProjects() {
             Web & Graphics
           </p>
         </div>
-        <Swiper className="mySwiper" slidesPerView={2}>
-          {swiperData.map((data, index) => {
-            return (
-              <SwiperSlide slidesPerView={2} key={index}>
-                <SwiperCard data={data} />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-        <p className="view-all">View All Courses</p>
+        <div className="d-none d-lg-block">
+          <Swiper className="mySwiper" slidesPerView={2}>
+            {swiperData.map((data, index) => {
+              return (
+                <SwiperSlide slidesPerView={2} key={index}>
+                  <SwiperCard data={data} />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+        <div className="d-block d-lg-none">
+          <Swiper className="mySwiper" slidesPerView={1}>
+            {swiperData.map((data, index) => {
+              return (
+                <SwiperSlide slidesPerView={1} key={index}>
+                  <SwiperCard data={data} />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+        <p className="view-all mx-auto">View All Courses</p>
       </SliderContainer>
     </PopularProjectsContainer>
   );
@@ -168,6 +183,7 @@ const SliderContainer = styled.div`
   margin-top: 50px;
   .buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
   }
@@ -199,9 +215,10 @@ const SliderContainer = styled.div`
   }
 `;
 const SwiperCardContainer = styled.div`
-  // width: 50%;
-  width: 500px;
-
+  width: 85%;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
   .about-title {
     font-size: 20px;
     font-weight: bold;
@@ -223,10 +240,12 @@ const SwiperCardContainer = styled.div`
       .description {
         margin-top: 20px;
         width: 90%;
+        height: 95%;
       }
       .learn-more {
         position: absolute;
-        bottom: 50px;
+        height: 5%;
+        bottom: 40px;
         color: white;
         right: 50px;
         font-weight: bold;
@@ -268,14 +287,14 @@ const SwiperCardContainer = styled.div`
       .footer-inner {
         padding: 10px 20px;
       }
-      .rating {
-        position: absolute;
-        right: 10%;
-        bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
+      // .rating {
+      //   position: absolute;
+      //   right: 10%;
+      //   bottom: 10px;
+      //   display: flex;
+      //   align-items: center;
+      //   gap: 5px;
+      // }
     }
   }
 `;

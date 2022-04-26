@@ -17,37 +17,67 @@ function Gallery() {
       <div className="inner-container">
         <p className="title">Gallery</p>
         <ImageContainer>
-          <Upper>
-            ;
-            <div className="slider">
-              <Image src={gallerySlider1} alt="" />
-            </div>
-            <div className="grid">
-              <div className="grid-upper">
-                <Image src={img1} alt="" />
-                <Image src={img2} alt="" />
+          {/* <Upper> */}
+          <div className="row">
+            <div className="col-12 col-md-6 p-0">
+              <div className="m-2 d-flex justify-content-center">
+                <Image src={gallerySlider1} alt="" />
               </div>
-              <div className="grid-lower">
+            </div>
+            <div className="col-12 col-md-6 p-0">
+              <div className="">
+                <div className=" row">
+                  <div className="col-6 d-flex justify-content-end p-1">
+                    <Image src={img1} alt="" />
+                  </div>
+                  <div className="col-6 d-flex justify-content-start p-1">
+                    <Image src={img2} alt="" />
+                  </div>
+                  <div className="col-6 d-flex justify-content-end p-1">
+                    <Image src={img3} alt="" />
+                  </div>
+                  <div className="col-6 d-flex justify-content-start p-1">
+                    <Image src={img4} alt="" />
+                  </div>
+                </div>
+              </div>
+              {/* <div className="grid-upper m-1">
+                <Image src={img2} alt="" />
+              </div> */}
+              {/* <div className="grid-lower m-1">
                 <Image src={img3} alt="" />
                 <Image src={img4} alt="" />
+              </div> */}
+            </div>
+          </div>
+          {/* </Upper> */}
+          {/* <Lower> */}
+          <div className="row">
+            <div className="col-12 col-md-6 p-0 order-2 order-md-1">
+              <div className="">
+                <div className="row">
+                  <div className="col-6 d-flex justify-content-end p-1">
+                    <Image src={img5} alt="" />
+                  </div>
+                  <div className="col-6 d-flex justify-content-start p-1">
+                    <Image src={img6} alt="" />
+                  </div>
+                  <div className="col-6 d-flex justify-content-end p-1">
+                    <Image src={img7} alt="" />
+                  </div>
+                  <div className="col-6  d-flex justify-content-start p-1">
+                    <Image src={img8} alt="" />
+                  </div>
+                </div>
               </div>
             </div>
-          </Upper>
-          <Lower>
-            <div className="grid">
-              <div className="grid-upper">
-                <Image src={img5} alt="" />
-                <Image src={img6} alt="" />
-              </div>
-              <div className="grid-lower">
-                <Image src={img7} alt="" />
-                <Image src={img8} alt="" />
+            <div className="col-12 col-md-6 p-0 order-1 order-md-2">
+              <div className="d-flex justify-content-center">
+                <Image src={gallerySlider2} alt="" />
               </div>
             </div>
-            <div className="slider">
-              <Image src={gallerySlider2} alt="" />
-            </div>
-          </Lower>
+          </div>
+          {/* </Lower> */}
         </ImageContainer>
       </div>
     </GalleryContainer>
@@ -103,3 +133,155 @@ const Lower = styled.div`
   display: flex;
   width: 100%;
 `;
+{
+  /* <div className="row">
+<div className="col-6 p-0 bg-warning">
+  <Image src={gallerySlider1} alt="" />
+</div>
+<div className="col-6 p-0 bg-danger">
+  <div className="d-flex">
+    <div className="w-50 d-flex justify-content-center">
+      <Image
+        src={img1}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+    <div className="w-50 d-flex justify-content-center">
+      <Image
+        src={img2}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+  </div>
+  <div className="d-flex">
+    <div className="w-50 d-flex justify-content-center">
+      <Image
+        src={img1}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+    <div className="w-50 d-flex justify-content-center">
+      <Image
+        src={img2}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+  </div>
+  <div className="col-6 p-0">
+      <Image
+        src={img1}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+    <div className="col-6 p-0">
+      <Image
+        src={img2}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div> 
+   <div className="col-6 p-0">
+      <Image
+        src={img3}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+    <div className="col-6 p-0">
+      <Image
+        src={img4}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+</div>
+</div>
+<div className="row">
+<div className="col-6 p-0 bg-warning">
+  <Image src={gallerySlider1} alt="" />
+</div>
+<div className="col-6 p-0 bg-danger">
+  <div className="d-flex">
+    <div className="w-50 d-flex justify-content-center">
+      <Image
+        src={img1}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+    <div className="w-50 d-flex justify-content-center">
+      <Image
+        src={img2}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+  </div>
+  <div className="d-flex">
+    <div className="w-50 d-flex justify-content-center">
+      <Image
+        src={img1}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+    <div className="w-50 d-flex justify-content-center">
+      <Image
+        src={img2}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+  </div>
+  <div className="col-6 p-0">
+      <Image
+        src={img1}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div>
+    <div className="col-6 p-0">
+      <Image
+        src={img2}
+        alt=""
+        className=""
+        style={{ width: "100%" }}
+      />
+    </div> */
+}
+//  <div className="col-6 p-0">
+//       <Image
+//         src={img3}
+//         alt=""
+//         className=""
+//         style={{ width: "100%" }}
+//       />
+//     </div>
+//     <div className="col-6 p-0">
+//       <Image
+//         src={img4}
+//         alt=""
+//         className=""
+//         style={{ width: "100%" }}
+//       />
+//     </div>
+// </div>
+// </div>

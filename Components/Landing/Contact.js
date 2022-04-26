@@ -12,7 +12,7 @@ function Contact() {
       </p>
       <div className="buttons">
         <p
-          className="button1 button"
+          className="button1 button mx-2"
           onClick={() => {
             setIsCochin(true);
           }}
@@ -20,7 +20,7 @@ function Contact() {
           Cochin
         </p>
         <p
-          className="button2 button"
+          className="button2 button mx-2"
           onClick={() => {
             setIsCochin(false);
           }}
@@ -29,28 +29,38 @@ function Contact() {
         </p>
       </div>
       <FormContainer>
-        <div className="left-part">
-          <p className="key">Email us at</p>
-          <p className="value">
-            {isCochin ? "nfo@lcccochin.com" : "always@lcccochin.com"}
-          </p>
-          <p className="key">Our Address</p>
-          <p className="value">
-            {isCochin
-              ? "3rd floor, Dharmodayam Bldgs Marine Drive, Cochin-31, Kerala"
-              : "New other address"}
-          </p>
-          <div className="map-container"></div>
-        </div>
-        <div className="right-part">
-          <form>
-            <input type="text" placeholder="First Name*" />
-            <input type="text" placeholder="Last Name*" />
-            <input type="text" placeholder="Email Address*" />
-            <p className="small-title">Message</p>
-            <textarea />
-            <p className="submit-button">Send it</p>
-          </form>
+        <div className="row m-0">
+          <div
+            className={`left-part col-12 col-md-6 ${
+              !isCochin ? "px-4" : ""
+            }`}
+          >
+            <p className="key text-md-end">Email us at</p>
+            <p className="value text-md-end">
+              {isCochin ? "nfo@lcccochin.com" : "always@lcccochin.com"}
+            </p>
+            <p className="key text-md-end">Our Address</p>
+            <p className="value text-md-end">
+              {isCochin
+                ? "3rd floor, Dharmodayam Bldgs Marine Drive, Cochin-31, Kerala"
+                : "New other address"}
+            </p>
+            <div className="map-container"></div>
+          </div>
+          <div className="right-part col-12 col-md-6">
+            <form
+              className={`d-flex justify-content-center align-items-center flex-column ${
+                !isCochin ? "mx-lg-5 px-lg-5" : ""
+              }`}
+            >
+              <input type="text" placeholder="First Name*" />
+              <input type="text" placeholder="Last Name*" />
+              <input type="text" placeholder="Email Address*" />
+              <p className="small-title">Message</p>
+              <textarea />
+              <p className="submit-button d-block mx-auto my-4">Send it</p>
+            </form>
+          </div>
         </div>
       </FormContainer>
     </ContactContainer>
@@ -117,9 +127,6 @@ const FormContainer = styled.div`
   margin-top: 70px;
   justify-content: center;
   .left-part {
-    text-align: right;
-    margin-right: 50px;
-    width: 300px;
     .key {
       font-size: 16px;
       letter-spacing: 2px;
@@ -133,9 +140,6 @@ const FormContainer = styled.div`
     }
   }
   .right-part {
-    text-align: left;
-    margin-bottom: 10px;
-
     input,
     textarea {
       display: block;

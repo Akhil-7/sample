@@ -18,7 +18,7 @@ function HeroSection() {
             life.
           </p>
           <p className="button">
-            Choose the Program{" "}
+            Choose the Program
             <span>
               <AiOutlineArrowRight />
             </span>
@@ -26,31 +26,39 @@ function HeroSection() {
         </HeroSectionContent>
       </Hero>
       <CardsContainer>
-        <CardsInnerContainer>
-          <Card className="card1">
-            <div className="circle">
-              <div className="image-container ">
-                <Image src={studentLogo} alt="" />
+        <CardsInnerContainer className="row mx-auto py-5">
+          <div className="col-12 col-lg-4">
+            <Card className="card1 mx-auto mt-lg-5">
+              <div className="circle">
+                <div className="image-container ">
+                  <Image src={studentLogo} alt="" />
+                </div>
               </div>
-            </div>
-            <p className="title">Get Certificate</p>
-          </Card>
-          <Card className="card2">
-            <div className="circle">
-              <div className="image-container ">
-                <Image src={onlineClassLogo} alt="" />
+              <p className="title">Get Certificate</p>
+            </Card>
+          </div>
+          <div className="col-12 col-lg-4">
+            {/* <div className="col-4"> */}
+            <Card className="card2 mx-auto my-5 my-lg-0">
+              <div className="circle">
+                <div className="image-container ">
+                  <Image src={onlineClassLogo} alt="" />
+                </div>
               </div>
-            </div>
-            <p className="title">Live online lectures and webinars</p>
-          </Card>
-          <Card className="card3">
-            <div className="circle">
-              <div className="image-container">
-                <Image src={studentLogo} alt="" />
+              <p className="title">Live online lectures and webinars</p>
+            </Card>
+          </div>
+          <div className="col-12 col-lg-4">
+            {/* <div className="col-4"> */}
+            <Card className="card3 mx-auto mt-lg-5">
+              <div className="circle">
+                <div className="image-container">
+                  <Image src={studentLogo} alt="" />
+                </div>
               </div>
-            </div>
-            <p className="title">Expert Instructors</p>
-          </Card>
+              <p className="title">Expert Instructors</p>
+            </Card>
+          </div>
         </CardsInnerContainer>
       </CardsContainer>
     </HeroSectionContainer>
@@ -82,6 +90,22 @@ const HeroSectionContent = styled.div`
     letter-spacing: 0.19em;
     font-family: "IM Fell Double Pica", serif;
   }
+  @media (max-width: 700px) {
+    .title {
+      font-size: 20px;
+      line-height: 31px;
+      margin-top: 100px !important;
+    }
+    .sub-title {
+      font-size: 14px !important;
+      line-height: 20px !important;
+      letter-spacing: 0.05em;
+      margin: 30px 0px !important;
+    }
+    .button {
+      padding: 10px 20px !important;
+    }
+  }
   .sub-title {
     font-weight: 300;
     font-size: 24px;
@@ -106,9 +130,10 @@ const HeroSectionContent = styled.div`
 `;
 const CardsContainer = styled.div`
   background-color: var(--secondary);
-  height: 390px;
+  height: auto;
   font-family: "Poppins";
   font-style: normal;
+  padding: 30px 0px;
 `;
 const CardsInnerContainer = styled.div`
   width: 70%;
@@ -116,12 +141,12 @@ const CardsInnerContainer = styled.div`
   display: flex;
   justify-content: space-between;
   .card1,
-  .card3 {
-    margin-top: 120px;
-  }
-  .card2 {
-    margin-top: 60px;
-  }
+  // .card3 {
+  //   margin-top: 120px;
+  // }
+  // .card2 {
+  //   margin-top: 60px;
+  // }
 `;
 const Card = styled.div`
   display: flex;
