@@ -159,9 +159,10 @@ p {
 
 
 
-.main_row_containt{
+.main_row_containt {
   width: 75%;
 }
+
 @media screen and (max-width: 992px) {
   .corporate__bg-bg {
     top: 75px;
@@ -178,6 +179,7 @@ p {
     margin: 0 20px;
     text-align: center;
   }
+
   .main_row_containt {
     width: 100% !important;
   }
@@ -192,6 +194,7 @@ p {
     bottom: 0;
     left: 0;
   }
+
   .bg-w {
     width: 372px;
     height: auto;
@@ -200,6 +203,7 @@ p {
     display: flex;
     align-items: center;
   }
+
   .portfolio-title::after {
     content: "";
     width: 10px;
@@ -211,6 +215,7 @@ p {
     top: unset;
     border-radius: 50%;
   }
+
   .data {
     position: absolute;
     left: 10%;
@@ -291,6 +296,7 @@ p {
   right: 35%;
   bottom: -25%;
 }
+
 .bg-w p {
   position: absolute;
   left: 50%;
@@ -350,25 +356,55 @@ p {
 .card_Our_story {
   background: #fff8f0;
   border-radius: 17px;
-  padding: 10px 14px;
-  margin: 14px 0px;
+  padding: 20px 14px;
+}
+
+.card_Our_story::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.card_Our_story::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: flex-end !important;
 }
 
 .card_Our_story p {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: 14px;
+  line-height: 1.3rem;
   text-align: justify;
-  letter-spacing: 0.05em;
+  /* letter-spacing: 0.05em; */
+  color: #000;
 }
 
-.card_Our_story_line {
-  background-color: #000;
-  height: 4px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.slick-dots {
+  bottom: -35px !important;
+}
+
+.slick-dots li button::before {
+  font-size: 10px !important;
+}
+
+.slick-dots li.slick-active button:before{
+  color: white !important;
+ 
 }
 
 .card_Our_story_line div {
@@ -384,7 +420,8 @@ p {
   color: #fff;
   padding: 20px 26px;
   border-radius: 30px;
-  width: 50%;
+  margin-top: 50px;
+  display: flex;
 }
 
 .main_course_details {
@@ -556,7 +593,7 @@ p {
   }
 
   } */
-  
+
   .l_heding {
     position: relative;
     left: 0%;
@@ -599,6 +636,7 @@ p {
     justify-content: center;
     align-items: center;
   }
+
   .bg-w {
     width: 602px;
     height: 508px;
@@ -608,6 +646,7 @@ p {
     flex-direction: column;
     align-items: center;
   }
+
   .bg-w .l_img {
     /* display: contents; */
     position: relative;
@@ -618,6 +657,7 @@ p {
     bottom: -15%;
     width: 100%; */
   }
+
   .bg-w p {
     position: relative;
     left: 0;
@@ -664,6 +704,7 @@ p {
     width: 90%;
     height: 450px;
   }
+
   /* .bg-w {
     width: 125%;
   }

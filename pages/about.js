@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import '../styles/globals.css'
 import Image from "next/image";
 import img10 from "../public/assets/images/Rectangle 735.png";
@@ -12,30 +12,52 @@ import icon7 from "../public/assets/images/Vector (6).png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import $ from 'jquery';
 
-function about() {
+export default function about() {
+  const [Loaded, setLoaded] = useState(false);
+
+
   const settings = {
     dots: true,
     infinite: true,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    centerMode: true,
-    // vertical: true,
-    verticalSwiping: true,
-    beforeChange: function (currentSlide, nextSlide) {
-      console.log("before change", currentSlide, nextSlide);
-    },
-    afterChange: function (currentSlide) {
-      console.log("after change", currentSlide);
-    },
+    arrows: false,
+    // dots:false
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+
+    ],
   };
+
+
   return (
+
     <div className="about">
       <div className="home">
         <div className="data py-4">
           {/* <div className="">
             <h1 className="">
-              ABOUT <br /> THE LCC
+            ABOUT <br /> THE LCC
             </h1>
             <p className="py-1">An ISO 9001:2015 Certified Company</p>
           </div> */}
@@ -87,11 +109,10 @@ function about() {
           </div> */}
         </div>
       </div>
-
       {/*Facts  & Figures */}
       <div className="Facts py-5 px-0 px-sm-4">
         <div className="pl-5 ml-5">
-          <h1 className="text-start text-light">Facts & Figures</h1>
+          <h1 className="text-md-start text-center text-light">Facts & Figures</h1>
           <div className="">
             <div
               className="main_row_containt"
@@ -202,26 +223,75 @@ function about() {
       <div className="Our_story">
         <div className="Our_story_sub">
           <h1 className="text-light text-center py-5 my-4">Our story</h1>
-          <div>
-            <h2>Vertical Mode</h2>
-            <Slider {...settings}>
-              <div>
-                <h3>1</h3>
+
+
+          <Slider {...settings}>
+            <div className="py-4 px-3 position-relative">
+
+              <div className="card_Our_story">
+                <p>
+                  Founded in Cochin back in the year 1992, LCC started its
+                  journey as a premier computer coaching centre and later
+                  advanced into one of the most reputedbrand for computer
+                  learning throughout India. LCC has surpassed victory in
+                  finding and refining those hidden talents in our pupils, to
+                  deliver thousands of IT prosto the evergreen IT Industry every
+                  year.Whether you are a novice, a mediocre or a professional in
+                  computer technologies, we have the right course for you to
+                  advance and follow anambitious career path.
+                </p>
               </div>
-              <div>
-                <h3>2</h3>
+            </div>
+            <div className="py-4 px-3 position-relative">
+
+              <div className="card_Our_story">
+                <p>
+                  Technology as you can imagine, advances every second. It feeds
+                  upon itself i.e., technology makes more technology possible.
+                  LCC’s expert academicians and certified faculties interact
+                  with our leading computer technology company allies
+                  like(include LCCs alliances here for eg.Java, Red Hat,
+                  Microsoft and Oracle)to come up with relevantcertification
+                  courses (short term, long term, professional, and career
+                  courses) after thorough market research and study.LCC is also
+                  the training partner to World famous MNC TOTAL SOLUTIONS INC,
+                  CHICAGO, USA, and its allied Company EZMRX Bangalore.Our
+                  curriculum features the largest offering of computer course
+                  varieties to keep you updated with cutting edge technology
+                  through expert and experienced training faculties. This will
+                  help the students pursue a job of their dreams with better
+                  career prospects and industry best salaries.
+                </p>
               </div>
-              <div>
-                <h3>3</h3>
+            </div>
+            <div className="py-4 px-3 position-relative">
+
+              <div className="card_Our_story">
+                <p>
+                  That is not all to it;we also mould students into professional
+                  characters for interviews through job fairs, placement
+                  workshops, seminars, presentations and various other
+                  personality development programs. To sum it up, in spite of
+                  being the right platform to build your sharp IT knowledge, LCC
+                  also supports your first step to career by introducing you to
+                  the complex technology job sector through placement
+                  opportunities to reputed companie
+                </p>
               </div>
-              <div>
-                <h3>4</h3>
+            </div>
+            <div className="py-4 px-3 position-relative">
+
+              <div className="card_Our_story">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A blanditiis sit commodi aliquam ullam vitae architecto alias, similique rem repellendus voluptas eius culpa nesciunt voluptate laborum quas consequatur quis odio.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam nobis earum vero saepe velit aut ipsam dolor? Excepturi modi, voluptas quisquam soluta natus quia nam illum ipsam corrupti nesciunt harum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos et, quae quod sit a beatae voluptates aliquam debitis at perferendis, aspernatur enim deserunt accusantium fugit qui vero quasi iure adipisci?
+                </p>
               </div>
-              {/* <div>
-                <h3>5</h3>
-              </div> */}
-            </Slider>
-          </div>
+            </div>
+
+
+          </Slider>
+
           {/* <div className="row m-0 h-75">
             <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center align-items-end">
               <div className="card_Our_story">
@@ -291,15 +361,13 @@ function about() {
               </div>
             </div>
           </div> */}
-          <div className="Our_story_bottom_div m-auto">
+          <div className="Our_story_bottom_div ">
             Come join us and innovate to multiply world’s Technology by your
             skill, who knows, tomorrow we might get a chance to teach your
             invention!
           </div>
         </div>
-      </div>
+      </div >
     </div>
-  );
+  )
 }
-
-export default about;
