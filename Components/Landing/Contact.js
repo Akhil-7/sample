@@ -31,27 +31,38 @@ function Contact() {
       <FormContainer>
         <div className="row m-0">
           <div
-            className={`left-part col-12 col-md-6 ${
-              !isCochin ? "px-4" : ""
-            }`}
+            className={`left-part col-12 col-md-6 ${!isCochin ? "px-4" : ""
+              }`}
           >
-            <p className="key text-md-end">Email us at</p>
-            <p className="value text-md-end">
-              {isCochin ? "nfo@lcccochin.com" : "always@lcccochin.com"}
-            </p>
-            <p className="key text-md-end">Our Address</p>
-            <p className="value text-md-end">
-              {isCochin
-                ? "3rd floor, Dharmodayam Bldgs Marine Drive, Cochin-31, Kerala"
-                : "New other address"}
-            </p>
-            <div className="map-container"></div>
+            <div className="d-flex align-items-center  align-items-md-end flex-column">
+
+              <p className="key text-md-end">Email us at</p>
+              <p className="value text-md-end">
+                {isCochin ? "nfo@lcccochin.com" : "always@lcccochin.com"}
+              </p>
+              <p className="key text-md-end">Our Address</p>
+              <p className="value text-md-end">
+                {isCochin
+                  ? "3rd floor, Dharmodayam Bldgs Marine Drive, Cochin-31, Kerala"
+                  : "New other address"}
+              </p>
+
+              <div className="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10500.444064064968!2d2.2842910697753904!3d48.8560934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sin!4v1650966295875!5m2!1sen!2sin"
+                  width="300"
+                  height="200"
+                  style={{ border: '0' }}
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe></div>
+            </div>
+
           </div>
           <div className="right-part col-12 col-md-6">
             <form
-              className={`d-flex justify-content-center align-items-center flex-column ${
-                !isCochin ? "mx-lg-5 px-lg-5" : ""
-              }`}
+              className={`d-flex justify-content-center align-items-center flex-column ${!isCochin ? "mx-lg-5 px-lg-5" : ""
+                }`}
             >
               <input type="text" placeholder="First Name*" />
               <input type="text" placeholder="Last Name*" />
@@ -104,19 +115,19 @@ const ContactContainer = styled.div`
     }
     .button1 {
       background-color: ${({ isCochin }) =>
-        isCochin ? "#ffffff" : "transparent"};
+    isCochin ? "#ffffff" : "transparent"};
       color: ${({ isCochin }) => (isCochin ? "var(--secondary)" : "#fff")};
       border: ${({ isCochin }) =>
-        isCochin ? "1px solid transparent" : "1px solid #fff"};
+    isCochin ? "1px solid transparent" : "1px solid #fff"};
 
       cursor: pointer;
     }
     .button2 {
       background-color: ${({ isCochin }) =>
-        isCochin ? "transparent" : "#fff"};
+    isCochin ? "transparent" : "#fff"};
       color: ${({ isCochin }) => (isCochin ? "#fff" : "var(--secondary)")};
       border: ${({ isCochin }) =>
-        isCochin ? "1px solid #fff" : "1px solid transparent"};
+    isCochin ? "1px solid #fff" : "1px solid transparent"};
 
       cursor: pointer;
     }
