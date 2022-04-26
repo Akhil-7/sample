@@ -213,7 +213,12 @@ p {
     width: 100% !important;
   }
 }
-
+.slick-track {
+  display: flex !important;
+  justify-content: end !important;
+  align-items: baseline !important;
+  height: 600px !important;
+}
 @media screen and (max-width: 576px) {
   .portfolio-title::before {
     content: "";
@@ -609,7 +614,7 @@ p {
 }
 
 @media (max-width: 1600px) {
-  .main_course_details{
+  .main_course_details {
     height: 100% !important;
   }
 }

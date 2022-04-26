@@ -154,14 +154,14 @@ function PopularProjects() {
         <div className="d-block d-lg-none">
           <Swiper
             className="mySwiper"
-            slidesPerView={1}
+            slidesPerView={2}
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            pagination={{ clickable: true }}
+            // pagination={{ clickable: true }}
           >
             {swiperData.map((data, index) => {
               return (
                 <SwiperSlide slidesPerView={1} key={index}>
-                  <SwiperCard data={data} />
+                  <SwiperCard data={data} className='' />
                 </SwiperSlide>
               );
             })}

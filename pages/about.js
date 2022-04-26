@@ -225,7 +225,7 @@ export default function about() {
 
 
           <Slider {...settings}>
-            <div className="py-4 px-3 position-relative">
+            <div className="py-4 px-3 position-relative ">
 
               <div className="card_Our_story">
                 <p>
