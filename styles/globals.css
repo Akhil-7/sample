@@ -45,34 +45,28 @@ p {
 
 .nav-active .nav-active-items li {
   color: black;
-
 }
 
 .nav-active .nav-active-items li input {
   border: none;
   border-bottom: 1px solid #000;
   background-color: transparent;
-
 }
 
 .nav-active-items li input {
   border: none;
   border-bottom: 1px solid white;
   background-color: transparent;
-
 }
 
 .nav-active-items li input:focus {
   outline: none;
-
 }
 
 .nav-active .nav-active-items li .search-button {
-
   background-color: rgba(0, 0, 0, 0.1);
   color: black;
 }
-
 
 .corporate__bg-bg {
   width: 100%;
@@ -562,6 +556,10 @@ p {
 }
 
 .gallery__container {
+  width: 100%;
+  margin: 0 auto;
+}
+.gallery__container2 {
   width: 80%;
   margin: 0 auto;
 }
@@ -607,7 +605,7 @@ p {
   color: white;
   text-align: center;
   font-size: 46px;
-  padding: 100px 0;
+  padding: 140px 0;
 }
 
 @media (max-width: 1200px) {

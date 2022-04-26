@@ -9,9 +9,11 @@ export default function gallery() {
                 <div className='gallery__heading'>
                     Explore LCC
                 </div>
+            <div className='gallery__container2 mb-5'>
 
                 <GalleryComp />
                 <GalleryComp />
+            </div>
             </div>
 
         </>
