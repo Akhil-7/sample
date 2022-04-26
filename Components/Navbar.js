@@ -1,30 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import logo from "../public/assets/images/logo.png";
+import logoDark from "../public/assets/images/logoDark.png";
+import logoLight from "../public/assets/images/logoLight.png";
 import { BiChevronDown } from "react-icons/bi";
 import { BiMenu } from "react-icons/bi";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { CgMenuRightAlt } from "react-icons/cg";
 import Image from "next/image";
+import $ from 'jquery';
 
 function Navbar() {
   const [menu, setmenu] = useState(false);
+
+  const [ToggleMenu, setToggleMenu] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  const navToggle = () => {
+    ToggleMenu === false ? setToggleMenu(true) : setToggleMenu(false);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', (e) => {
+      window.scrollY > 100 ? setScroll(true) : setScroll(false);
+    })
+  }, [])
+
   return (
     <>
-      <NavbarOuterContainer>
+      <NavbarOuterContainer id="nav-bar" className={scroll === true ? 'nav-active' : ''}>
         <NavItemsContainer_main>
           <NavbarContainer className="d-flex justify-content-between">
-            <Image className="logo" src={logo} alt="" />
+            <Image className="logo" src={scroll === true ? logoDark : logoLight} alt="" />
             <div className="">
               <button
                 className="btn d-flex d-lg-none"
                 onClick={() => setmenu(!menu)}
               >
-                <CgMenuRightAlt className="text-light"/>
+                <CgMenuRightAlt className={scroll === true ? 'text-dark' : 'text-light'} />
               </button>
             </div>
           </NavbarContainer>
-          <NavItemsContainer className="d-none d-lg-flex">
+          <NavItemsContainer className="d-none d-lg-flex nav-active-items">
             <NavItems>Home</NavItems>
             <NavItems>
               Courses <BiChevronDown />
@@ -80,13 +96,13 @@ const NavbarOuterContainer2 = styled.div`
   flex-direction: column;
 `;
 const NavbarOuterContainer = styled.div`
-  position: sticky;
+  position: absolute;
   top: 0;
   width: 100%;
   height: 140px;
   color: #fff;
   z-index: 9999;
-  background: #000;
+  background: transperent;
   border-bottom: 1px solid white;
   @media (max-width: 992px) {
     height: auto;
@@ -124,7 +140,8 @@ const NavItems = styled.li`
   display: flex;
   cursor: pointer;
   font-size: 20px;
-  opacity: 0.8;
+  align-items: center
+
   input {
     border: none;
     outline: none;
