@@ -16,65 +16,56 @@ import { Row, Col } from "react-bootstrap";
 function GalleryComp() {
 	return (
 		<>
-			<div className="gallery__wrapper">
-				<div className="gallery__container">
-					<div className="gallery-title">Gallery</div>.
-					<Row className="g-3 mt-1">
-						<Col xs={12} md={6}>
-							<div className="gallery__slider-img">
-								<Image src={gallerySlider1} layout='responsive' />
-							</div>
-						</Col>
-						<Col xs={12} md={6}>
-							<Row className="g-3">
-								<Col xs={6}>
-									<Image src={img1} layout='responsive' />
-								</Col>
-								<Col xs={6}>
-									<Image src={img2} layout='responsive' />
-								</Col>
-								<Col xs={6}>
-									<Image src={img3} layout='responsive' />
-								</Col>
-								<Col xs={6}>
-									<Image src={img4} layout='responsive' />
-								</Col>
-							</Row>
-						</Col>
-					</Row>
-					<Row className="g-3 mt-1">
 
-						<Col xs={12} md={6}>
-							<Row className="g-3">
-								<Col xs={6}>
-									<Image src={img5} layout='responsive' />
-								</Col>
-								<Col xs={6}>
-									<Image src={img6} layout='responsive' />
-								</Col>
-								<Col xs={6}>
-									<Image src={img7} layout='responsive' />
-								</Col>
-								<Col xs={6}>
-									<Image src={img8} layout='responsive' />
-								</Col>
-							</Row>
-						</Col>
-						<Col xs={12} md={6}>
-							<div className="gallery__slider-img">
-								<Image src={gallerySlider2} layout='responsive' />
-							</div>
-						</Col>
-					</Row>
-
-					<div className="gallery__btn-wrapper">
-						<a href="/gallery">
-							View All
-						</a>
+			<Row className="g-3 mt-1">
+				<Col xs={12} md={6}>
+					<div className="gallery__slider-img">
+						<Image src={gallerySlider1} layout='responsive' />
 					</div>
-				</div>
+				</Col>
+				<Col xs={12} md={6}>
+					<Row className="g-3">
+						<Col xs={6}>
+							<Image src={img1} layout='responsive' />
+						</Col>
+						<Col xs={6}>
+							<Image src={img2} layout='responsive' />
+						</Col>
+						<Col xs={6}>
+							<Image src={img3} layout='responsive' />
+						</Col>
+						<Col xs={6}>
+							<Image src={img4} layout='responsive' />
+						</Col>
+					</Row>
+				</Col>
+			</Row>
+			<Row className="g-3 mt-1">
 
-			</div>
+				<Col xs={12} md={6}>
+					<Row className="g-3">
+						<Col xs={6}>
+							<Image src={img5} layout='responsive' />
+						</Col>
+						<Col xs={6}>
+							<Image src={img6} layout='responsive' />
+						</Col>
+						<Col xs={6}>
+							<Image src={img7} layout='responsive' />
+						</Col>
+						<Col xs={6}>
+							<Image src={img8} layout='responsive' />
+						</Col>
+					</Row>
+				</Col>
+				<Col xs={12} md={6}>
+					<div className="gallery__slider-img">
+						<Image src={gallerySlider2} layout='responsive' />
+					</div>
+				</Col>
+			</Row>
+
+		
 		</>
 	);
 }

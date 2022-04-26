@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import GalleryComp from "../Components/Landing/GalleryComp";
+import HomeGallery from "../Components/Landing/HomeGallery";
 import HeroSection from "../Components/Landing/HeroSection";
 import LiveProjects from "../Components/Landing/LiveProjects";
 import PopularProjects from "../Components/Landing/PopularProjects";
@@ -10,7 +10,7 @@ function Home() {
     <div>
       <HeroSection />
       <PopularProjects />
-      <GalleryComp />
+      <HomeGallery />
       <LiveProjects />
       <Contact />
     </div>
