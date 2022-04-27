@@ -71,7 +71,7 @@ const Upper = styled.div`
     background-color: #1d1e2c;
     width: fit-content;
     margin-left: auto;
-    color: #fff;
+    color: #fff8f0;
     padding: 5px 40px;
     border-radius: 5px;
     font-size: 18px;

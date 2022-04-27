@@ -110,7 +110,11 @@ export default function about() {
                     <Image src={icon3} alt="" />
                   </div>
                   <p className="card_text h-50">
-                    <b>Graduates</b>
+                    {" "}
+                    <br />
+                    <span>
+                      <b>Graduates</b>
+                    </span>
                   </p>
                 </div>
                 <div className="col-3 d-flex flex-column justify-content-center align-items-center py-2">
@@ -270,8 +274,18 @@ export default function about() {
 }
 const AboutContainer = styled.div`
   .data {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    background: #e39774;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: var(--primary);
-    height: 73vh;
+    height: 75vh;
     .bg-w {
       height: 350px;
     }
@@ -279,6 +293,7 @@ const AboutContainer = styled.div`
   .Facts {
     background-color: var(--secondary);
     .facts-title {
+      color: var(--secondary);
       span {
         display: block;
       }

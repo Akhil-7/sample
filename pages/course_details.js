@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import img7 from "../public/assets/images/course-detials-bg.svg";
+import img7 from "../public/assets/images/course-detials-bg-full.svg";
 import img8 from "../public/assets/images/Vector (8).png";
 import styled from "styled-components";
 
@@ -22,14 +22,14 @@ function course_details() {
             <p className="heding_tex_we_sub">Experienced Faculty</p>
           </div>
         </div>
-        <div className="part2 col-4 p-0">
-          <div className="back">{/* <Image src={img7} alt="" /> */}</div>
+        <div className="back col-4 p-0">
+          <div className="img-container">{<Image src={img7} alt="" />}</div>
         </div>
         <div className="part3 col-4 p-2 pt-5">
           <div className="book_div mx-auto mt-5">
             <Image src={img8} alt="" />
           </div>
-          <h4 className="text-center text-light pt-3">
+          <h4 className="text-center text-light pt-3 title">
             <b>About the course</b>
           </h4>
           <p className="text-light heding_tex_we_sub py-2">
@@ -51,10 +51,11 @@ export default course_details;
 const CourseDetails = styled.div`
   row {
     min-height: 150vh !important;
+    position: relative;
   }
   .part1 {
     background-color: #153955 !important;
-    color: #fff;
+    color: #fff8f0;
     h1 {
       font-family: "IM Fell Double Pica", serif;
     }
@@ -64,22 +65,35 @@ const CourseDetails = styled.div`
     .part1-content {
       margin-left: 80px !important;
       .heding_tex_we {
-        padding-top: 100px !important;
+        padding-top: 40px !important;
         font-family: "IM Fell Double Pica", serif;
-      }
-      .heding_tex_we_sub {
-        font-size: 23px;
       }
     }
   }
   .part3 {
     background-color: #784638;
-    color: #fff;
+    color: #fff8f0;
+    padding: 50px !important;
+
     h4 {
+      margin-top: 40px;
       font-family: "IM Fell Double Pica", serif;
     }
     p {
-      font-size: 23px;
+      font-size: 18px;
+    }
+  }
+  .back {
+    position: relative;
+    .img-container {
+      position: absolute;
+      bottom: 0;
+      img {
+        width: 90%;
+        margin: auto;
+      }
+      height: fit-content;
+      margin-bottom: 0;
     }
   }
 `;

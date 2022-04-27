@@ -14,7 +14,17 @@
   padding: 0;
   font-family: "Cardo", serif;
 }
-
+@font-face {
+  font-family: tiempos;
+  src: url(../public/assets/fonts/tiempos-Font/TiemposHeadline-Regular.otf);
+}
+@font-face {
+  font-family: tiemposBold;
+  src: url(../public/assets/fonts/tiempos-Font/TiemposHeadline-Bold.otf);
+}
+.title{
+font-family: 'IM Fell Double Pica', serif;
+}
 p {
   margin: 0% !important;
   padding: 4px;
@@ -36,10 +46,10 @@ p {
 }
 
 .nav-active {
-  background-color: white !important;
+  background-color: #fff8f0;
   transition: transform 0.5s ease-in-out;
   position: fixed !important;
-  top: -150px !important;
+  top: -151px !important;
   transform: translateY(150px);
 }
 
@@ -52,10 +62,12 @@ p {
   border-bottom: 1px solid #000;
   background-color: transparent;
 }
-
+.nav-active a {
+  color: var(--secondary) !important;
+}
 .nav-active-items li input {
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #Fff8f0;
   background-color: transparent;
 }
 
@@ -161,7 +173,7 @@ p {
   background-color: #3b3b46;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: #Fff8f0;
   padding: 30px 20px;
   height: 100%;
   justify-content: space-between;
@@ -267,7 +279,7 @@ p {
 .home {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background-color: #29335c;
   background-image: url(../public/assets/images/Rectangle\ 728.png);
   background-position: center;
@@ -275,19 +287,6 @@ p {
   background-repeat: no-repeat;
 }
 
-.data {
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  bottom: 0;
-  background: #e39774;
-  width: 80%;
-  height: 65vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 .btn {
   outline: none;
   border: none;
@@ -332,7 +331,7 @@ p {
   padding: 5px 15px;
   background-color: var(--secondary);
   border-radius: 6px;
-  color: #fff;
+  color: #Fff8f0;
   width: fit-content;
   margin: 0 auto;
   font-size: 14px;
@@ -340,7 +339,7 @@ p {
 }
 .button:hover {
   background-color: var(--secondary);
-  color: #fff;
+  color: #Fff8f0;
 }
 .l_subheding {
   position: relative;
@@ -397,7 +396,6 @@ p {
 
 .card_text {
   text-align: center;
-  color: #fff;
 }
 
 .image-Our-Capabilities {
@@ -461,7 +459,7 @@ p {
 }
 
 .card_Our_story_line div {
-  background-color: #fff;
+  background-color: #Fff8f0;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -470,7 +468,7 @@ p {
 .Our_story_bottom_div {
   background: rgba(0, 0, 0, 0.75);
   text-align: center;
-  color: #fff;
+  color: #Fff8f0;
   padding: 20px 26px;
   border-radius: 30px;
   width: 50%;
@@ -481,13 +479,13 @@ p {
 }
 
 .heding_text_tally {
-  font-size: 90px;
+  font-size: 70px;
   padding-top: 140px;
   text-align: center;
   font-style: italic;
 }
 .heding_tex_we {
-  font-size: 50px;
+  font-size: 1.8rem;
 }
 .swiper-pagination {
   position: absolute;
@@ -505,13 +503,13 @@ p {
   width: 100%;
 }
 .heding_tex_we_sub {
-  font-size: 30px;
+  font-size: 18px;
   padding: 10px;
   text-align: justify;
 }
 
 .heding_text_Workshop {
-  font-size: 90px;
+  font-size: 70px;
   font-style: italic;
   margin-left: 340px;
 }
@@ -520,21 +518,25 @@ p {
   background: url(../public/assets/images/Rectangle\ 783.png);
   background-repeat: space;
   background-size: contain;
-  height: 100%;
+  min-height: 100%;
+  
+
 }
 
-.img_con {
+
+@media screen and (max-width: 768px) {
+  .img_con {
   height: 80vh;
   width: 100%;
   background: url(../public/assets/images/course-detials-bg.svg);
   background-repeat: no-repeat;
   background-size: cover;
+}    
 }
-
 .book_div {
   height: 200px;
   width: 190px;
-  background: #fff;
+  background: #Fff8f0;
   border-radius: 50% 50% 0% 0%;
   display: flex;
   justify-content: center;
@@ -578,7 +580,7 @@ p {
   font-size: 50px;
   font-weight: bold;
   opacity: 0.9;
-  color: #fff;
+  color: #Fff8f0;
   font-family: poppins;
   letter-spacing: 5px;
   margin-bottom: 20px;
@@ -607,7 +609,7 @@ p {
 /* gallery page css */
 .gallery__heading {
   background-color: #56566f;
-  color: white;
+  color: #Fff8f0;
   text-align: center;
   font-size: 46px;
   padding: 140px 0;
@@ -693,7 +695,7 @@ p {
   }
 
   .heding_tex_we {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   .heding_tex_we_sub {
@@ -703,7 +705,7 @@ p {
   .book_div {
     height: 110px;
     width: 100px;
-    background: #fff;
+    background: #Fff8f0;
     border-radius: 50% 50% 0% 0%;
     display: flex;
     justify-content: center;
@@ -787,7 +789,7 @@ p {
     width: 100% !important;
     background: rgba(0, 0, 0, 0.75);
     text-align: center;
-    color: #fff;
+    color: #Fff8f0;
     padding: 20px 26px;
     border-radius: 30px;
   }

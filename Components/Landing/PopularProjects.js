@@ -26,8 +26,8 @@ function PopularProjects() {
   const SwiperCard = ({ data }) => {
     return (
       <SwiperCardContainer>
-        <div className="back">
-          <div className="back-innercontainer">
+        <div className="back-card">
+          <div className="back-card-innercontainer">
             <p className="about-title">About the course</p>
             <p className="description">{data.description}</p>
             <p className="learn-more">Learn More</p>
@@ -59,7 +59,16 @@ function PopularProjects() {
       </SwiperCardContainer>
     );
   };
-
+  const breakpoints = {
+    // when window width is >= 320px
+    0: {
+      slidesPerView: 1,
+    },
+    // when window width is >= 640px
+    1100: {
+      slidesPerView: 2,
+    },
+  };
   return (
     <PopularProjectsContainer>
       <p className="title">Our popular learning programs</p>
@@ -76,7 +85,7 @@ function PopularProjects() {
               section === "career"
                 ? {
                     backgroundColor: "var(--secondary)",
-                    color: "#fff",
+                    color: "#Fff8f0",
                   }
                 : {}
             }
@@ -92,7 +101,7 @@ function PopularProjects() {
               section === "accounting"
                 ? {
                     backgroundColor: "var(--secondary)",
-                    color: "#fff",
+                    color: "#Fff8f0",
                   }
                 : {}
             }
@@ -108,7 +117,7 @@ function PopularProjects() {
               section === "programming"
                 ? {
                     backgroundColor: "var(--secondary)",
-                    color: "#fff",
+                    color: "#Fff8f0",
                   }
                 : {}
             }
@@ -124,7 +133,7 @@ function PopularProjects() {
               section === "web"
                 ? {
                     backgroundColor: "var(--secondary)",
-                    color: "#fff",
+                    color: "#Fff8f0",
                   }
                 : {}
             }
@@ -141,6 +150,9 @@ function PopularProjects() {
             slidesPerView={2}
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             pagination={{ clickable: true }}
+            updateOnWindowResize={true}
+            breakpoints={breakpoints}
+            grabCursor={true}
           >
             {swiperData.map((data, index) => {
               return (
@@ -154,9 +166,8 @@ function PopularProjects() {
         <div className="d-block d-lg-none">
           <Swiper
             className="mySwiper"
-            slidesPerView={2}
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-            // pagination={{ clickable: true }}
+            pagination={{ clickable: true }}
           >
             {swiperData.map((data, index) => {
               return (
@@ -175,7 +186,7 @@ function PopularProjects() {
 export default PopularProjects;
 
 const PopularProjectsContainer = styled.div`
-  background-color: #fff;
+  background-color: #fff8f0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -193,14 +204,16 @@ const PopularProjectsContainer = styled.div`
     font-size: 15px;
     line-height: 20px;
     max-width: 600px;
+    font-family: tiempos;
+    letter-spacing: 1px;
   }
 `;
 const SliderContainer = styled.div`
-  margin-top: 50px;
+  margin-top: 60px;
   .buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
     justify-content: center;
   }
   .button {
@@ -212,19 +225,23 @@ const SliderContainer = styled.div`
     transition: all 0.3s;
     :hover {
       background-color: var(--secondary);
-      color: #fff;
+      color: #fff8f0;
     }
   }
   .mySwiper {
     max-width: 75vw;
     margin: 50px auto;
-    height: 450px;
+    min-height: 450px;
+    max-height: fit-content;
+    @media (max-width: 1380px) {
+      max-width: 90vw;
+    }
   }
   .view-all {
     padding: 5px 15px;
     background-color: var(--secondary);
     border-radius: 6px;
-    color: #fff;
+    color: #fff8f0;
     width: fit-content;
     margin: 0 auto;
     font-size: 14px;
@@ -233,6 +250,7 @@ const SliderContainer = styled.div`
 `;
 const SwiperCardContainer = styled.div`
   width: 80%;
+  margin: auto;
   @media (max-width: 700px) {
     width: 100%;
   }
@@ -241,12 +259,13 @@ const SwiperCardContainer = styled.div`
     font-weight: bold;
   }
   position: relative;
-  .back {
+  .back-card {
     background-color: var(--primary);
-    height: 400px;
+    min-height: 400px;
+    max-height: fit-content;
     width: 80%;
     margin-left: auto;
-    .back-innercontainer {
+    .back-card-innercontainer {
       width: 50%;
       margin-left: auto;
       text-align: left;
@@ -263,17 +282,17 @@ const SwiperCardContainer = styled.div`
       .learn-more {
         position: absolute;
         bottom: 50px;
-        color: white;
         right: 50px;
-        font-weight: bold;
+        font-weight: bolder;
         cursor: pointer;
         margin-left: 10px !important;
+        color: var(--secondary);
       }
     }
   }
   .front {
     background-color: var(--secondary);
-    color: white;
+    color: #fff8f0;
     position: absolute;
     top: 10%;
     height: 80%;
@@ -284,7 +303,7 @@ const SwiperCardContainer = styled.div`
       width: 80%;
       margin: 40px auto 0;
       .icon-container {
-        background-color: white;
+        background-color: #fff8f0;
         border-radius: 10px;
         height: fit-content;
         padding: 5px;

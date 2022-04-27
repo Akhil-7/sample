@@ -49,7 +49,7 @@ function HeroSection() {
                   <Image src={studentLogo} alt="" />
                 </div>
               </div>
-              <p className="title">Get Certificate</p>
+              <p className="title">Get Certified</p>
             </Card>
           </div>
           <div className="col-12 col-lg-4">
@@ -131,12 +131,12 @@ const HeroSectionContent = styled.div`
     line-height: 35px;
     letter-spacing: 0.1em;
     max-width: 90%;
-    font-family: "IM Fell Double Pica", serif;
+    font-family: tiempos;
   }
   .button {
     margin-top: 30px !important;
     padding: 10px 60px;
-    background-color: #ffffff;
+    background-color: #fff8f0;
     width: fit-content;
     display: flex;
     cursor: pointer;
@@ -160,7 +160,7 @@ const CardsInnerContainer = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  .card1,
+  // .card1,
   // .card3 {
   //   margin-top: 120px;
   // }
@@ -174,7 +174,7 @@ const Card = styled.div`
   align-items: center;
   width: 220px;
   height: 208px;
-  background-color: #ffffff;
+  background-color: #fff8f0;
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -193,7 +193,7 @@ const Card = styled.div`
     position: relative;
   }
   .image-container {
-    background-color: #fff;
+    background-color: #fff8f0;
     width: 80%;
     height: 80%;
     border-radius: 50%;
@@ -206,8 +206,9 @@ const Card = styled.div`
     }
   }
   .title {
-    margin-top: 10px;
-    font-weight: 600;
+    margin-top: 20px;
+    font-family: tiempos;
+    
   }
 
   &:hover {

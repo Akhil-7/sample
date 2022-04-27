@@ -141,7 +141,7 @@ export default GalleryComp;
   //     font-size: 50px;
   //     font-weight: bold;
   //     opacity: 0.9;
-  //     color: #fff;
+  //     color: #Fff8f0;
   //     font-family: poppins;
   //     letter-spacing: 5px;
   //     margin-bottom: 20px;

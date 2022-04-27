@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Contact() {
   const [isCochin, setIsCochin] = useState(true);
   return (
-    <ContactContainer isCochin={isCochin}>
+    <ContactContainer id="contact" isCochin={isCochin}>
       <p className="title">Contact Us</p>
       <p className="subtitle">
         <span>Drop Us a line</span>
@@ -79,7 +79,7 @@ export default Contact;
 const ContactContainer = styled.div`
   background-color: var(--secondary);
   padding: 100px 0;
-  color: #fff;
+  color: #fff8f0;
   text-align: center;
 
   .title {
@@ -89,11 +89,14 @@ const ContactContainer = styled.div`
   }
   .subtitle {
     margin-top: 50px;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 30px;
     letter-spacing: 3px;
+    font-family: tiempos;
+    opacity: 0.9;
     span {
       display: block;
+      font-family: tiempos;
     }
   }
   .buttons {
@@ -112,19 +115,19 @@ const ContactContainer = styled.div`
     }
     .button1 {
       background-color: ${({ isCochin }) =>
-        isCochin ? "#ffffff" : "transparent"};
-      color: ${({ isCochin }) => (isCochin ? "var(--secondary)" : "#fff")};
+        isCochin ? "#Fff8f0" : "transparent"};
+      color: ${({ isCochin }) => (isCochin ? "var(--secondary)" : "#Fff8f0")};
       border: ${({ isCochin }) =>
-        isCochin ? "1px solid transparent" : "1px solid #fff"};
+        isCochin ? "1px solid transparent" : "1px solid #Fff8f0"};
 
       cursor: pointer;
     }
     .button2 {
       background-color: ${({ isCochin }) =>
-        isCochin ? "transparent" : "#fff"};
-      color: ${({ isCochin }) => (isCochin ? "#fff" : "var(--secondary)")};
+        isCochin ? "transparent" : "#Fff8f0"};
+      color: ${({ isCochin }) => (isCochin ? "#Fff8f0" : "var(--secondary)")};
       border: ${({ isCochin }) =>
-        isCochin ? "1px solid #fff" : "1px solid transparent"};
+        isCochin ? "1px solid #Fff8f0" : "1px solid transparent"};
 
       cursor: pointer;
     }
@@ -156,20 +159,20 @@ const FormContainer = styled.div`
       display: block;
       background-color: transparent;
       border: none;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid #fff8f0;
       width: 300px;
       outline: none;
       padding: 10px;
-      color: #fff;
+      color: #fff8f0;
       ::placeholder {
-        color: #fff;
+        color: #fff8f0;
         opacity: 0.9;
         font-size: 13px;
         letter-spacing: 2px;
       }
     }
     textarea {
-      border: 1px solid #fff;
+      border: 1px solid #fff8f0;
       resize: none;
       height: 150px;
     }
@@ -184,7 +187,7 @@ const FormContainer = styled.div`
       border-radius: 5px;
       letter-spacing: 2px;
       width: fit-content;
-      border: 1px solid #fff;
+      border: 1px solid #fff8f0;
       margin: 20px 50px auto auto !important;
       cursor: pointer;
     }

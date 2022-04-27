@@ -52,21 +52,34 @@ function Navbar() {
           </NavbarContainer>
           <NavItemsContainer className="d-none d-lg-flex nav-active-items">
             <NavItems>
-              <Link href={"/"}>Home</Link>
+              <p>
+                <Link href={"/"}>Home</Link>
+              </p>
             </NavItems>
             <NavItems>
-              Courses <BiChevronDown />
+              <p>
+                <Link href={"/course_details"}>Courses</Link>
+              </p>
+              <BiChevronDown />
             </NavItems>
             <NavItems>
-              Pages <BiChevronDown />
+              <p>
+                <Link href={"/about"}>About Us</Link>
+              </p>
             </NavItems>
-            <NavItems>ContactUs</NavItems>
             <NavItems>
+              <p>
+                <a className="contact-button" href="#contact">
+                  Contact us
+                </a>
+              </p>
+            </NavItems>
+            {/* <NavItems>
               <input type={"text"} />
               <p className="search-button">
                 <BiSearchAlt2 />
               </p>
-            </NavItems>
+            </NavItems> */}
           </NavItemsContainer>
         </NavItemsContainer_main>
       </NavbarOuterContainer>
@@ -101,9 +114,9 @@ const NavbarOuterContainer2 = styled.div`
   width: 100%;
   height: 105vh;
   z-index: 10;
-  color: white;
+  color: #fff8f0;
   background: rgba(0, 0, 0, 0.75);
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #fff8f0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,11 +126,11 @@ const NavbarOuterContainer = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  // height: 140px;
-  color: #fff;
+  // color: black;
+  color: #fff8f0;
   z-index: 9999;
-  background: transperent;
-  border-bottom: 1px solid white;
+  // background-color: #fff8f0;
+  border-bottom: 1px solid #fff8f0;
   @media (max-width: 992px) {
     height: auto;
   }
@@ -126,12 +139,14 @@ const NavbarOuterContainer = styled.div`
 const NavItemsContainer_main = styled.div`
   width: 80%;
   margin: 0 auto;
+  display: flex;
 `;
 const NavbarContainer = styled.div`
   padding: 20px 0;
   .logo {
     width: 60px;
     height: 30px;
+    color: black;
   }
 `;
 
@@ -139,7 +154,7 @@ const NavItemsContainer2 = styled.ul`
 weight:100%;
 height:100vh;
 position:absolute
-background:#fff
+background:#Fff8f0
 `;
 const NavItemsContainer = styled.ul`
   display: flex;
@@ -152,24 +167,27 @@ const NavItemsContainer = styled.ul`
 const NavItems = styled.li`
   padding: 0px 20px;
   display: flex;
+  align-items: center;
   cursor: pointer;
   font-size: 20px;
+  #Fff8f0-space: nowrap;
   align-items: center input {
     border: none;
     outline: none;
     background-color: transparent;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid #fff8f0;
     margin-right: 10px;
   }
   a {
-    color: inherit;
-    text-decoration: none;
-    
+    color: #fff8f0 !important;
+    text-decoration: none !important;
+
     :hover {
       color: inherit;
       text-decoration: none;
     }
   }
+
   .search-button {
     background-color: #7c7c7c;
     padding: 5px;
@@ -179,6 +197,15 @@ const NavItems = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #fff8f0;
+  }
+  .contact-button {
+    background-color: var(--primary);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--secondary) !important;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
 `;
