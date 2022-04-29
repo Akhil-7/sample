@@ -56,11 +56,7 @@ function Contact() {
             </div>
           </div>
           <div className="right-part col-12 col-md-6">
-            <form
-              className={`d-flex justify-content-center align-items-center flex-column ${
-                !isCochin ? "mx-lg-5 px-lg-5" : ""
-              }`}
-            >
+            <form className="d-flex justify-content-center align-items-center flex-column">
               <input type="text" placeholder="First Name*" />
               <input type="text" placeholder="Last Name*" />
               <input type="text" placeholder="Email Address*" />

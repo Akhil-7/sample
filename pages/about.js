@@ -11,40 +11,11 @@ import icon7 from "../public/assets/images/Vector (6).png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import $ from "jquery";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export default function about() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: false,
-    // dots:false
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
   return (
     <AboutContainer>
       <div className="home">
@@ -191,77 +162,104 @@ export default function about() {
       <div className="Our_story">
         <div className="Our_story_sub">
           <h1 className="text-light text-center py-5 my-4">Our story</h1>
+          <Swiper
+            className="mySwiper2"
+            slidesPerView={3}
+            updateOnWindowResize={true}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+            }}
+            centeredSlides={true}
+            grabCursor={true}
+          >
+            <SwiperSlide>
+              <div className="py-4 px-3 position-relative ">
+                <div className="card_Our_story">
+                  <p>
+                    Founded in Cochin back in the year 1992, LCC started its
+                    journey as a premier computer coaching centre and later
+                    advanced into one of the most reputedbrand for computer
+                    learning throughout India. LCC has surpassed victory in
+                    finding and refining those hidden talents in our pupils, to
+                    deliver thousands of IT prosto the evergreen IT Industry
+                    every year.Whether you are a novice, a mediocre or a
+                    professional in computer technologies, we have the right
+                    course for you to advance and follow anambitious career
+                    path.
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
 
-          <Slider {...settings}>
-            <div className="py-4 px-3 position-relative ">
-              <div className="card_Our_story">
-                <p>
-                  Founded in Cochin back in the year 1992, LCC started its
-                  journey as a premier computer coaching centre and later
-                  advanced into one of the most reputedbrand for computer
-                  learning throughout India. LCC has surpassed victory in
-                  finding and refining those hidden talents in our pupils, to
-                  deliver thousands of IT prosto the evergreen IT Industry every
-                  year.Whether you are a novice, a mediocre or a professional in
-                  computer technologies, we have the right course for you to
-                  advance and follow anambitious career path.
-                </p>
+            <SwiperSlide>
+              <div className="py-4 px-3 position-relative">
+                <div className="card_Our_story">
+                  <p>
+                    Technology as you can imagine, advances every second. It
+                    feeds upon itself i.e., technology makes more technology
+                    possible. LCC’s expert academicians and certified faculties
+                    interact with our leading computer technology company allies
+                    like(include LCCs alliances here for eg.Java, Red Hat,
+                    Microsoft and Oracle)to come up with relevantcertification
+                    courses (short term, long term, professional, and career
+                    courses) after thorough market research and study.LCC is
+                    also the training partner to World famous MNC TOTAL
+                    SOLUTIONS INC, CHICAGO, USA, and its allied Company EZMRX
+                    Bangalore.Our curriculum features the largest offering of
+                    computer course varieties to keep you updated with cutting
+                    edge technology through expert and experienced training
+                    faculties. This will help the students pursue a job of their
+                    dreams with better career prospects and industry best
+                    salaries.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="py-4 px-3 position-relative">
-              <div className="card_Our_story">
-                <p>
-                  Technology as you can imagine, advances every second. It feeds
-                  upon itself i.e., technology makes more technology possible.
-                  LCC’s expert academicians and certified faculties interact
-                  with our leading computer technology company allies
-                  like(include LCCs alliances here for eg.Java, Red Hat,
-                  Microsoft and Oracle)to come up with relevantcertification
-                  courses (short term, long term, professional, and career
-                  courses) after thorough market research and study.LCC is also
-                  the training partner to World famous MNC TOTAL SOLUTIONS INC,
-                  CHICAGO, USA, and its allied Company EZMRX Bangalore.Our
-                  curriculum features the largest offering of computer course
-                  varieties to keep you updated with cutting edge technology
-                  through expert and experienced training faculties. This will
-                  help the students pursue a job of their dreams with better
-                  career prospects and industry best salaries.
-                </p>
-              </div>
-            </div>
-            <div className="py-4 px-3 position-relative">
-              <div className="card_Our_story">
-                <p>
-                  That is not all to it;we also mould students into professional
-                  characters for interviews through job fairs, placement
-                  workshops, seminars, presentations and various other
-                  personality development programs. To sum it up, in spite of
-                  being the right platform to build your sharp IT knowledge, LCC
-                  also supports your first step to career by introducing you to
-                  the complex technology job sector through placement
-                  opportunities to reputed companie
-                </p>
-              </div>
-            </div>
-            <div className="py-4 px-3 position-relative">
-              <div className="card_Our_story">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
-                  blanditiis sit commodi aliquam ullam vitae architecto alias,
-                  similique rem repellendus voluptas eius culpa nesciunt
-                  voluptate laborum quas consequatur quis odio. Lorem ipsum
-                  dolor sit, amet consectetur adipisicing elit. Nam nobis earum
-                  vero saepe velit aut ipsam dolor? Excepturi modi, voluptas
-                  quisquam soluta natus quia nam illum ipsam corrupti nesciunt
-                  harum. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit. Quos et, quae quod sit a beatae voluptates aliquam
-                  debitis at perferendis, aspernatur enim deserunt accusantium
-                  fugit qui vero quasi iure adipisci?
-                </p>
-              </div>
-            </div>
-          </Slider>
+            </SwiperSlide>
 
+            <SwiperSlide>
+              <div className="py-4 px-3 position-relative">
+                <div className="card_Our_story">
+                  <p>
+                    That is not all to it;we also mould students into
+                    professional characters for interviews through job fairs,
+                    placement workshops, seminars, presentations and various
+                    other personality development programs. To sum it up, in
+                    spite of being the right platform to build your sharp IT
+                    knowledge, LCC also supports your first step to career by
+                    introducing you to the complex technology job sector through
+                    placement opportunities to reputed companie
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="py-4 px-3 position-relative">
+                <div className="card_Our_story">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                    blanditiis sit commodi aliquam ullam vitae architecto alias,
+                    similique rem repellendus voluptas eius culpa nesciunt
+                    voluptate laborum quas consequatur quis odio. Lorem ipsum
+                    dolor sit, amet consectetur adipisicing elit. Nam nobis
+                    earum vero saepe velit aut ipsam dolor? Excepturi modi,
+                    voluptas quisquam soluta natus quia nam illum ipsam corrupti
+                    nesciunt harum. Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Quos et, quae quod sit a beatae voluptates
+                    aliquam debitis at perferendis, aspernatur enim deserunt
+                    accusantium fugit qui vero quasi iure adipisci?
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
           <div className="Our_story_bottom_div mx-auto">
             Come join us and innovate to multiply world’s Technology by your
             skill, who knows, tomorrow we might get a chance to teach your
@@ -307,8 +305,24 @@ const AboutContainer = styled.div`
     background-color: var(--secondary);
   }
   .card_Our_story {
+    display: flex;
+    align-items: center;
     p {
-      font-size: 15px;
+      font-size: 13px;
+    }
+  }
+  .swiper-wrapper {
+    align-items: end;
+
+    .card_Our_story {
+      transform: scale(0.8);
+      transition: all 0.5s;
+    }
+    .swiper-slide-active {
+      .card_Our_story {
+        transform: scale(1) !important;
+        transition: all 0.5s;
+      }
     }
   }
 `;

@@ -179,6 +179,7 @@ function PopularProjects() {
           </Swiper>
         </div>
         <p className="view-all mx-auto">View All Courses</p>
+        
       </SliderContainer>
     </PopularProjectsContainer>
   );
