@@ -58,7 +58,7 @@ function Navbar() {
             </NavItems>
             <NavItems>
               <p>
-                <Link href={"/course_details"}>Courses</Link>
+                <Link href={"/course_page"}>Courses</Link>
               </p>
               <BiChevronDown />
             </NavItems>

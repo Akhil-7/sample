@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 function course_details() {
   const [currentSection, setCurrentSecion] = useState("career");
+  const data = {
+    career: ["Diploma in career "],
+    accounting: ["Diploma in Financial Accounting (DFA)"],
+    programming: ["Diploma in programming"],
+    web: ["Diploma in web"],
+  };
   return (
     <CourseDetailsContainer>
       <SwitchContainer currentSection={currentSection}>
@@ -74,7 +80,9 @@ function course_details() {
         <p className="course-page-title">Career & Short term</p>
         <CourseContainer>
           <div className="course-card">
-            <p> Diploma in Financial Accounting (DFA)</p>
+            {data[currentSection].map((item, index) => (
+              <p key={index}>{item}</p>
+            ))}
           </div>
         </CourseContainer>
       </SwitchContainer>
