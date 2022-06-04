@@ -49,7 +49,11 @@ function Navbar() {
 								onClick={() => setmenu(!menu)}
 							>
 								<CgMenuRightAlt
-									className={scroll === true ? "text-dark" : "text-light"}
+									className={
+										scroll === true || path === "/course_page"
+											? "text-dark"
+											: "text-light"
+									}
 								/>
 							</button>
 						</div>
