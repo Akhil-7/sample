@@ -132,8 +132,7 @@ const NavbarOuterContainer = styled.div`
 	width: 100%;
 	color: ${(props) => (props.path === "/course_page" ? "black" : "#fff8f0")};
 	z-index: 9999;
-	background: ${(props) =>
-		props.path === "/course_page" ? "#fff" : "transparent"};
+	background: ${(props) => props.path === "/course_page" && "#fff"};
 	border-bottom: 1px solid #fff8f0;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 5px;
 	@media (max-width: 992px) {

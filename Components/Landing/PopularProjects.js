@@ -188,7 +188,7 @@ const PopularProjectsContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 	padding: 80px 0;
