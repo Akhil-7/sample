@@ -46,7 +46,7 @@ p {
 }
 
 .nav-active {
-	background-color: #fff8f0;
+	background-color: #fff;
 	transition: transform 0.5s ease-in-out;
 	position: fixed !important;
 	top: -151px !important;

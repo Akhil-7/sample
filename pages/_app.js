@@ -260,6 +260,7 @@ function MyApp({ Component, pageProps }) {
 	};
 
 	const [courses, setCourses] = useState([]);
+	const [scroll, setScroll] = useState(false);
 
 	useEffect(() => {
 		fetch("http://localhost:1337/api/courses")
@@ -268,7 +269,9 @@ function MyApp({ Component, pageProps }) {
 	}, []);
 
 	return (
-		<PopularProjectsContext.Provider value={{ popularProjectsData, courses }}>
+		<PopularProjectsContext.Provider
+			value={{ popularProjectsData, courses, scroll, setScroll }}
+		>
 			<Navbar />
 			<Component {...pageProps} />
 			<Footer />
