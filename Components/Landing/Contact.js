@@ -56,7 +56,7 @@ function Contact() {
 						</div>
 					</div>
 					<div className="right-part col-12 col-md-6">
-						<form className="d-flex justify-content-center align-items-center flex-column">
+						<form className="d-flex justify-content-center flex-column">
 							<input type="text" placeholder="First Name*" />
 							<input type="text" placeholder="Last Name*" />
 							<input type="text" placeholder="Email Address*" />
@@ -177,6 +177,8 @@ const FormContainer = styled.div`
 			opacity: 0.9;
 			font-size: 16px;
 			letter-spacing: 2px;
+			padding-left: 10px;
+			align-self: flex-start;
 		}
 		.submit-button {
 			padding: 8px 20px;
@@ -184,7 +186,7 @@ const FormContainer = styled.div`
 			letter-spacing: 2px;
 			width: fit-content;
 			border: 1px solid #fff8f0;
-			margin: 20px 50px auto auto !important;
+			margin: 20px auto auto 150px !important;
 			cursor: pointer;
 		}
 	}
