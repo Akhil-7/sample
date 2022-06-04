@@ -56,7 +56,7 @@ function Contact() {
 						</div>
 					</div>
 					<div className="right-part col-12 col-md-6">
-						<form className="d-flex justify-content-center flex-column">
+						<form className="d-flex justify-content-center align-items-center flex-column form">
 							<input type="text" placeholder="First Name*" />
 							<input type="text" placeholder="Last Name*" />
 							<input type="text" placeholder="Email Address*" />
@@ -133,6 +133,7 @@ const FormContainer = styled.div`
 	display: flex;
 	margin-top: 70px;
 	justify-content: center;
+
 	.left-part {
 		.key {
 			font-size: 16px;
@@ -150,6 +151,7 @@ const FormContainer = styled.div`
 		}
 	}
 	.right-part {
+		width: max-content;
 		input,
 		textarea {
 			display: block;
