@@ -56,14 +56,16 @@ function Contact() {
 						</div>
 					</div>
 					<div className="right-part col-12 col-md-6">
-						<form className="d-flex justify-content-center align-items-center flex-column form">
-							<input type="text" placeholder="First Name*" />
-							<input type="text" placeholder="Last Name*" />
-							<input type="text" placeholder="Email Address*" />
-							<p className="small-title">Message</p>
-							<textarea />
-							<p className="submit-button d-block ">Send it</p>
-						</form>
+						<div className="form-container">
+							<form className="d-flex justify-content-center align-items-center flex-column">
+								<input type="text" placeholder="First Name*" />
+								<input type="text" placeholder="Last Name*" />
+								<input type="text" placeholder="Email Address*" />
+								<p className="small-title">Message</p>
+								<textarea />
+								<p className="submit-button d-block ">Send it</p>
+							</form>
+						</div>
 					</div>
 				</div>
 			</FormContainer>

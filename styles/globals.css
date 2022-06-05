@@ -809,4 +809,14 @@ p {
 		display: flex;
 		text-align: justify;
 	}
+	.right-part {
+		width: 100% !important;
+	}
+	.form-container {
+		width: max-content;
+		margin: auto;
+	}
+	.small-title {
+		text-align: left !important;
+	}
 }
