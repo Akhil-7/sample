@@ -265,7 +265,21 @@ function MyApp({ Component, pageProps }) {
 	useEffect(() => {
 		fetch("http://localhost:1337/api/courses")
 			.then((res) => res.json())
-			.then((result) => setCourses(result.data));
+			.then((result) => {
+				const arr = [];
+				for (let item of result.data) {
+					arr.push({
+						title: item.attributes.Name,
+						teacher: item.attributes.teacher_name,
+						description: item.attributes.About,
+						numberOfLect: item.attributes.total_lectures,
+						hours: item.attributes.duration,
+						ratingStar: item.attributes.rating,
+						ratingNumber: item.attributes.total_ratings,
+					});
+				}
+				setCourses(arr);
+			});
 	}, []);
 
 	return (
