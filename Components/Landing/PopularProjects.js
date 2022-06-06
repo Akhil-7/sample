@@ -144,7 +144,7 @@ function PopularProjects() {
 						Web & Graphics
 					</p>
 				</div>
-				<div className="d-none d-lg-block">
+				<div className="d-block">
 					<Swiper
 						className="mySwiper"
 						slidesPerView={1}
