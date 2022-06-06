@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Router from "next/router";
 import React, { useEffect, useState } from "react";
 import { BsFillStarFill } from "react-icons/bs";
 import styled from "styled-components";
@@ -30,7 +31,12 @@ function PopularProjects() {
 					<div className="back-card-innercontainer">
 						<p className="about-title">About the course</p>
 						<p className="description">{data?.description}</p>
-						<p className="learn-more">Learn More</p>
+						<p
+							className="learn-more"
+							onClick={() => Router.push(`/${data?.id}`)}
+						>
+							Learn More
+						</p>
 					</div>
 				</div>
 				<div className="front">
@@ -69,6 +75,7 @@ function PopularProjects() {
 			slidesPerView: 1,
 		},
 	};
+
 	return (
 		<PopularProjectsContainer>
 			<p className="title">Our popular learning programs</p>
@@ -159,7 +166,12 @@ function PopularProjects() {
 						</SwiperSlide>
 					</Swiper>
 				</div>
-				<p className="view-all mx-auto">View All Courses</p>
+				<p
+					className="view-all mx-auto"
+					onClick={() => Router.push("/course_page")}
+				>
+					View All Courses
+				</p>
 			</SliderContainer>
 		</PopularProjectsContainer>
 	);

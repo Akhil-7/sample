@@ -119,25 +119,25 @@ function Navbar() {
 						<div className="row mt-3">
 							<div className="col-12 col-md-3 px-3">
 								<h5>Career & Shortterm</h5>
-								<Link href="/course_details">
+								<Link href="/1">
 									<a onClick={() => setDropdown(false)}>Career & Shortterm</a>
 								</Link>
 							</div>
 							<div className="col-12 col-md-3 px-3">
 								<h5>Basic&Accounting</h5>
-								<Link href="/course_details">
+								<Link href="/2">
 									<a onClick={() => setDropdown(false)}>Basic&Accounting</a>
 								</Link>
 							</div>
 							<div className="col-12 col-md-3 px-3">
 								<h5>Programming</h5>
-								<Link href="/course_details">
+								<Link href="/3">
 									<a onClick={() => setDropdown(false)}>Programming</a>
 								</Link>
 							</div>
 							<div className="col-12 col-md-3 px-3">
 								<h5>Web & Graphics</h5>
-								<Link href="/course_details">
+								<Link href="/4">
 									<a onClick={() => setDropdown(false)}>Web & Graphics</a>
 								</Link>
 							</div>
