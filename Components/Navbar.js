@@ -37,25 +37,20 @@ function Navbar() {
 			>
 				<NavItemsContainer_main>
 					<NavbarContainer className="d-flex justify-content-between">
-						<Image
-							className="logo"
-							src={logo}
-							alt="lcc"
-							height={36}
-							style={{ objectFit: "cover" }}
-						/>
+						<div className="imgContainer">
+							<Image
+								className="logo"
+								src={logo}
+								alt="lcc"
+								style={{ objectFit: "contain" }}
+							/>
+						</div>
 						<div className="">
 							<button
 								className="btn d-flex d-lg-none"
 								onClick={() => setmenu(!menu)}
 							>
-								<CgMenuRightAlt
-									className={
-										scroll === true || path === "/course_page"
-											? "text-dark"
-											: "text-light"
-									}
-								/>
+								<CgMenuRightAlt className={"text-light"} />
 							</button>
 						</div>
 					</NavbarContainer>
@@ -185,10 +180,13 @@ const NavItemsContainer_main = styled.div`
 `;
 const NavbarContainer = styled.div`
 	padding: 20px 0;
-	.logo {
-		width: 60px;
-		height: 30px;
-		color: black;
+	.imgContainer {
+		height: 46px;
+		margin-top: -10px;
+		img {
+			height: 56px !important;
+			object-fit: contain;
+		}
 	}
 `;
 
