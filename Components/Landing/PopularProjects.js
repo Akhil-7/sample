@@ -259,6 +259,10 @@ const SwiperCardContainer = styled.div`
 				margin-top: 20px;
 				width: 90%;
 				margin-left: 10px !important;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 7;
 			}
 			.learn-more {
 				position: absolute;
