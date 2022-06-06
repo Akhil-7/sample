@@ -10,6 +10,7 @@ import PopularProjectsContext from "../public/Contexts/PopularProjectsContext";
 
 function Navbar() {
 	const [menu, setmenu] = useState(false);
+	const [dropdown, setDropdown] = useState(false);
 
 	const [ToggleMenu, setToggleMenu] = useState(false);
 	const { scroll, setScroll } = React.useContext(PopularProjectsContext);
@@ -64,10 +65,8 @@ function Navbar() {
 								<Link href={"/"}>Home</Link>
 							</p>
 						</NavItems>
-						<NavItems path={path}>
-							<p>
-								<Link href={"/course_page"}>Courses</Link>
-							</p>
+						<NavItems path={path} onClick={() => setDropdown(!dropdown)}>
+							<p>Courses</p>
 							<BiChevronDown />
 						</NavItems>
 						<NavItems path={path}>
@@ -110,6 +109,38 @@ function Navbar() {
 						</p>
 					</NavItems>
 				</NavbarOuterContainer2>
+			)}
+			{dropdown && (
+				<DropdownContainer>
+					<DropdownContent>
+						<div className="row mt-3">
+							<div className="col-12 col-md-3 px-3">
+								<h5>Career & Shortterm</h5>
+								<Link href="/course_details">
+									<a onClick={() => setDropdown(false)}>Career & Shortterm</a>
+								</Link>
+							</div>
+							<div className="col-12 col-md-3 px-3">
+								<h5>Basic&Accounting</h5>
+								<Link href="/course_details">
+									<a onClick={() => setDropdown(false)}>Basic&Accounting</a>
+								</Link>
+							</div>
+							<div className="col-12 col-md-3 px-3">
+								<h5>Programming</h5>
+								<Link href="/course_details">
+									<a onClick={() => setDropdown(false)}>Programming</a>
+								</Link>
+							</div>
+							<div className="col-12 col-md-3 px-3">
+								<h5>Web & Graphics</h5>
+								<Link href="/course_details">
+									<a onClick={() => setDropdown(false)}>Web & Graphics</a>
+								</Link>
+							</div>
+						</div>
+					</DropdownContent>
+				</DropdownContainer>
 			)}
 		</>
 	);
@@ -216,5 +247,22 @@ const NavItems = styled.li`
 		color: var(--secondary) !important;
 		font-weight: bold;
 		letter-spacing: 1px;
+	}
+`;
+
+const DropdownContainer = styled.div`
+	position: fixed;
+	width: 100%;
+	height: 93%;
+	top: 75px;
+	background-color: var(--secondary);
+	z-index: 100;
+	color: white;
+`;
+const DropdownContent = styled.div`
+	width: 80%;
+	margin: 0 auto;
+	a {
+		text-decoration: none;
 	}
 `;
