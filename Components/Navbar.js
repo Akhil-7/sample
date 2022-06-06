@@ -60,21 +60,24 @@ function Navbar() {
 						</div>
 					</NavbarContainer>
 					<NavItemsContainer className="d-none d-lg-flex nav-active-items">
-						<NavItems path={path}>
+						<NavItems>
 							<p>
 								<Link href={"/"}>Home</Link>
 							</p>
 						</NavItems>
-						<NavItems path={path} onClick={() => setDropdown(!dropdown)}>
+						<NavItems
+							onClick={() => setDropdown(!dropdown)}
+							style={{ color: "white" }}
+						>
 							<p>Courses</p>
 							<BiChevronDown />
 						</NavItems>
-						<NavItems path={path}>
+						<NavItems>
 							<p>
 								<Link href={"/about"}>About Us</Link>
 							</p>
 						</NavItems>
-						<NavItems path={path}>
+						<NavItems>
 							<p>
 								<a className="contact-button" href="#contact">
 									Contact us
@@ -165,9 +168,9 @@ const NavbarOuterContainer = styled.div`
 	position: absolute;
 	top: 0;
 	width: 100%;
-	color: ${(props) => (props.path === "/course_page" ? "black" : "#fff8f0")};
+	color: #fff8f0;
 	z-index: 9999;
-	background: ${(props) => props.path === "/course_page" && "#fff"};
+	background: ${(props) => props.path === "/course_page" && "var(--secondary)"};
 	border-bottom: 1px solid #fff8f0;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 5px;
 	@media (max-width: 992px) {
@@ -218,8 +221,7 @@ const NavItems = styled.li`
 		margin-right: 10px;
 	}
 	a {
-		// color: #fff8f0 !important;
-		color: ${(props) => (props.path === "/course_page" ? "black" : "#fff8f0")};
+		color: #fff8f0 !important;
 		text-decoration: none !important;
 
 		:hover {
@@ -253,9 +255,9 @@ const NavItems = styled.li`
 const DropdownContainer = styled.div`
 	position: fixed;
 	width: 100%;
-	height: 93%;
 	top: 75px;
-	background-color: var(--secondary);
+	padding-bottom: 20px;
+	background-color: var(--dark-secondary);
 	z-index: 100;
 	color: white;
 `;
@@ -264,5 +266,9 @@ const DropdownContent = styled.div`
 	margin: 0 auto;
 	a {
 		text-decoration: none;
+		color: #fff8f0;
+	}
+	a:hover {
+		color: var(--primary);
 	}
 `;

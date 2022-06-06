@@ -46,7 +46,7 @@ p {
 }
 
 .nav-active {
-	background-color: #fff;
+	background-color: var(--secondary);
 	transition: transform 0.5s ease-in-out;
 	position: fixed !important;
 	top: -151px !important;
@@ -63,7 +63,7 @@ p {
 	background-color: transparent;
 }
 .nav-active a {
-	color: var(--secondary) !important;
+	/* color: var(--secondary) !important; */
 }
 .nav-active-items li input {
 	border: none;
