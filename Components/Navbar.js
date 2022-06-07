@@ -55,7 +55,7 @@ function Navbar() {
 						</div>
 					</NavbarContainer>
 					<NavItemsContainer className="d-none d-lg-flex nav-active-items">
-						<NavItems>
+						<NavItems onClick={() => setDropdown(false)}>
 							<p>
 								<Link href={"/"}>Home</Link>
 							</p>
@@ -63,16 +63,17 @@ function Navbar() {
 						<NavItems
 							onClick={() => setDropdown(!dropdown)}
 							style={{ color: "white" }}
+							dropdown={dropdown}
 						>
 							<p>Courses</p>
-							<BiChevronDown />
+							<BiChevronDown className="icon" />
 						</NavItems>
-						<NavItems>
+						<NavItems onClick={() => setDropdown(false)}>
 							<p>
 								<Link href={"/about"}>About Us</Link>
 							</p>
 						</NavItems>
-						<NavItems>
+						<NavItems onClick={() => setDropdown(false)}>
 							<p>
 								<a className="contact-button" href="#contact">
 									Contact us
@@ -109,7 +110,7 @@ function Navbar() {
 				</NavbarOuterContainer2>
 			)}
 			{dropdown && (
-				<DropdownContainer>
+				<DropdownContainer className="animate__animated animate__fadeInDown">
 					<DropdownContent>
 						<div className="row mt-3">
 							<div className="col-12 col-md-3 px-3">
@@ -247,6 +248,10 @@ const NavItems = styled.li`
 		color: var(--secondary) !important;
 		font-weight: bold;
 		letter-spacing: 1px;
+	}
+	.icon {
+		transition: transform 0.7s;
+		transform: ${(props) => props.dropdown && "rotate(-180deg)"};
 	}
 `;
 

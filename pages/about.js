@@ -3,8 +3,9 @@ import React from "react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import styled from "styled-components";
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import icon1 from "../public/assets/images/group-svgrepo-com 1.png";
@@ -180,16 +181,24 @@ export default function about() {
 						}}
 						centeredSlides={true}
 						grabCursor={true}
-						autoplay={{
-							delay: 2500,
-							disableOnInteraction: false,
-						}}
+						// autoplay={{
+						// 	delay: 2500,
+						// 	disableOnInteraction: false,
+						// }}
 						loop={true}
 						pagination={{
 							clickable: true,
 							dynamicBullets: true,
 						}}
-						modules={[Pagination, Autoplay]}
+						coverflowEffect={{
+							rotate: 50,
+							stretch: 0,
+							depth: 100,
+							modifier: 1,
+							slideShadows: true,
+						}}
+						effect={"coverflow"}
+						modules={[Pagination, EffectCoverflow, Autoplay]}
 					>
 						<SwiperSlide>
 							<div className="py-4 px-3 position-relative ">
