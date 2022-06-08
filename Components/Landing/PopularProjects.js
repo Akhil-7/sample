@@ -161,7 +161,7 @@ function PopularProjects() {
 						breakpoints={breakpoints}
 						grabCursor={true}
 					>
-						<SwiperSlide slidesPerView={1}>
+						<SwiperSlide>
 							<SwiperCard data={swiperData} />
 						</SwiperSlide>
 					</Swiper>
