@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import { BsCheck, BsFillStarFill } from "react-icons/bs";
-// import img8 from "../public/assets/images/Vector (8).png";
 import styled from "styled-components";
 import img7 from "../public/assets/images/course-detials-bg-full.svg";
 
@@ -25,7 +24,7 @@ const CourseDetail = () => {
 						</div>
 						<p className="rating">
 							<BsFillStarFill />
-							<div>{"4"}</div> ({"200"})
+							<span>{"4"}</span> ({"200"})
 						</p>
 					</div>
 				</div>
@@ -84,6 +83,7 @@ const CourseDetail = () => {
 };
 
 export default CourseDetail;
+
 const CourseDetails = styled.div`
 	margin-top: 77px;
 	h1 {
@@ -122,7 +122,6 @@ const CourseDetails = styled.div`
 		}
 	}
 `;
-// font-family: "IM Fell Double Pica", serif;
 const Banner = styled.div`
 	position: relative;
 	min-height: 100%;
@@ -156,7 +155,7 @@ const Banner = styled.div`
 			align-items: center;
 			justify-content: center;
 			gap: 5px;
-			div {
+			span {
 				font-family: "IM Fell Double Pica", serif;
 				font-size: 30px;
 				font-weight: 500;
