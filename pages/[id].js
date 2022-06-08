@@ -1,107 +1,182 @@
 import Image from "next/image";
 import React from "react";
+import { BsCheck, BsFillStarFill } from "react-icons/bs";
 import styled from "styled-components";
 import img7 from "../public/assets/images/course-detials-bg-full.svg";
-import img8 from "../public/assets/images/Vector (8).png";
 
-function Details({ id, course }) {
-	const Part1 = () => (
-		<div className="part1 col-4 p-0">
-			<h1 className="heding_text_tally">
-				<b>{course.Name.split(" ")[0]} </b>
-			</h1>
-			<h1 className="heding_text_Workshop">{course.Name.split(" ")[1]}</h1>
-			<div className="part1-content p-0 p-sm-4">
-				<p className="heding_tex_we">We Offer You </p>
-				{course.key_points.points.map((item, index) => (
-					<p key={index} className="heding_tex_we_sub">
-						{item}
-					</p>
+function CourseDetail({ id, course, courses }) {
+	const {
+		Name,
+		teacher_name,
+		About,
+		duration,
+		key_points,
+		rating,
+		total_lectures,
+		total_ratings,
+	} = course;
+
+	const Content = () => (
+		<div className="content">
+			<h1>{Name}</h1>
+			<div>
+				<p>
+					By- <span>{teacher_name}</span>
+				</p>
+				<p>
+					<span>{total_lectures}</span> Lectures in <span>{duration}</span>{" "}
+					Hours
+				</p>
+			</div>
+			<p className="rating">
+				<BsFillStarFill />
+				<span>{rating}</span> ({total_ratings})
+			</p>
+		</div>
+	);
+
+	const Description = () => (
+		<div>
+			<p className="tag">Details</p>
+			<h1>Description</h1>
+			<p>{About}</p>
+
+			<h3>What is Included</h3>
+			<div>
+				{key_points.points.map((item, index) => (
+					<Item key={index}>
+						<p>
+							<BsCheck className="icon" />
+						</p>
+						<p>{item}</p>
+					</Item>
 				))}
 			</div>
 		</div>
 	);
 
-	const Part2 = () => (
-		<div className="back col-4 p-0">
-			<div className="img-container">{<Image src={img7} alt="" />}</div>
-		</div>
-	);
-
-	const Part3 = () => (
-		<div className="part3 col-4 p-2 pt-5">
-			<div className="book_div mx-auto mt-5">
-				<Image src={img8} alt="" />
-			</div>
-			<h4 className="text-center text-light pt-3 title">
-				<b>About the course</b>
-			</h4>
-			<p className="text-light heding_tex_we_sub py-2">{course.About}</p>
-		</div>
-	);
-	console.log(course);
-
 	return (
 		<CourseDetails>
-			<div className="img_con"></div>
-			<div className="row  main_course_details m-0">
-				<Part1 />
-				<Part2 />
-				<Part3 />
-			</div>
+			<Banner>
+				<div className="bannerImage">
+					<Image src={img7} alt="bg" />
+				</div>
+				<div className="contentContainer">
+					<Content />
+				</div>
+			</Banner>
+			<DetailsContainer>
+				<Details>
+					<Description />
+				</Details>
+			</DetailsContainer>
 		</CourseDetails>
 	);
 }
 
 const CourseDetails = styled.div`
-	min-height: 100vh;
-	row {
-		min-height: 150vh !important;
-		position: relative;
-	}
-	.part1 {
-		min-height: 100vh;
-		background-color: #153955 !important;
-		color: #fff8f0;
-		h1 {
-			font-family: "IM Fell Double Pica", serif;
-		}
-		.heding_text_Workshop {
-			color: #784638;
-		}
-		.part1-content {
-			margin-left: 80px !important;
-			.heding_tex_we {
-				padding-top: 40px !important;
-				font-family: "IM Fell Double Pica", serif;
-			}
+	margin-top: 77px;
+	h1 {
+		font-family: "IM Fell Double Pica", serif;
+		font-size: 40px;
+		font-weight: 500;
+		@media (max-width: 700px) {
+			font-size: 27px;
 		}
 	}
-	.part3 {
-		background-color: #784638;
-		color: #fff8f0;
-		padding: 50px !important;
 
-		h4 {
-			margin-top: 40px;
-			font-family: "IM Fell Double Pica", serif;
-		}
-		p {
-			font-size: 18px;
+	h3 {
+		font-family: "IM Fell Double Pica", serif;
+		font-size: 27px;
+		font-weight: 500;
+		margin-top: 15px;
+		@media (max-width: 700px) {
+			font-size: 1rem;
 		}
 	}
-	.back {
-		position: relative;
-		.img-container {
-			position: absolute;
-			bottom: 0;
-			img {
-				width: 90%;
-				margin: auto;
-			}
-			height: fit-content;
-			margin-bottom: 0;
+
+	p {
+		font-family: "IM Fell Double Pica", serif;
+		font-size: 1rem;
+		@media (max-width: 700px) {
+			font-size: 0.8rem;
 		}
+	}
+	span {
+		font-family: "IM Fell Double Pica", serif;
+		font-size: 25px;
+		font-weight: 500;
+		color: var(--primary);
+		@media (max-width: 700px) {
+			font-size: 17px;
+		}
+	}
+`;
+const Banner = styled.div`
+	position: relative;
+	min-height: 100%;
+
+	.bannerImage {
+		img {
+			min-width: 100vw !important;
+			max-height: calc(100vh - 77px) !important;
+			object-fit: cover;
+		}
+	}
+	.contentContainer {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: calc(100% - 7px);
+		background: #000000aa;
+		color: #fff;
+	}
+	.content {
+		width: 80%;
+		margin: auto;
+		text-align: center;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+
+		.rating {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 5px;
+			span {
+				font-family: "IM Fell Double Pica", serif;
+				font-size: 30px;
+				font-weight: 500;
+				color: var(--primary);
+				margin-top: -11px;
+				@media (max-width: 700px) {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+`;
+const DetailsContainer = styled.div`
+	background: var(--secondary);
+	margin-top: -7px;
+	color: #fff;
+	padding: 25px 0;
+`;
+const Details = styled.div`
+	width: 80%;
+	margin: auto;
+	.tag {
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		font-size: 10px;
+	}
+`;
+const Item = styled.div`
+	display: flex;
+	.icon {
+		font-size: 1.2rem;
 	}
 `;
 
@@ -125,10 +200,10 @@ export async function getStaticProps({ params }) {
 	const course = results.data[params.id - 1];
 
 	return {
-		props: { id: params.id, course: course.attributes },
+		props: { id: params.id, course: course.attributes, courses: results.data },
 
 		revalidate: 1,
 	};
 }
 
-export default Details;
+export default CourseDetail;
