@@ -23,7 +23,7 @@ function Navbar() {
 		<>
 			<NavbarOuterContainer id="nav-bar" className="nav-active">
 				<NavItemsContainer_main>
-					<NavbarContainer className="d-flex justify-content-between">
+					<NavbarContainer className="d-flex justify-content-between small">
 						<div className="imgContainer">
 							<Image
 								className="logo"
@@ -165,6 +165,9 @@ const NavItemsContainer_main = styled.div`
 	width: 80%;
 	margin: 0 auto;
 	display: flex;
+	.small {
+		width: 100%;
+	}
 `;
 const NavbarContainer = styled.div`
 	padding: 20px 0;
