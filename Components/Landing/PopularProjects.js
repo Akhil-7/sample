@@ -26,7 +26,7 @@ function PopularProjects() {
 	});
 	const SwiperCard = ({ data }) => {
 		return (
-			<SwiperCardContainer>
+			<SwiperCardContainer className="animate__animated animate__backInDown">
 				<div className="back-card">
 					<div className="back-card-innercontainer">
 						<p className="about-title">About the course</p>

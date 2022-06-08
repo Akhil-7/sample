@@ -5,46 +5,61 @@ import img7 from "../public/assets/images/course-detials-bg-full.svg";
 import img8 from "../public/assets/images/Vector (8).png";
 
 function Details({ id, course }) {
+	const Part1 = () => (
+		<div className="part1 col-4 p-0 animate__animated animate__slideInLeft">
+			<h1 className="heding_text_tally">
+				<b>{course.Name.split(" ")[0]} </b>
+			</h1>
+			<h1 className="heding_text_Workshop">{course.Name.split(" ")[1]}</h1>
+			<div className="part1-content p-0 p-sm-4">
+				<p className="heding_tex_we">We Offer You </p>
+				{course.key_points.points.map((item, index) => (
+					<p key={index} className="heding_tex_we_sub">
+						{item}
+					</p>
+				))}
+			</div>
+		</div>
+	);
+
+	const Part2 = () => (
+		<div className="back col-4 p-0 animate__animated animate__slideInUp">
+			<div className="img-container">{<Image src={img7} alt="" />}</div>
+		</div>
+	);
+
+	const Part3 = () => (
+		<div className="part3 col-4 p-2 pt-5 animate__animated animate__slideInRight">
+			<div className="book_div mx-auto mt-5">
+				<Image src={img8} alt="" />
+			</div>
+			<h4 className="text-center text-light pt-3 title">
+				<b>About the course</b>
+			</h4>
+			<p className="text-light heding_tex_we_sub py-2">{course.About}</p>
+		</div>
+	);
+
 	return (
-		<CourseDetails>
+		<CourseDetails className="animate__animated animate__backInDown">
 			<div className="img_con"></div>
 			<div className="row  main_course_details m-0">
-				<div className="part1 col-4 p-0">
-					<h1 className="heding_text_tally">
-						<b>Tally </b>
-					</h1>
-					<h1 className="heding_text_Workshop">Workshop</h1>
-					<div className="part1-content p-0 p-sm-4">
-						<p className="heding_tex_we">We Offer You </p>
-						<p className="heding_tex_we_sub">Online Class</p>
-						<p className="heding_tex_we_sub">Group Classes</p>
-						<p className="heding_tex_we_sub">One to One Teaching</p>
-						<p className="heding_tex_we_sub">Experienced Faculty</p>
-					</div>
-				</div>
-				<div className="back col-4 p-0">
-					<div className="img-container">{<Image src={img7} alt="" />}</div>
-				</div>
-				<div className="part3 col-4 p-2 pt-5">
-					<div className="book_div mx-auto mt-5">
-						<Image src={img8} alt="" />
-					</div>
-					<h4 className="text-center text-light pt-3 title">
-						<b>About the course</b>
-					</h4>
-					<p className="text-light heding_tex_we_sub py-2">{course.About}</p>
-				</div>
+				<Part1 />
+				<Part2 />
+				<Part3 />
 			</div>
 		</CourseDetails>
 	);
 }
 
 const CourseDetails = styled.div`
+	min-height: 100vh;
 	row {
 		min-height: 150vh !important;
 		position: relative;
 	}
 	.part1 {
+		min-height: 100vh;
 		background-color: #153955 !important;
 		color: #fff8f0;
 		h1 {

@@ -157,7 +157,7 @@ function GalleryComp() {
 				</Col>
 			</Row>
 
-			{open && <Modal src={img} setOpen={setOpen} />}
+			{open && <Modal src={img} setOpen={setOpen} open={open} />}
 		</>
 	);
 }

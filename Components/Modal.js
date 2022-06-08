@@ -13,7 +13,7 @@ const Modal = ({ src, setOpen }) => {
 	});
 
 	return (
-		<ModalContainer id="modal">
+		<ModalContainer id="modal" className="animate__animated animate__zoomIn">
 			<Content>
 				<span className="close" onClick={() => setOpen(false)}>
 					&times;

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import PopularProjectsContext from "../public/Contexts/PopularProjectsContext";
 function course_details() {
 	const [currentSection, setCurrentSecion] = useState("Career course");
-	const [data2, setData2] = useState(null);
+	const [data2, setData2] = useState({});
 	const { courses } = React.useContext(PopularProjectsContext);
 
 	useEffect(() => {
@@ -21,6 +21,13 @@ function course_details() {
 	// 	programming: ["Diploma in programming"],
 	// 	web: ["Diploma in web"],
 	// };
+	const Content = ({ id, title }) => (
+		<div className="animate__animated animate__bounceInDown">
+			<Link href={`/${id}`} passHref>
+				<p>{title}</p>
+			</Link>
+		</div>
+	);
 	return (
 		<CourseDetailsContainer>
 			<SwitchContainer currentSection={currentSection}>
@@ -92,15 +99,11 @@ function course_details() {
 				</div>
 				<p className="course-page-title">Career & Short term</p>
 				<CourseContainer>
-					<div className="course-card">
+					<div className="course-card ">
 						{/* {data[currentSection].map((item, index) => (
 							<p key={index}>{item}</p>
 						))} */}
-						<div>
-							<Link href={`/${data2?.id}`}>
-								<p>{data2?.title}</p>
-							</Link>
-						</div>
+						<Content id={data2.id} title={data2.title} />
 					</div>
 				</CourseContainer>
 			</SwitchContainer>

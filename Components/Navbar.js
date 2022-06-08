@@ -1,40 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BiChevronDown, BiSearchAlt2 } from "react-icons/bi";
 import { CgMenuRightAlt } from "react-icons/cg";
 import styled from "styled-components";
 import logo from "../public/assets/images/logo.png";
-import PopularProjectsContext from "../public/Contexts/PopularProjectsContext";
 
 function Navbar() {
 	const [menu, setmenu] = useState(false);
 	const [dropdown, setDropdown] = useState(false);
 
 	const [ToggleMenu, setToggleMenu] = useState(false);
-	const { scroll, setScroll } = React.useContext(PopularProjectsContext);
 
 	const navToggle = () => {
 		ToggleMenu === false ? setToggleMenu(true) : setToggleMenu(false);
 	};
 
-	useEffect(() => {
-		window.addEventListener("scroll", (e) => {
-			window.scrollY > 100 ? setScroll(true) : setScroll(false);
-		});
-	}, []);
-
 	const router = useRouter();
-	const path = router.pathname;
 
 	return (
 		<>
-			<NavbarOuterContainer
-				id="nav-bar"
-				className={scroll === true ? "nav-active" : ""}
-				path={path}
-			>
+			<NavbarOuterContainer id="nav-bar" className="nav-active">
 				<NavItemsContainer_main>
 					<NavbarContainer className="d-flex justify-content-between">
 						<div className="imgContainer">
@@ -55,7 +42,7 @@ function Navbar() {
 						</div>
 					</NavbarContainer>
 					<NavItemsContainer className="d-none d-lg-flex nav-active-items">
-						<NavItems>
+						<NavItems onClick={() => setDropdown(false)}>
 							<p>
 								<Link href={"/"}>Home</Link>
 							</p>
@@ -63,16 +50,17 @@ function Navbar() {
 						<NavItems
 							onClick={() => setDropdown(!dropdown)}
 							style={{ color: "white" }}
+							dropdown={dropdown}
 						>
 							<p>Courses</p>
-							<BiChevronDown />
+							<BiChevronDown className="icon" />
 						</NavItems>
-						<NavItems>
+						<NavItems onClick={() => setDropdown(false)}>
 							<p>
 								<Link href={"/about"}>About Us</Link>
 							</p>
 						</NavItems>
-						<NavItems>
+						<NavItems onClick={() => setDropdown(false)}>
 							<p>
 								<a className="contact-button" href="#contact">
 									Contact us
@@ -109,31 +97,31 @@ function Navbar() {
 				</NavbarOuterContainer2>
 			)}
 			{dropdown && (
-				<DropdownContainer>
+				<DropdownContainer className="animate__animated animate__fadeInDown">
 					<DropdownContent>
 						<div className="row mt-3">
 							<div className="col-12 col-md-3 px-3">
 								<h5>Career & Shortterm</h5>
 								<Link href="/1">
-									<a onClick={() => setDropdown(false)}>Career & Shortterm</a>
+									<a onClick={() => setDropdown(false)}>Career Course</a>
 								</Link>
 							</div>
 							<div className="col-12 col-md-3 px-3">
 								<h5>Basic&Accounting</h5>
 								<Link href="/2">
-									<a onClick={() => setDropdown(false)}>Basic&Accounting</a>
+									<a onClick={() => setDropdown(false)}>Accounting Course</a>
 								</Link>
 							</div>
 							<div className="col-12 col-md-3 px-3">
 								<h5>Programming</h5>
 								<Link href="/3">
-									<a onClick={() => setDropdown(false)}>Programming</a>
+									<a onClick={() => setDropdown(false)}>Programming Course</a>
 								</Link>
 							</div>
 							<div className="col-12 col-md-3 px-3">
 								<h5>Web & Graphics</h5>
 								<Link href="/4">
-									<a onClick={() => setDropdown(false)}>Web & Graphics</a>
+									<a onClick={() => setDropdown(false)}>Designing Course</a>
 								</Link>
 							</div>
 						</div>
@@ -165,7 +153,7 @@ const NavbarOuterContainer = styled.div`
 	width: 100%;
 	color: #fff8f0;
 	z-index: 9999;
-	background: ${(props) => props.path === "/course_page" && "var(--secondary)"};
+	background: var(--secondary);
 	border-bottom: 1px solid #fff8f0;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 5px;
 	@media (max-width: 992px) {
@@ -247,6 +235,10 @@ const NavItems = styled.li`
 		color: var(--secondary) !important;
 		font-weight: bold;
 		letter-spacing: 1px;
+	}
+	.icon {
+		transition: transform 0.7s;
+		transform: ${(props) => props.dropdown && "rotate(-180deg)"};
 	}
 `;
 
