@@ -1,4 +1,3 @@
-import "animate.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import Footer from "../Components/Footer";

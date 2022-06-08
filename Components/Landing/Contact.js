@@ -4,9 +4,7 @@ import styled from "styled-components";
 function Contact() {
 	const [isCochin, setIsCochin] = useState(true);
 	const Left = () => (
-		<div
-			className={`left-part col-12 col-md-6 animate__animated animate__backInLeft `}
-		>
+		<div className={`left-part col-12 col-md-6`}>
 			<div className="d-flex align-items-center  align-items-md-end flex-column">
 				<p className="key text-md-end">Email us at</p>
 				<p className="value text-md-end">
@@ -34,7 +32,7 @@ function Contact() {
 	);
 
 	const Right = () => (
-		<div className="right-part col-12 col-md-6 animate__animated animate__backInRight">
+		<div className="right-part col-12 col-md-6">
 			<div className="form-container">
 				<form className="d-flex justify-content-center align-items-center flex-column">
 					<input type="text" placeholder="First Name*" />

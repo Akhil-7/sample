@@ -6,7 +6,7 @@ import img8 from "../public/assets/images/Vector (8).png";
 
 function Details({ id, course }) {
 	const Part1 = () => (
-		<div className="part1 col-4 p-0 animate__animated animate__slideInLeft">
+		<div className="part1 col-4 p-0">
 			<h1 className="heding_text_tally">
 				<b>{course.Name.split(" ")[0]} </b>
 			</h1>
@@ -23,13 +23,13 @@ function Details({ id, course }) {
 	);
 
 	const Part2 = () => (
-		<div className="back col-4 p-0 animate__animated animate__slideInUp">
+		<div className="back col-4 p-0">
 			<div className="img-container">{<Image src={img7} alt="" />}</div>
 		</div>
 	);
 
 	const Part3 = () => (
-		<div className="part3 col-4 p-2 pt-5 animate__animated animate__slideInRight">
+		<div className="part3 col-4 p-2 pt-5">
 			<div className="book_div mx-auto mt-5">
 				<Image src={img8} alt="" />
 			</div>
@@ -41,7 +41,7 @@ function Details({ id, course }) {
 	);
 
 	return (
-		<CourseDetails className="animate__animated animate__backInDown">
+		<CourseDetails>
 			<div className="img_con"></div>
 			<div className="row  main_course_details m-0">
 				<Part1 />

@@ -22,7 +22,7 @@ function course_details() {
 	// 	web: ["Diploma in web"],
 	// };
 	const Content = ({ id, title }) => (
-		<div className="animate__animated animate__bounceInDown">
+		<div>
 			<Link href={`/${id}`} passHref>
 				<p>{title}</p>
 			</Link>
