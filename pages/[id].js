@@ -39,6 +39,7 @@ function Details({ id, course }) {
 			<p className="text-light heding_tex_we_sub py-2">{course.About}</p>
 		</div>
 	);
+	console.log(course);
 
 	return (
 		<CourseDetails>
