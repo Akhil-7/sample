@@ -97,7 +97,7 @@ function Navbar() {
 				</NavbarOuterContainer2>
 			)}
 			{dropdown && (
-				<DropdownContainer className="animate__animated animate__fadeInDown">
+				<DropdownContainer>
 					<DropdownContent>
 						<div className="row mt-3">
 							<div className="col-12 col-md-3 px-3">
