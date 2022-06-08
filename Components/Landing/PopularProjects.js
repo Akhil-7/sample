@@ -258,10 +258,22 @@ const SwiperCardContainer = styled.div`
 		max-height: fit-content;
 		width: 80%;
 		margin-left: auto;
+		//
+		@media (max-width: 700px) {
+			margin-top: 320px;
+			width: 100%;
+			border-bottom-right-radius: 50px;
+		}
+		//
 		.back-card-innercontainer {
 			width: 50%;
 			margin-left: auto;
 			text-align: left;
+			//
+			@media (max-width: 700px) {
+				width: 100%;
+			}
+			//
 			.about-title {
 				padding-top: 20px;
 				font-weight: bold;
@@ -292,8 +304,14 @@ const SwiperCardContainer = styled.div`
 		color: #fff8f0;
 		position: absolute;
 		top: 10%;
-		height: 80%;
+		height: 320px;
 		width: 60%;
+		//
+		@media (max-width: 700px) {
+			top: -320px;
+			width: 100%;
+		}
+		//
 		border-top-left-radius: 50px;
 		.header {
 			display: flex;
