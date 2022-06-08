@@ -274,7 +274,7 @@ function MyApp({ Component, pageProps, courses }) {
 export default MyApp;
 
 MyApp.getInitialProps = async () => {
-	const res = await fetch("http://localhost:1337/api/courses");
+	const res = await fetch("http://65.20.75.248:1337/api/courses");
 	const data = await res.json();
 
 	const getData = (a) => {

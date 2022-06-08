@@ -105,7 +105,7 @@ const CourseDetails = styled.div`
 `;
 
 export async function getStaticPaths() {
-	const res = await fetch("http://localhost:1337/api/courses");
+	const res = await fetch("http://65.20.75.248:1337/api/courses");
 	const result = await res.json();
 	const data = result.data.map((item) => ({
 		params: { id: `${item.id}` },
@@ -118,7 +118,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const res = await fetch("http://localhost:1337/api/courses");
+	const res = await fetch("http://65.20.75.248:1337/api/courses");
 	const results = await res.json();
 
 	const course = results.data[params.id - 1];
