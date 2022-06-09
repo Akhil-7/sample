@@ -181,10 +181,10 @@ export default function about() {
 						}}
 						centeredSlides={true}
 						grabCursor={true}
-						// autoplay={{
-						// 	delay: 2500,
-						// 	disableOnInteraction: false,
-						// }}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
 						loop={true}
 						pagination={{
 							clickable: true,
