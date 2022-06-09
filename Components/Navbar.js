@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import React, { useState } from "react";
 import { BiChevronDown, BiSearchAlt2 } from "react-icons/bi";
 import { CgMenuRightAlt } from "react-icons/cg";
@@ -26,10 +26,11 @@ function Navbar() {
 					<NavbarContainer className="d-flex justify-content-between small">
 						<div className="imgContainer">
 							<Image
-								className="logo"
+								className="logo button"
 								src={logo}
 								alt="lcc"
 								style={{ objectFit: "contain" }}
+								onClick={() => Router.push("/")}
 							/>
 						</div>
 						<div className="">
@@ -56,23 +57,17 @@ function Navbar() {
 							<BiChevronDown className="icon" />
 						</NavItems>
 						<NavItems onClick={() => setDropdown(false)}>
-							<p>
+							<p style={{ width: "90px" }}>
 								<Link href={"/about"}>About Us</Link>
 							</p>
 						</NavItems>
 						<NavItems onClick={() => setDropdown(false)}>
-							<p>
+							<p style={{ width: "190px" }}>
 								<a className="contact-button" href="#contact">
 									Contact us
 								</a>
 							</p>
 						</NavItems>
-						{/* <NavItems>
-              <input type={"text"} />
-              <p className="search-button">
-                <BiSearchAlt2 />
-              </p>
-            </NavItems> */}
 					</NavItemsContainer>
 				</NavItemsContainer_main>
 			</NavbarOuterContainer>
@@ -249,7 +244,7 @@ const DropdownContainer = styled.div`
 	position: fixed;
 	width: 100%;
 	top: 75px;
-	padding-bottom: 20px;
+	padding: 20px 0;
 	background-color: var(--dark-secondary);
 	z-index: 100;
 	color: white;
