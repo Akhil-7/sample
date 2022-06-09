@@ -9,6 +9,8 @@ import Rating from "../Components/Rating";
 import img7 from "../public/assets/images/course-detials-bg-full.svg";
 
 function CourseDetail({ course, courses }) {
+	if (course === undefined || courses === undefined) return null;
+
 	const {
 		Name,
 		teacher_name,
@@ -47,7 +49,7 @@ function CourseDetail({ course, courses }) {
 
 			<h3>What is Included</h3>
 			<div>
-				{key_points.points.map((item, index) => (
+				{key_points && key_points.points.map((item, index) => (
 					<Item key={index}>
 						<p>
 							<BsCheck className="icon" />
@@ -60,30 +62,34 @@ function CourseDetail({ course, courses }) {
 	);
 
 	return (
+		<>
+		{course !== null && 
 		<CourseDetails>
-			<Banner>
-				<div className="bannerImage">
-					<Image src={img7} alt="bg" />
+		<Banner>
+			<div className="bannerImage">
+				<Image src={img7} alt="bg" />
+			</div>
+			<div className="contentContainer">
+				<Content />
+			</div>
+		</Banner>
+		<DetailsContainer>
+			<Details>
+				<Description />
+			</Details>
+			<SimilarCourses>
+				<p className="tag">Details</p>
+				<h1>Similar Courses</h1>
+				<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 pt-3">
+					{courses && courses.map((item) => (
+						<CourseCard data={item} key={item.id} />
+					))}
 				</div>
-				<div className="contentContainer">
-					<Content />
-				</div>
-			</Banner>
-			<DetailsContainer>
-				<Details>
-					<Description />
-				</Details>
-				<SimilarCourses>
-					<p className="tag">Details</p>
-					<h1>Similar Courses</h1>
-					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 pt-3">
-						{courses.map((item) => (
-							<CourseCard data={item} key={item.id} />
-						))}
-					</div>
-				</SimilarCourses>
-			</DetailsContainer>
-		</CourseDetails>
+			</SimilarCourses>
+		</DetailsContainer>
+	</CourseDetails>
+		}
+		</>
 	);
 }
 
