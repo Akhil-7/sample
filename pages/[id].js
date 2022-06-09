@@ -2,9 +2,10 @@ import Image from "next/image";
 import React from "react";
 import { BsCheck, BsFillStarFill } from "react-icons/bs";
 import styled from "styled-components";
+import CourseCard from "../Components/CourseCard";
 import img7 from "../public/assets/images/course-detials-bg-full.svg";
 
-function CourseDetail({ id, course, courses }) {
+function CourseDetail({ course, courses }) {
 	const {
 		Name,
 		teacher_name,
@@ -69,6 +70,15 @@ function CourseDetail({ id, course, courses }) {
 				<Details>
 					<Description />
 				</Details>
+				<SimilarCourses>
+					<p className="tag">Details</p>
+					<h1>Similar Courses</h1>
+					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 pt-3">
+						{courses.map((item) => (
+							<CourseCard data={item} key={item.id} />
+						))}
+					</div>
+				</SimilarCourses>
 			</DetailsContainer>
 		</CourseDetails>
 	);
@@ -159,25 +169,29 @@ const Banner = styled.div`
 	}
 `;
 const DetailsContainer = styled.div`
-	background: var(--secondary);
+	background: #fff8f0;
 	margin-top: -7px;
-	color: #fff;
+	color: #000;
 	padding: 25px 0;
-`;
-const Details = styled.div`
-	width: 80%;
-	margin: auto;
 	.tag {
 		letter-spacing: 5px;
 		text-transform: uppercase;
 		font-size: 10px;
 	}
 `;
+const Details = styled.div`
+	width: 80%;
+	margin: 25px auto;
+`;
 const Item = styled.div`
 	display: flex;
 	.icon {
 		font-size: 1.2rem;
 	}
+`;
+const SimilarCourses = styled.div`
+	width: 80%;
+	margin: 50px auto 25px;
 `;
 
 export async function getStaticPaths() {
@@ -198,9 +212,10 @@ export async function getStaticProps({ params }) {
 	const results = await res.json();
 
 	const course = results.data[params.id - 1];
+	const otherCourses = results.data.filter((item) => item.id != params.id);
 
 	return {
-		props: { id: params.id, course: course.attributes, courses: results.data },
+		props: { course: course.attributes, courses: otherCourses },
 
 		revalidate: 1,
 	};
