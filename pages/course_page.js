@@ -101,9 +101,11 @@ export default course_details;
 
 const CourseDetailsContainer = styled.div`
 	padding-top: 100px;
+	padding-bottom: 60px;
+	background: #fff8f0;
 `;
 const SwitchContainer = styled.div`
-	margin: 60px 0;
+	margin: 60px 0 0;
 
 	.buttons {
 		display: flex;
