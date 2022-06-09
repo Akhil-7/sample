@@ -1,33 +1,21 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import CourseCard from "../Components/CourseCard";
 import PopularProjectsContext from "../public/Contexts/PopularProjectsContext";
+
 function course_details() {
-	const [currentSection, setCurrentSecion] = useState("Career course");
-	const [data2, setData2] = useState({});
+	const [currentSection, setCurrentSecion] = useState("Career");
+	const [data, setData] = useState([]);
 	const { courses } = React.useContext(PopularProjectsContext);
 
 	useEffect(() => {
-		setTimeout(() => {
-			const search = courses.find((item) => item.title == currentSection);
-			setData2(search);
-		}, 200);
-	});
+		const search = courses.filter(
+			(item) => item.attributes.category == currentSection
+		);
+		setData(search);
+	}, [currentSection]);
 
-	// const data = {
-	// 	career: ["Diploma in career "],
-	// 	accounting: ["Diploma in Financial Accounting (DFA)"],
-	// 	programming: ["Diploma in programming"],
-	// 	web: ["Diploma in web"],
-	// };
-	const Content = ({ id, title }) => (
-		<div>
-			<Link href={`/${id}`} passHref>
-				<p>{title}</p>
-			</Link>
-		</div>
-	);
 	return (
 		<CourseDetailsContainer>
 			<SwitchContainer currentSection={currentSection}>
@@ -35,7 +23,7 @@ function course_details() {
 					<p
 						className="button"
 						style={
-							currentSection === "Career course"
+							currentSection === "Career"
 								? {
 										backgroundColor: "var(--secondary)",
 										color: "#Fff8f0",
@@ -43,7 +31,7 @@ function course_details() {
 								: {}
 						}
 						onClick={() => {
-							setCurrentSecion("Career course");
+							setCurrentSecion("Career");
 						}}
 					>
 						Career & Shortterm
@@ -51,7 +39,7 @@ function course_details() {
 					<p
 						className="button"
 						style={
-							currentSection === "Accounting course"
+							currentSection === "Accounting"
 								? {
 										backgroundColor: "var(--secondary)",
 										color: "#Fff8f0",
@@ -59,7 +47,7 @@ function course_details() {
 								: {}
 						}
 						onClick={() => {
-							setCurrentSecion("Accounting course");
+							setCurrentSecion("Accounting");
 						}}
 					>
 						Basic&Accounting
@@ -67,7 +55,7 @@ function course_details() {
 					<p
 						className="button"
 						style={
-							currentSection === "Programing course"
+							currentSection === "Programming"
 								? {
 										backgroundColor: "var(--secondary)",
 										color: "#Fff8f0",
@@ -75,7 +63,7 @@ function course_details() {
 								: {}
 						}
 						onClick={() => {
-							setCurrentSecion("Programing course");
+							setCurrentSecion("Programming");
 						}}
 					>
 						Programming
@@ -83,7 +71,7 @@ function course_details() {
 					<p
 						className="button"
 						style={
-							currentSection === "Designing course"
+							currentSection === "Designing"
 								? {
 										backgroundColor: "var(--secondary)",
 										color: "#Fff8f0",
@@ -91,7 +79,7 @@ function course_details() {
 								: {}
 						}
 						onClick={() => {
-							setCurrentSecion("Designing course");
+							setCurrentSecion("Designing");
 						}}
 					>
 						Web & Graphics
@@ -99,11 +87,10 @@ function course_details() {
 				</div>
 				<p className="course-page-title">Career & Short term</p>
 				<CourseContainer>
-					<div className="course-card ">
-						{/* {data[currentSection].map((item, index) => (
-							<p key={index}>{item}</p>
-						))} */}
-						<Content id={data2.id} title={data2.title} />
+					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+						{data?.map((item) => (
+							<CourseCard data={item} key={item.id} />
+						))}
 					</div>
 				</CourseContainer>
 			</SwitchContainer>
@@ -116,7 +103,7 @@ const CourseDetailsContainer = styled.div`
 	padding-top: 100px;
 `;
 const SwitchContainer = styled.div`
-	margin-top: 60px;
+	margin: 60px 0;
 
 	.buttons {
 		display: flex;
@@ -145,23 +132,6 @@ const SwitchContainer = styled.div`
 	}
 `;
 const CourseContainer = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin-top: 50px;
-	.course-card {
-		width: 180px;
-		height: 122px;
-		background-color: var(--primary);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		p {
-			font-size: 15px;
-			opacity: 0.9;
-			font-family: tiempos;
-			text-align: center;
-			cursor: pointer;
-		}
-	}
+	width: 80%;
+	margin: auto;
 `;

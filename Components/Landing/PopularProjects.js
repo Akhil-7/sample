@@ -13,24 +13,25 @@ import logo from "../../public/assets/images/popular-learning-logo.svg";
 import PopularProjectsContext from "../../public/Contexts/PopularProjectsContext";
 
 function PopularProjects() {
-	const [section, setSection] = useState("Career course");
-	const [swiperData, setSwiperData] = useState(null);
+	const [section, setSection] = useState("Career");
+	const [swiperData, setSwiperData] = useState([]);
 
 	const { courses } = React.useContext(PopularProjectsContext);
 
 	useEffect(() => {
-		setTimeout(() => {
-			const search = courses.find((item) => item.title == section);
-			setSwiperData(search);
-		}, 200);
-	});
+		const search = courses.filter(
+			(item) => item.attributes.category == section
+		);
+		setSwiperData(search);
+	}, [section]);
+
 	const SwiperCard = ({ data }) => {
 		return (
 			<SwiperCardContainer>
 				<div className="back-card">
 					<div className="back-card-innercontainer">
 						<p className="about-title">About the course</p>
-						<p className="description">{data?.description}</p>
+						<p className="description">{data?.About}</p>
 						<p
 							className="learn-more"
 							onClick={() => Router.push(`/${data?.id}`)}
@@ -44,20 +45,20 @@ function PopularProjects() {
 						<p className="icon-container">
 							<Image src={logo} alt="" />
 						</p>
-						<p className="card-title">{data?.title}</p>
+						<p className="card-title">{data?.Name}</p>
 					</div>
 					<div className="footer">
 						<div className="footer-inner">
-							<p className="">Lecture by {data?.teacher}</p>
+							<p className="">Lecture by {data?.teacher_name}</p>
 							<div className="">
 								<p>
-									{data?.numberOfLect} lectures ({data?.hours} Hours)
+									{data?.total_lectures} lectures ({data?.duration} Hours)
 								</p>
 							</div>
 
 							<p className="rating">
 								<BsFillStarFill />
-								{data?.ratingStar} ({data?.ratingNumber})
+								{data?.rating} ({data?.total_ratings})
 							</p>
 						</div>
 					</div>
@@ -72,7 +73,7 @@ function PopularProjects() {
 		},
 		// when window width is >= 640px
 		1100: {
-			slidesPerView: 1,
+			slidesPerView: 2,
 		},
 	};
 
@@ -89,7 +90,7 @@ function PopularProjects() {
 					<p
 						className="button"
 						style={
-							section === "Career course"
+							section === "Career"
 								? {
 										backgroundColor: "var(--secondary)",
 										color: "#Fff8f0",
@@ -97,7 +98,7 @@ function PopularProjects() {
 								: {}
 						}
 						onClick={() => {
-							setSection("Career course");
+							setSection("Career");
 						}}
 					>
 						Career & Shortterm
@@ -105,7 +106,7 @@ function PopularProjects() {
 					<p
 						className="button"
 						style={
-							section === "Accounting course"
+							section === "Accounting"
 								? {
 										backgroundColor: "var(--secondary)",
 										color: "#Fff8f0",
@@ -113,7 +114,7 @@ function PopularProjects() {
 								: {}
 						}
 						onClick={() => {
-							setSection("Accounting course");
+							setSection("Accounting");
 						}}
 					>
 						Basic&Accounting
@@ -121,7 +122,7 @@ function PopularProjects() {
 					<p
 						className="button"
 						style={
-							section === "Programing course"
+							section === "Programming"
 								? {
 										backgroundColor: "var(--secondary)",
 										color: "#Fff8f0",
@@ -129,7 +130,7 @@ function PopularProjects() {
 								: {}
 						}
 						onClick={() => {
-							setSection("Programing course");
+							setSection("Programming");
 						}}
 					>
 						Programming
@@ -137,7 +138,7 @@ function PopularProjects() {
 					<p
 						className="button"
 						style={
-							section === "Designing course"
+							section === "Designing"
 								? {
 										backgroundColor: "var(--secondary)",
 										color: "#Fff8f0",
@@ -145,7 +146,7 @@ function PopularProjects() {
 								: {}
 						}
 						onClick={() => {
-							setSection("Designing course");
+							setSection("Designing");
 						}}
 					>
 						Web & Graphics
@@ -154,16 +155,18 @@ function PopularProjects() {
 				<div className="d-block">
 					<Swiper
 						className="mySwiper"
-						slidesPerView={1}
+						slidesPerView={2}
 						modules={[Navigation, Pagination, Scrollbar, A11y]}
 						pagination={{ clickable: true }}
 						updateOnWindowResize={true}
 						breakpoints={breakpoints}
 						grabCursor={true}
 					>
-						<SwiperSlide>
-							<SwiperCard data={swiperData} />
-						</SwiperSlide>
+						{swiperData.map((item) => (
+							<SwiperSlide key={item.id}>
+								<SwiperCard data={item.attributes} />
+							</SwiperSlide>
+						))}
 					</Swiper>
 				</div>
 				<p
