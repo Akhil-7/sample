@@ -25,17 +25,14 @@ function PopularProjects() {
 		setSwiperData(search);
 	}, [section]);
 
-	const SwiperCard = ({ data }) => {
+	const SwiperCard = ({ data, id }) => {
 		return (
 			<SwiperCardContainer>
 				<div className="back-card">
 					<div className="back-card-innercontainer">
 						<p className="about-title">About the course</p>
 						<p className="description">{data?.About}</p>
-						<p
-							className="learn-more"
-							onClick={() => Router.push(`/${data?.id}`)}
-						>
+						<p className="learn-more" onClick={() => Router.push(`/${id}`)}>
 							Learn More
 						</p>
 					</div>
@@ -164,7 +161,7 @@ function PopularProjects() {
 					>
 						{swiperData.map((item) => (
 							<SwiperSlide key={item.id}>
-								<SwiperCard data={item.attributes} />
+								<SwiperCard data={item.attributes} id={item.id} />
 							</SwiperSlide>
 						))}
 					</Swiper>
@@ -206,6 +203,7 @@ const PopularProjectsContainer = styled.div`
 `;
 const SliderContainer = styled.div`
 	margin-top: 60px;
+	width: 80%;
 	.buttons {
 		display: flex;
 		flex-wrap: wrap;
