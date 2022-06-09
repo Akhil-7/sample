@@ -181,10 +181,10 @@ export default function about() {
 						}}
 						centeredSlides={true}
 						grabCursor={true}
-						// autoplay={{
-						// 	delay: 2500,
-						// 	disableOnInteraction: false,
-						// }}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
 						loop={true}
 						pagination={{
 							clickable: true,
@@ -374,5 +374,11 @@ const AboutContainer = styled.div`
 	}
 	.swiper-pagination-bullet-active-main {
 		background-color: var(--secondary) !important;
+	}
+	.swiper-slide-shadow-left {
+		opacity: 0 !important;
+	}
+	.swiper-slide-shadow-right {
+		opacity: 0 !important;
 	}
 `;
