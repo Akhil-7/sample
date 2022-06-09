@@ -1,8 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import { BsCheck, BsFillStarFill } from "react-icons/bs";
+import { AiOutlineFieldTime } from "react-icons/ai";
+import { BsCheck } from "react-icons/bs";
+import { MdOutlineVideoLibrary } from "react-icons/md";
 import styled from "styled-components";
 import CourseCard from "../Components/CourseCard";
+import Rating from "../Components/Rating";
 import img7 from "../public/assets/images/course-detials-bg-full.svg";
 
 function CourseDetail({ course, courses }) {
@@ -19,19 +22,19 @@ function CourseDetail({ course, courses }) {
 
 	const Content = () => (
 		<div className="content">
-			<h1>{Name}</h1>
+			<div className="mx-auto">
+				<Rating rating={rating} />
+			</div>
 			<div>
-				<p>
+				<h1>{Name}</h1>
+				<p>{About.slice(0, 50).trim()}...</p>
+				<p className="mt-3">
 					By- <span>{teacher_name}</span>
 				</p>
-				<p>
-					<span>{total_lectures}</span> Lectures in <span>{duration}</span>{" "}
-					Hours
-				</p>
 			</div>
-			<p className="rating">
-				<BsFillStarFill />
-				<span>{rating}</span> ({total_ratings})
+			<p>
+				<MdOutlineVideoLibrary /> <span>{total_lectures}</span> Lectures /{" "}
+				<AiOutlineFieldTime /> <span>{duration}</span> Hrs Duration
 			</p>
 		</div>
 	);
@@ -88,7 +91,7 @@ const CourseDetails = styled.div`
 	margin-top: 77px;
 	h1 {
 		font-family: "IM Fell Double Pica", serif;
-		font-size: 40px;
+		font-size: 45px;
 		font-weight: 500;
 		@media (max-width: 700px) {
 			font-size: 27px;
@@ -124,12 +127,12 @@ const CourseDetails = styled.div`
 `;
 const Banner = styled.div`
 	position: relative;
-	min-height: 100%;
+	height: 70%;
 
 	.bannerImage {
 		img {
 			min-width: 100vw !important;
-			max-height: calc(100vh - 77px) !important;
+			max-height: calc(70vh - 77px) !important;
 			object-fit: cover;
 		}
 	}

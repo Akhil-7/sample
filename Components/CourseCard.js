@@ -2,10 +2,10 @@ import Image from "next/image";
 import Router from "next/router";
 import React from "react";
 import { AiOutlineFieldTime } from "react-icons/ai";
-import { BsFillStarFill } from "react-icons/bs";
 import { MdOutlineVideoLibrary } from "react-icons/md";
 import styled from "styled-components";
 import img from "../public/assets/images//course-detials-bg-full.svg";
+import Rating from "./Rating";
 
 const CourseCard = ({ data }) => {
 	const { id } = data;
@@ -24,13 +24,7 @@ const CourseCard = ({ data }) => {
 					/>
 				</div>
 				<div className="card-body">
-					<RatingContainer>
-						{[1, 2, 3, 4, 5].map((item) => (
-							<Rating key={item} rating={rating} index={item}>
-								<BsFillStarFill className="icon" />
-							</Rating>
-						))}
-					</RatingContainer>
+					<Rating rating={rating} />
 					<h5 className="card-title" onClick={() => Router.push(`/${id}`)}>
 						{Name}
 					</h5>
@@ -65,17 +59,6 @@ const Content = styled.div`
 	.card-footer {
 		background-color: transparent;
 		border: 0;
-	}
-`;
-const RatingContainer = styled.div`
-	display: flex;
-	gap: 5px;
-	margin-bottom: 10px;
-`;
-const Rating = styled.div`
-	.icon {
-		color: ${(props) =>
-			props.rating >= props.index ? "var(--secondary)" : "lightgray"};
 	}
 `;
 export default CourseCard;
