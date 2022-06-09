@@ -4,6 +4,13 @@ import styled from "styled-components";
 import CourseCard from "../Components/CourseCard";
 import PopularProjectsContext from "../public/Contexts/PopularProjectsContext";
 
+const sectionToNameMap = {
+	Career: "Career & Shortterm",
+	Accounting: "Basics & Accounting",
+	Designing: "Web & Graphics",
+	Programming: "Programming"
+}
+
 function course_details() {
 	const [currentSection, setCurrentSecion] = useState("Career");
 	const [data, setData] = useState([]);
@@ -50,7 +57,7 @@ function course_details() {
 							setCurrentSecion("Accounting");
 						}}
 					>
-						Basic&Accounting
+						Basics & Accounting
 					</p>
 					<p
 						className="button"
@@ -85,7 +92,7 @@ function course_details() {
 						Web & Graphics
 					</p>
 				</div>
-				<p className="course-page-title">Career & Short term</p>
+				<p className="course-page-title">{sectionToNameMap[currentSection]}</p>
 				<CourseContainer>
 					<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
 						{data?.map((item) => (
