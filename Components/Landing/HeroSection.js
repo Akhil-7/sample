@@ -93,6 +93,7 @@ const Hero = styled.div`
 	min-height: 100vh;
 	@media (max-width: 767px) {
 		margin-left: -35%;
+		min-height: 50vh;
 	}
 `;
 const HeroSectionContent = styled.div`

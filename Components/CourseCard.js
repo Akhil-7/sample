@@ -8,6 +8,7 @@ import img from "../public/assets/images//course-detials-bg-full.svg";
 import Rating from "./Rating";
 
 const CourseCard = ({ data }) => {
+	if (data === undefined) return null;
 	const { id } = data;
 	const { Name, teacher_name, duration, rating, total_lectures } =
 		data.attributes;
