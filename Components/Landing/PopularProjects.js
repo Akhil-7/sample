@@ -153,6 +153,7 @@ function PopularProjects() {
 					<Swiper
 						className="mySwiper"
 						slidesPerView={2}
+						centeredSlides={true}
 						modules={[Navigation, Pagination, Scrollbar, A11y]}
 						pagination={{ clickable: true }}
 						updateOnWindowResize={true}
