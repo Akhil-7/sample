@@ -375,4 +375,10 @@ const AboutContainer = styled.div`
 	.swiper-pagination-bullet-active-main {
 		background-color: var(--secondary) !important;
 	}
+	.swiper-slide-shadow-left {
+		opacity: 0 !important;
+	}
+	.swiper-slide-shadow-right {
+		opacity: 0 !important;
+	}
 `;
