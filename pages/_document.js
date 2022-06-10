@@ -1,6 +1,7 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+/* eslint-disable @next/next/no-sync-scripts */
+import Document, { Head, Html, Main, NextScript } from "next/document";
 // Import styled components ServerStyleSheet
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
 	static getInitialProps({ renderPage }) {
@@ -9,7 +10,7 @@ export default class MyDocument extends Document {
 
 		// Step 2: Retrieve styles from components in the page
 		const page = renderPage(
-			App => props => sheet.collectStyles(<App {...props} />)
+			(App) => (props) => sheet.collectStyles(<App {...props} />)
 		);
 
 		// Step 3: Extract the styles as <style> tags
@@ -25,6 +26,11 @@ export default class MyDocument extends Document {
 				<Head>
 					{/* Step 5: Output the styles in the head  */}
 					{this.props.styleTags}
+					<script
+						src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+						integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+						crossOrigin="anonymous"
+					></script>
 				</Head>
 				<body>
 					<Main />
