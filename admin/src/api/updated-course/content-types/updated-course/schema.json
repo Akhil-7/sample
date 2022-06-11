@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "courses",
+  "collectionName": "updated_courses",
   "info": {
-    "singularName": "course",
-    "pluralName": "courses",
-    "displayName": "Course",
+    "singularName": "updated-course",
+    "pluralName": "updated-courses",
+    "displayName": "Updated Course",
     "description": ""
   },
   "options": {
@@ -14,38 +14,28 @@
   "attributes": {
     "Name": {
       "type": "string",
-      "required": false
+      "required": true,
+      "unique": false
     },
     "About": {
       "type": "text",
-      "required": false
-    },
-    "key_points": {
-      "type": "json"
-    },
-    "teacher_name": {
-      "type": "string"
-    },
-    "total_lectures": {
-      "type": "integer"
+      "required": false,
+      "unique": false
     },
     "duration": {
-      "type": "integer"
-    },
-    "rating": {
-      "type": "decimal"
-    },
-    "total_ratings": {
-      "type": "integer"
+      "type": "string",
+      "required": false,
+      "unique": false
     },
     "category": {
       "type": "enumeration",
       "enum": [
-        "Career",
-        "Programming",
         "Accounting",
-        "Designing"
-      ]
+        "Career",
+        "Designing",
+        "Programming"
+      ],
+      "required": true
     },
     "thumbnail": {
       "type": "media",
@@ -54,6 +44,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "key_points": {
+      "type": "json",
+      "required": true
     }
   }
 }

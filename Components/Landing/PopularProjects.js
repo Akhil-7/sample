@@ -16,7 +16,8 @@ function PopularProjects() {
 	const [section, setSection] = useState("Career");
 	const [swiperData, setSwiperData] = useState([]);
 
-	const { courses } = React.useContext(PopularProjectsContext);
+	const { courses, newCourses } = React.useContext(PopularProjectsContext);
+	console.log(newCourses);
 
 	useEffect(() => {
 		const search = courses.filter(
