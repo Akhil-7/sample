@@ -15,44 +15,13 @@ import img7 from "../public/assets/images/course-detials-bg-full.svg";
 function CourseDetail({ course, courses }) {
 	if (course === undefined || courses === undefined) return null;
 
-	// const {
-	// 	Name,
-	// 	teacher_name,
-	// 	About,
-	// 	duration,
-	// 	key_points,
-	// 	rating,
-	// 	total_lectures,
-	// 	total_ratings,
-	// } = course;
-
 	const { Name, About, category, duration, key_points } = course;
-
-	// const Content = () => (
-	// 	<div className="content">
-	// 		<div className="mx-auto">
-	// 			<Rating rating={rating} />
-	// 		</div>
-	// 		<div>
-	// 			<h1>{Name}</h1>
-	// 			<p>{About.slice(0, 50).trim()}...</p>
-	// 			<p className="mt-3">
-	// 				By- <span>{teacher_name}</span>
-	// 			</p>
-	// 		</div>
-	// 		<p>
-	// 			<MdOutlineVideoLibrary /> <span>{total_lectures}</span> Lectures /{" "}
-	// 			<AiOutlineFieldTime /> <span>{duration}</span> Hrs Duration
-	// 		</p>
-	// 	</div>
-	// );
 
 	const Content = () => (
 		<div className="content">
-			<div className="mx-auto">{/* <Rating rating={rating} /> */}</div>
+			<div className="mx-auto"></div>
 			<div>
 				<h1>{Name}</h1>
-				<p>{About ? About.slice(0, 50).trim() : "Welcome text"}...</p>
 				<p className="mt-3">
 					Category- <span>{category}</span>
 				</p>
@@ -62,32 +31,9 @@ function CourseDetail({ course, courses }) {
 					</>
 				)}
 			</div>
-			<p>
-				{/* <MdOutlineVideoLibrary /> <span>{total_lectures}</span> Lectures /{" "} */}
-			</p>
+			<p></p>
 		</div>
 	);
-
-	// const Description = () => (
-	// 	<div>
-	// 		<p className="tag">Details</p>
-	// 		<h1>Description</h1>
-	// 		<p>{About}</p>
-
-	// 		<h3>What is Included</h3>
-	// 		<div>
-	// 			{key_points &&
-	// 				key_points.points.map((item, index) => (
-	// 					<Item key={index}>
-	// 						<p>
-	// 							<BsCheck className="icon" />
-	// 						</p>
-	// 						<p>{item}</p>
-	// 					</Item>
-	// 				))}
-	// 		</div>
-	// 	</div>
-	// );
 
 	const Description = () => (
 		<div>
@@ -111,15 +57,12 @@ function CourseDetail({ course, courses }) {
 	);
 
 	const breakpoints = {
-		// when window width is >= 320px
 		0: {
 			slidesPerView: 1,
 		},
-		// when window width is >= 640px
 		767: {
 			slidesPerView: 2,
 		},
-		// when window width is >= 640px
 		1100: {
 			slidesPerView: 4,
 		},
@@ -161,11 +104,6 @@ function CourseDetail({ course, courses }) {
 									breakpoints={breakpoints}
 									grabCursor={true}
 								>
-									{/* {swiperData2.map((item) => (
-										<SwiperSlide key={item.id}>
-											<SwiperCard2 data={item.attributes} id={item.id} />
-										</SwiperSlide>
-									))} */}
 									{courses &&
 										courses.map((item) => (
 											<SwiperSlide key={item.id}>
@@ -293,7 +231,10 @@ const SimilarCourses = styled.div`
 `;
 
 export async function getStaticPaths() {
-	const res = await fetch("http://65.20.75.248:1337/api/courses");
+	// const res = await fetch("http://65.20.75.248:1337/api/courses");
+	const res = await fetch(
+		"http://localhost:1337/api/updated-courses?pagination[pageSize]=10000"
+	);
 	const result = await res.json();
 	const data = result.data.map((item) => ({
 		params: { id: `${item.id}` },
@@ -325,8 +266,6 @@ export async function getStaticProps({ params }) {
 
 	return {
 		props: {
-			course: "course.attributes",
-			courses: "otherCourses",
 			course: course.attributes,
 			courses: otherCourses,
 		},

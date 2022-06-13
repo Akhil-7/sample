@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Router from "next/router";
 import React, { useEffect, useState } from "react";
-import { BsFillStarFill } from "react-icons/bs";
 import styled from "styled-components";
 import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import "swiper/css";
@@ -14,69 +13,18 @@ import PopularProjectsContext from "../../public/Contexts/PopularProjectsContext
 
 function PopularProjects() {
 	const [section, setSection] = useState("Career");
-	const [section2, setSection2] = useState("Career"); // Duplicate data
 	const [swiperData, setSwiperData] = useState([]);
-	const [swiperData2, setSwiperData2] = useState([]); // Duplicate data
 
-	const { courses, newCourses } = React.useContext(PopularProjectsContext);
+	const { newCourses } = React.useContext(PopularProjectsContext);
 
 	useEffect(() => {
-		const search = courses.filter(
+		const search = newCourses.filter(
 			(item) => item.attributes.category == section
 		);
 		setSwiperData(search);
 	}, [section]);
 
-	// Duplicate data
-	useEffect(() => {
-		const search = newCourses.filter(
-			(item) => item.attributes.category == section2
-		);
-		setSwiperData2(search);
-	}, [section2]);
-
-	const SwiperCard = ({ data, id }) => {
-		return (
-			<SwiperCardContainer>
-				<div className="back-card">
-					<div className="back-card-innercontainer">
-						<p className="about-title">About the course</p>
-						<p className="description">{data?.About}</p>
-						<p className="learn-more" onClick={() => Router.push(`/${id}`)}>
-							Learn More
-						</p>
-					</div>
-				</div>
-				<div className="front">
-					<div className="header">
-						<p className="icon-container">
-							<Image src={logo} alt="" />
-						</p>
-						<p className="card-title">{data?.Name}</p>
-					</div>
-					<div className="footer">
-						<div className="footer-inner">
-							<p className="">Lecture by {data?.teacher_name}</p>
-							<div className="">
-								<p>
-									{data?.total_lectures} lectures ({data?.duration} Hours)
-								</p>
-							</div>
-
-							<p className="rating">
-								<BsFillStarFill />
-								{data?.rating} ({data?.total_ratings})
-							</p>
-						</div>
-					</div>
-				</div>
-			</SwiperCardContainer>
-		);
-	};
-
-	// Duplicate Data
 	const SwiperCard2 = ({ data, id }) => {
-		// console.log(data.key_points.points[0], data.key_points.points[0].slice(5));
 		return (
 			<SwiperCardContainer>
 				<div className="back-card">
@@ -116,224 +64,122 @@ function PopularProjects() {
 		);
 	};
 	const breakpoints = {
-		// when window width is >= 320px
 		0: {
 			slidesPerView: 1,
 		},
-		// when window width is >= 640px
-		1100: {
+		1024: {
 			slidesPerView: 2,
+		},
+		1600: {
+			slidesPerView: 3,
 		},
 	};
 
 	return (
-		<>
-			{/* <PopularProjectsContainer>
-				<p className="title">Our popular learning programs</p>
-				<p className="subtitle">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
-					nunc gravida mauris viverra dui viverra tempus. Risus tempus nisi
-					cursus sem scelerisque at.
-				</p>
-				<SliderContainer section={section}>
-					<div className="buttons">
-						<p
-							className="button"
-							style={
-								section === "Career"
-									? {
-											backgroundColor: "var(--secondary)",
-											color: "#Fff8f0",
-									  }
-									: {}
-							}
-							onClick={() => {
-								setSection("Career");
-							}}
-						>
-							Career & Shortterm
-						</p>
-						<p
-							className="button"
-							style={
-								section === "Accounting"
-									? {
-											backgroundColor: "var(--secondary)",
-											color: "#Fff8f0",
-									  }
-									: {}
-							}
-							onClick={() => {
-								setSection("Accounting");
-							}}
-						>
-							Basic&Accounting
-						</p>
-						<p
-							className="button"
-							style={
-								section === "Programming"
-									? {
-											backgroundColor: "var(--secondary)",
-											color: "#Fff8f0",
-									  }
-									: {}
-							}
-							onClick={() => {
-								setSection("Programming");
-							}}
-						>
-							Programming
-						</p>
-						<p
-							className="button"
-							style={
-								section === "Designing"
-									? {
-											backgroundColor: "var(--secondary)",
-											color: "#Fff8f0",
-									  }
-									: {}
-							}
-							onClick={() => {
-								setSection("Designing");
-							}}
-						>
-							Web & Graphics
-						</p>
-					</div>
-					<div className="d-block">
-						<Swiper
-							className="mySwiper"
-							slidesPerView={2}
-							centeredSlides={true}
-							modules={[Navigation, Pagination, Scrollbar, A11y]}
-							pagination={{ clickable: true }}
-							updateOnWindowResize={true}
-							breakpoints={breakpoints}
-							grabCursor={true}
-						>
-							{swiperData.map((item) => (
-								<SwiperSlide key={item.id}>
-									<SwiperCard data={item.attributes} id={item.id} />
-								</SwiperSlide>
-							))}
-						</Swiper>
-					</div>
+		<PopularProjectsContainer>
+			<p className="title">Our popular learning programs</p>
+			<p className="subtitle">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc
+				gravida mauris viverra dui viverra tempus. Risus tempus nisi cursus sem
+				scelerisque at.
+			</p>
+			<SliderContainer section={section}>
+				<div className="buttons">
 					<p
-						className="view-all mx-auto"
-						onClick={() => Router.push("/course_page")}
+						className="button"
+						style={
+							section === "Career"
+								? {
+										backgroundColor: "var(--secondary)",
+										color: "#Fff8f0",
+								  }
+								: {}
+						}
+						onClick={() => {
+							setSection("Career");
+						}}
 					>
-						View All Courses
+						Career & Shortterm
 					</p>
-				</SliderContainer>
-			</PopularProjectsContainer> */}
-			<PopularProjectsContainer>
-				<p className="title">Our popular learning programs</p>
-				<p className="subtitle">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt
-					nunc gravida mauris viverra dui viverra tempus. Risus tempus nisi
-					cursus sem scelerisque at.
-				</p>
-				<SliderContainer section={section2}>
-					<div className="buttons">
-						<p
-							className="button"
-							style={
-								section2 === "Career"
-									? {
-											backgroundColor: "var(--secondary)",
-											color: "#Fff8f0",
-									  }
-									: {}
-							}
-							onClick={() => {
-								setSection2("Career");
-							}}
-						>
-							Career & Shortterm
-						</p>
-						<p
-							className="button"
-							style={
-								section2 === "Accounting"
-									? {
-											backgroundColor: "var(--secondary)",
-											color: "#Fff8f0",
-									  }
-									: {}
-							}
-							onClick={() => {
-								setSection2("Accounting");
-							}}
-						>
-							Basic&Accounting
-						</p>
-						<p
-							className="button"
-							style={
-								section2 === "Programming"
-									? {
-											backgroundColor: "var(--secondary)",
-											color: "#Fff8f0",
-									  }
-									: {}
-							}
-							onClick={() => {
-								setSection2("Programming");
-							}}
-						>
-							Programming
-						</p>
-						<p
-							className="button"
-							style={
-								section2 === "Designing"
-									? {
-											backgroundColor: "var(--secondary)",
-											color: "#Fff8f0",
-									  }
-									: {}
-							}
-							onClick={() => {
-								setSection2("Designing");
-							}}
-						>
-							Web & Graphics
-						</p>
-					</div>
-					<div className="d-block">
-						<Swiper
-							className="mySwiper"
-							slidesPerView={2}
-							centeredSlides={true}
-							modules={[Navigation, Pagination, Autoplay, Scrollbar, A11y]}
-							pagination={{ clickable: true }}
-							updateOnWindowResize={true}
-							breakpoints={breakpoints}
-							grabCursor={true}
-							autoplay={{
-								delay: 2500,
-								disableOnInteraction: false,
-							}}
-							loop={true}
-						>
-							{swiperData2.map((item) => (
-								<SwiperSlide key={item.id}>
-									<SwiperCard2 data={item.attributes} id={item.id} />
-								</SwiperSlide>
-							))}
-						</Swiper>
-					</div>
 					<p
-						className="view-all mx-auto"
-						onClick={() => Router.push("/course_page")}
+						className="button"
+						style={
+							section === "Accounting"
+								? {
+										backgroundColor: "var(--secondary)",
+										color: "#Fff8f0",
+								  }
+								: {}
+						}
+						onClick={() => {
+							setSection("Accounting");
+						}}
 					>
-						View All Courses
+						Basic&Accounting
 					</p>
-				</SliderContainer>
-			</PopularProjectsContainer>
-		</>
+					<p
+						className="button"
+						style={
+							section === "Programming"
+								? {
+										backgroundColor: "var(--secondary)",
+										color: "#Fff8f0",
+								  }
+								: {}
+						}
+						onClick={() => {
+							setSection("Programming");
+						}}
+					>
+						Programming
+					</p>
+					<p
+						className="button"
+						style={
+							section === "Designing"
+								? {
+										backgroundColor: "var(--secondary)",
+										color: "#Fff8f0",
+								  }
+								: {}
+						}
+						onClick={() => {
+							setSection("Designing");
+						}}
+					>
+						Web & Graphics
+					</p>
+				</div>
+				<div className="d-block">
+					<Swiper
+						className="mySwiper"
+						slidesPerView={3}
+						modules={[Navigation, Pagination, Autoplay, Scrollbar, A11y]}
+						pagination={{ clickable: true }}
+						updateOnWindowResize={true}
+						breakpoints={breakpoints}
+						grabCursor={true}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
+						loop={true}
+					>
+						{swiperData.map((item) => (
+							<SwiperSlide key={item.id}>
+								<SwiperCard2 data={item.attributes} id={item.id} />
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
+				<p
+					className="view-all mx-auto"
+					onClick={() => Router.push("/course_page")}
+				>
+					View All Courses
+				</p>
+			</SliderContainer>
+		</PopularProjectsContainer>
 	);
 }
 export default PopularProjects;
@@ -403,7 +249,7 @@ const SliderContainer = styled.div`
 	}
 `;
 const SwiperCardContainer = styled.div`
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	@media (max-width: 700px) {
 		width: 100%;
@@ -442,8 +288,9 @@ const SwiperCardContainer = styled.div`
 			}
 			.description {
 				margin-top: 20px;
-				width: 90%;
-				margin-left: 10px !important;
+				// width: 90%;
+				// margin-left: 10px !important;
+				padding-right: 5px;
 				overflow: hidden;
 				display: -webkit-box;
 				-webkit-box-orient: vertical;

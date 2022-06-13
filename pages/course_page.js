@@ -14,14 +14,7 @@ const sectionToNameMap = {
 function course_details() {
 	const [currentSection, setCurrentSecion] = useState("Career");
 	const [data, setData] = useState([]);
-	const { courses, newCourses } = React.useContext(PopularProjectsContext);
-
-	// useEffect(() => {
-	// 	const search = courses.filter(
-	// 		(item) => item.attributes.category == currentSection
-	// 	);
-	// 	setData(search);
-	// }, [currentSection]);
+	const { newCourses } = React.useContext(PopularProjectsContext);
 
 	useEffect(() => {
 		const search = newCourses.filter(
@@ -29,6 +22,7 @@ function course_details() {
 		);
 		setData(search);
 	}, [currentSection]);
+
 	return (
 		<CourseDetailsContainer>
 			<SwitchContainer currentSection={currentSection}>

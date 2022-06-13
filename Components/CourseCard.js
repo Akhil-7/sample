@@ -6,10 +6,9 @@ import img from "../public/assets/images//course-detials-bg-full.svg";
 
 const CourseCard = ({ data }) => {
 	if (data === undefined) return null;
+
 	const { id } = data;
-	// const { Name, teacher_name, duration, rating, total_lectures } =
-	// 	data.attributes;
-	const { Name, duration } = data.attributes;
+	const { Name, key_points } = data.attributes;
 
 	return (
 		<Content className="col">
@@ -18,18 +17,16 @@ const CourseCard = ({ data }) => {
 					<Image src={img} className="card-img-top" alt="img" />
 				</div>
 				<div className="card-body">
-					{/* <Rating rating={rating} /> */}
 					<h5 className="card-title">{Name}</h5>
-					{/* <p className="card-text">
-						By <span>{teacher_name}</span>
-					</p> */}
+
+					{/* <div className="tagsContainer">
+						{key_points.points.slice(0, 3).map((item) => (
+							<p key={item} className="tags">
+								{item}
+							</p>
+						))}
+					</div> */}
 				</div>
-				{/* <div className="card-footer">
-					<div>
-						<AiOutlineFieldTime /> {duration}Hrs / <MdOutlineVideoLibrary />{" "}
-						{total_lectures}
-					</div>
-				</div> */}
 			</div>
 		</Content>
 	);
@@ -43,7 +40,7 @@ const Content = styled.div`
 	}
 	.card-body {
 		.card-title {
-			font-size: 25px;
+			font-size: 20px;
 			font-weight: 500;
 			font-family: IM Fell Double Pica, serif;
 			white-space: nowrap;
@@ -53,6 +50,17 @@ const Content = styled.div`
 		span {
 			color: var(--secondary);
 			font-size: 1.3rem;
+		}
+		.tagsContainer {
+			display: flex;
+			gap: 15px;
+			flex-wrap: wrap;
+		}
+		.tags {
+			background-color: gray;
+			padding: 0.5rem 1rem;
+			border-radius: 1rem;
+			display: inline;
 		}
 	}
 	.card-footer {
