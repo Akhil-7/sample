@@ -6,10 +6,15 @@ import { BiChevronDown } from "react-icons/bi";
 import { CgMenuRightAlt } from "react-icons/cg";
 import styled from "styled-components";
 import logo from "../public/assets/images/logo.png";
+import PopularProjectsContext from "../public/Contexts/PopularProjectsContext";
 
 function Navbar() {
 	const [menu, setMenu] = useState(false);
 	const [dropdown, setDropdown] = useState(false);
+	const [careerCourses, setCareerCourses] = useState([]);
+	const [accountingCourses, setAccountingCourses] = useState([]);
+	const [programmingCourses, setProgrammingCourses] = useState([]);
+	const [designingCourses, setDesigningCourses] = useState([]);
 
 	const [ToggleMenu, setToggleMenu] = useState(false);
 
@@ -18,6 +23,26 @@ function Navbar() {
 	};
 
 	const router = useRouter();
+	const { newCourses } = React.useContext(PopularProjectsContext);
+
+	React.useEffect(() => {
+		// Career Accounting Programming Designing
+		setCareerCourses(
+			newCourses.filter((item) => item.attributes.category === "Career")
+		);
+
+		setAccountingCourses(
+			newCourses.filter((item) => item.attributes.category === "Accounting")
+		);
+
+		setProgrammingCourses(
+			newCourses.filter((item) => item.attributes.category === "Programming")
+		);
+
+		setDesigningCourses(
+			newCourses.filter((item) => item.attributes.category === "Designing")
+		);
+	}, [newCourses]);
 
 	return (
 		<>
@@ -95,23 +120,23 @@ function Navbar() {
 									aria-labelledby="navbarDarkDropdownMenuLink"
 								>
 									<li onClick={() => setMenu(false)}>
-										<Link href="/1">
-											<a className="dropdown-item">Career Course</a>
+										<Link href="/course_page">
+											<a className="dropdown-item">Career & Shortterm</a>
 										</Link>
 									</li>
 									<li onClick={() => setMenu(false)}>
-										<Link href="/2">
-											<a className="dropdown-item">Accounting Course</a>
+										<Link href="/course_page">
+											<a className="dropdown-item">Basic&Accounting</a>
 										</Link>
 									</li>
 									<li onClick={() => setMenu(false)}>
-										<Link href="/3">
-											<a className="dropdown-item">Programming Course</a>
+										<Link href="/course_page">
+											<a className="dropdown-item">Programming</a>
 										</Link>
 									</li>
 									<li onClick={() => setMenu(false)}>
-										<Link href="/4">
-											<a className="dropdown-item">Designing Course</a>
+										<Link href="/course_page">
+											<a className="dropdown-item">Web & Graphics</a>
 										</Link>
 									</li>
 								</ul>
@@ -139,27 +164,43 @@ function Navbar() {
 						<div className="row mt-3">
 							<div className="col-12 col-md-3 px-3">
 								<h5>Career & Shortterm</h5>
-								<Link href="/1">
-									<a onClick={() => setDropdown(false)}>Career Course</a>
-								</Link>
+								{careerCourses?.map((item) => (
+									<Link key={item.id} href={item.id.toString()}>
+										<a onClick={() => setDropdown(false)}>
+											{item.attributes.Name}
+										</a>
+									</Link>
+								))}
 							</div>
 							<div className="col-12 col-md-3 px-3">
 								<h5>Basic&Accounting</h5>
-								<Link href="/2">
-									<a onClick={() => setDropdown(false)}>Accounting Course</a>
-								</Link>
+								{accountingCourses?.map((item) => (
+									<Link key={item.id} href={item.id.toString()}>
+										<a onClick={() => setDropdown(false)}>
+											{item.attributes.Name}
+										</a>
+									</Link>
+								))}
 							</div>
 							<div className="col-12 col-md-3 px-3">
 								<h5>Programming</h5>
-								<Link href="/3">
-									<a onClick={() => setDropdown(false)}>Programming Course</a>
-								</Link>
+								{programmingCourses?.map((item) => (
+									<Link key={item.id} href={item.id.toString()}>
+										<a onClick={() => setDropdown(false)}>
+											{item.attributes.Name}
+										</a>
+									</Link>
+								))}
 							</div>
 							<div className="col-12 col-md-3 px-3">
 								<h5>Web & Graphics</h5>
-								<Link href="/4">
-									<a onClick={() => setDropdown(false)}>Designing Course</a>
-								</Link>
+								{designingCourses?.map((item) => (
+									<Link key={item.id} href={item.id.toString()}>
+										<a onClick={() => setDropdown(false)}>
+											{item.attributes.Name}
+										</a>
+									</Link>
+								))}
 							</div>
 						</div>
 					</DropdownContent>
@@ -294,9 +335,14 @@ const DropdownContainer = styled.div`
 const DropdownContent = styled.div`
 	width: 80%;
 	margin: 0 auto;
+	h5 {
+		font-family: "tiemposBold", serif;
+	}
 	a {
+		font-family: "tiempos", serif;
 		text-decoration: none;
 		color: #fff8f0;
+		display: block;
 	}
 	a:hover {
 		color: var(--primary);
