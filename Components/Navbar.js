@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Router, { useRouter } from "next/router";
 import React, { useState } from "react";
-import { BiChevronDown, BiSearchAlt2 } from "react-icons/bi";
+import { BiChevronDown } from "react-icons/bi";
 import { CgMenuRightAlt } from "react-icons/cg";
 import styled from "styled-components";
 import logo from "../public/assets/images/logo.png";
 
 function Navbar() {
-	const [menu, setmenu] = useState(false);
+	const [menu, setMenu] = useState(false);
 	const [dropdown, setDropdown] = useState(false);
 
 	const [ToggleMenu, setToggleMenu] = useState(false);
@@ -36,7 +36,7 @@ function Navbar() {
 						<div className="">
 							<button
 								className="btn d-flex d-lg-none"
-								onClick={() => setmenu(!menu)}
+								onClick={() => setMenu(!menu)}
 							>
 								<CgMenuRightAlt className={"text-light"} />
 							</button>
@@ -63,9 +63,9 @@ function Navbar() {
 						</NavItems>
 						<NavItems onClick={() => setDropdown(false)}>
 							<p style={{ width: "190px" }}>
-								<a className="contact-button" href="#contact">
-									Contact us
-								</a>
+								<Link href="/#contact">
+									<a className="contact-button">Contact us</a>
+								</Link>
 							</p>
 						</NavItems>
 					</NavItemsContainer>
@@ -73,20 +73,62 @@ function Navbar() {
 			</NavbarOuterContainer>
 			{menu && (
 				<NavbarOuterContainer2>
-					<NavItems>
-						<Link href="/">Home</Link>
+					<NavItems onClick={() => setMenu(false)}>
+						<Link href="/" passHref>
+							Home
+						</Link>
 					</NavItems>
 					<NavItems>
-						Courses <BiChevronDown />
+						<ul className="navbar-nav">
+							<li className="nav-item dropdown">
+								<a
+									className="nav-link dropdown-toggle"
+									id="navbarDarkDropdownMenuLink"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									Courses
+								</a>
+								<ul
+									className="dropdown-menu dropdown-menu-dark"
+									aria-labelledby="navbarDarkDropdownMenuLink"
+								>
+									<li onClick={() => setMenu(false)}>
+										<Link href="/1">
+											<a className="dropdown-item">Career Course</a>
+										</Link>
+									</li>
+									<li onClick={() => setMenu(false)}>
+										<Link href="/2">
+											<a className="dropdown-item">Accounting Course</a>
+										</Link>
+									</li>
+									<li onClick={() => setMenu(false)}>
+										<Link href="/3">
+											<a className="dropdown-item">Programming Course</a>
+										</Link>
+									</li>
+									<li onClick={() => setMenu(false)}>
+										<Link href="/4">
+											<a className="dropdown-item">Designing Course</a>
+										</Link>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</NavItems>
-					<NavItems>
-						Pages <BiChevronDown />
+
+					<NavItems onClick={() => setMenu(false)}>
+						<Link href={"/about"} passHref>
+							About Us
+						</Link>
 					</NavItems>
-					<NavItems>ContactUs</NavItems>
-					<NavItems>
-						<input type={"text"} />
-						<p className="search-button">
-							<BiSearchAlt2 />
+					<NavItems onClick={() => setMenu(false)}>
+						<p>
+							<Link href="/#contact">
+								<a className="contact-button">Contact us</a>
+							</Link>
 						</p>
 					</NavItems>
 				</NavbarOuterContainer2>
@@ -133,7 +175,7 @@ const NavbarOuterContainer2 = styled.div`
 	top: 0;
 	width: 100%;
 	height: 105vh;
-	z-index: 10;
+	z-index: 100;
 	color: #fff8f0;
 	background: rgba(0, 0, 0, 0.75);
 	border-bottom: 1px solid #fff8f0;
