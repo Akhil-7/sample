@@ -125,16 +125,15 @@ const CourseDetails = styled.div`
 	h1 {
 		font-family: "IM Fell Double Pica", serif;
 		font-size: 45px;
-		font-weight: 500;
+		font-weight: 600;
 		@media (max-width: 700px) {
 			font-size: 27px;
 		}
 	}
 
 	h3 {
-		font-family: "IM Fell Double Pica", serif;
+		font-family: "tiemposBold", serif;
 		font-size: 27px;
-		font-weight: 500;
 		margin-top: 15px;
 		@media (max-width: 700px) {
 			font-size: 1rem;
@@ -142,14 +141,14 @@ const CourseDetails = styled.div`
 	}
 
 	p {
-		font-family: "IM Fell Double Pica", serif;
+		font-family: "tiempos", serif;
 		font-size: 1rem;
 		@media (max-width: 700px) {
 			font-size: 0.8rem;
 		}
 	}
 	span {
-		font-family: "IM Fell Double Pica", serif;
+		font-family: "tiemposBold", serif;
 		font-size: 25px;
 		font-weight: 500;
 		color: var(--primary);
@@ -210,6 +209,7 @@ const DetailsContainer = styled.div`
 	color: #000;
 	padding: 25px 0;
 	.tag {
+		font-family: "tiempos", serif;
 		letter-spacing: 5px;
 		text-transform: uppercase;
 		font-size: 10px;

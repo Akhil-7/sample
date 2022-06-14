@@ -122,6 +122,7 @@ const SwitchContainer = styled.div`
 	}
 	.button {
 		font-size: 17px;
+		font-family: "tiempos", serif;
 		border: 1px solid black;
 		border-radius: 6px;
 		padding: 10px 25px;
@@ -136,6 +137,7 @@ const SwitchContainer = styled.div`
 	.course-page-title {
 		font-size: 48px;
 		font-family: "IM Fell Double Pica", serif;
+		font-weight: 600;
 		margin: 50px auto !important;
 		text-align: center;
 	}

@@ -612,6 +612,8 @@ p {
 	text-align: center;
 	font-size: 46px;
 	padding: 140px 0;
+	font-family: "IM Fell Double Pica", serif;
+	font-weight: 600;
 }
 
 @media (max-width: 1600px) {

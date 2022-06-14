@@ -88,21 +88,25 @@ const ContactContainer = styled.div`
 	color: #fff8f0;
 	text-align: center;
 
+	p {
+		font-family: "tiempos", serif;
+	}
 	.title {
 		font-size: 35px;
 		letter-spacing: 5px;
 		font-family: "IM Fell Double Pica", serif;
+		font-weight: 600;
 	}
 	.subtitle {
 		margin-top: 50px;
 		font-size: 16px;
 		line-height: 30px;
 		letter-spacing: 3px;
-		font-family: tiempos;
+		font-family: "tiemposBold", serif;
 		opacity: 0.9;
 		span {
 			display: block;
-			font-family: tiempos;
+			font-family: "tiemposBold", serif;
 		}
 	}
 	.buttons {

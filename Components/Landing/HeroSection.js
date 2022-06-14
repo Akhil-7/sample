@@ -7,8 +7,6 @@ import heroImg from "../../public/assets/images/hero.png";
 import onlineClassLogo from "../../public/assets/images/online-class.svg";
 import studentLogo from "../../public/assets/images/student.svg";
 function HeroSection() {
-	// const color = React.useContext(PopularProjectsContext);
-
 	return (
 		<HeroSectionContainer>
 			<Hero bg={heroImg}>
@@ -54,7 +52,6 @@ function HeroSection() {
 						</Card>
 					</div>
 					<div className="col-12 col-lg-4">
-						{/* <div className="col-4"> */}
 						<Card className="card2 mx-auto my-5 my-lg-0">
 							<div className="circle">
 								<div className="image-container ">
@@ -65,7 +62,6 @@ function HeroSection() {
 						</Card>
 					</div>
 					<div className="col-12 col-lg-4">
-						{/* <div className="col-4"> */}
 						<Card className="card3 mx-auto mt-lg-5">
 							<div className="circle">
 								<div className="image-container">
@@ -136,7 +132,7 @@ const HeroSectionContent = styled.div`
 		line-height: 35px;
 		letter-spacing: 0.1em;
 		max-width: 90%;
-		font-family: tiempos;
+		font-family: "tiemposBold", serif;
 	}
 	.button {
 		margin-top: 30px !important;
@@ -146,6 +142,7 @@ const HeroSectionContent = styled.div`
 		display: flex;
 		cursor: pointer;
 		border: none;
+		font-family: "tiempos", serif;
 		span {
 			display: flex;
 			align-items: center;
@@ -212,7 +209,7 @@ const Card = styled.div`
 	}
 	.title {
 		margin-top: 20px;
-		font-family: tiempos;
+		font-family: "tiempos", serif;
 	}
 
 	&:hover {

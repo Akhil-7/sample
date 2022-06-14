@@ -19,13 +19,13 @@ const CourseCard = ({ data }) => {
 				<div className="card-body">
 					<h5 className="card-title">{Name}</h5>
 
-					{/* <div className="tagsContainer">
+					<div className="tagsContainer">
 						{key_points.points.slice(0, 3).map((item) => (
 							<p key={item} className="tags">
 								{item}
 							</p>
 						))}
-					</div> */}
+					</div>
 				</div>
 			</div>
 		</Content>
@@ -39,10 +39,11 @@ const Content = styled.div`
 		border: 0 !important;
 	}
 	.card-body {
+		height: 170px;
 		.card-title {
 			font-size: 20px;
-			font-weight: 500;
-			font-family: IM Fell Double Pica, serif;
+			font-family: "tiemposBold", serif;
+			font
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -53,14 +54,18 @@ const Content = styled.div`
 		}
 		.tagsContainer {
 			display: flex;
-			gap: 15px;
+			gap: 8px;
 			flex-wrap: wrap;
+			align-items: flex-start;
+			margin-top: 1rem;
 		}
 		.tags {
-			background-color: gray;
-			padding: 0.5rem 1rem;
+			background-color: var(--dark-secondary);
+			color: #fff;
+			padding: 0.3rem 0.7rem;
 			border-radius: 1rem;
-			display: inline;
+			display: inline-block;
+			font-size: 0.7rem;
 		}
 	}
 	.card-footer {

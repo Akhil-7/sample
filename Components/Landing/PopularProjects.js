@@ -24,7 +24,7 @@ function PopularProjects() {
 		setSwiperData(search);
 	}, [section]);
 
-	const SwiperCard2 = ({ data, id }) => {
+	const SwiperCard = ({ data, id }) => {
 		return (
 			<SwiperCardContainer>
 				<div className="back-card">
@@ -167,7 +167,7 @@ function PopularProjects() {
 					>
 						{swiperData.map((item) => (
 							<SwiperSlide key={item.id}>
-								<SwiperCard2 data={item.attributes} id={item.id} />
+								<SwiperCard data={item.attributes} id={item.id} />
 							</SwiperSlide>
 						))}
 					</Swiper>
@@ -197,14 +197,18 @@ const PopularProjectsContainer = styled.div`
 		font-size: 40px;
 		letter-spacing: 5px;
 		font-family: "IM Fell Double Pica", serif;
+		font-weight: 600;
 	}
 	.subtitle {
 		margin-top: 20px;
 		font-size: 15px;
 		line-height: 20px;
 		max-width: 600px;
-		font-family: tiempos;
+		font-family: "tiempos", serif;
 		letter-spacing: 1px;
+	}
+	p {
+		font-family: "tiempos", serif;
 	}
 `;
 const SliderContainer = styled.div`
@@ -238,6 +242,7 @@ const SliderContainer = styled.div`
 		}
 	}
 	.view-all {
+		font-family: "tiempos", serif;
 		padding: 5px 15px;
 		background-color: var(--secondary);
 		border-radius: 6px;
@@ -256,7 +261,7 @@ const SwiperCardContainer = styled.div`
 	}
 	.about-title {
 		font-size: 20px;
-		font-weight: bold;
+		font-family: "tiemposBold", serif;
 	}
 	position: relative;
 	.back-card {
@@ -283,18 +288,21 @@ const SwiperCardContainer = styled.div`
 			//
 			.about-title {
 				padding-top: 20px;
-				font-weight: bold;
+				font-family: "tiemposBold", serif;
 				margin-left: 10px !important;
 			}
 			.description {
 				margin-top: 20px;
-				// width: 90%;
-				// margin-left: 10px !important;
 				padding-right: 5px;
 				overflow: hidden;
 				display: -webkit-box;
 				-webkit-box-orient: vertical;
 				-webkit-line-clamp: 7;
+			}
+			ul {
+				li {
+					font-family: "tiempos", serif;
+				}
 			}
 			.learn-more {
 				position: absolute;
@@ -335,6 +343,8 @@ const SwiperCardContainer = styled.div`
 				margin-left: 20px !important;
 				text-align: left;
 				font-size: 17px;
+				font-family: "IM Fell Double Pica", serif;
+				font-weight: 600;
 			}
 		}
 		.footer {
@@ -346,6 +356,9 @@ const SwiperCardContainer = styled.div`
 			background-color: var(--dark-secondary);
 			.footer-inner {
 				padding: 10px 20px 20px 10px;
+				h6 {
+					font-family: "tiemposBold", serif;
+				}
 			}
 			.rating {
 				position: absolute;
