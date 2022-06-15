@@ -2,42 +2,36 @@ import Image from "next/image";
 import React from "react";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { BsCheck } from "react-icons/bs";
-import { MdOutlineVideoLibrary } from "react-icons/md";
 import styled from "styled-components";
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { Swiper, SwiperSlide } from "swiper/react";
 import CourseCard from "../Components/CourseCard";
-import Rating from "../Components/Rating";
 import img7 from "../public/assets/images/course-detials-bg-full.svg";
 
 function CourseDetail({ course, courses }) {
 	if (course === undefined || courses === undefined) return null;
 
-	const {
-		Name,
-		teacher_name,
-		About,
-		duration,
-		key_points,
-		rating,
-		total_lectures,
-		total_ratings,
-	} = course;
+	const { Name, About, category, duration, key_points } = course;
 
 	const Content = () => (
 		<div className="content">
-			<div className="mx-auto">
-				<Rating rating={rating} />
-			</div>
+			<div className="mx-auto"></div>
 			<div>
 				<h1>{Name}</h1>
-				<p>{About.slice(0, 50).trim()}...</p>
 				<p className="mt-3">
-					By- <span>{teacher_name}</span>
+					Category- <span>{category}</span>
 				</p>
+				{duration && (
+					<>
+						<AiOutlineFieldTime /> <span>{duration}</span>{" "}
+					</>
+				)}
 			</div>
-			<p>
-				<MdOutlineVideoLibrary /> <span>{total_lectures}</span> Lectures /{" "}
-				<AiOutlineFieldTime /> <span>{duration}</span> Hrs Duration
-			</p>
+			<p></p>
 		</div>
 	);
 
@@ -45,50 +39,83 @@ function CourseDetail({ course, courses }) {
 		<div>
 			<p className="tag">Details</p>
 			<h1>Description</h1>
-			<p>{About}</p>
+			{About && <p>{About}</p>}
 
 			<h3>What is Included</h3>
 			<div>
-				{key_points && key_points.points.map((item, index) => (
-					<Item key={index}>
-						<p>
-							<BsCheck className="icon" />
-						</p>
-						<p>{item}</p>
-					</Item>
-				))}
+				{key_points &&
+					key_points.points.map((item, index) => (
+						<Item key={index}>
+							<p>
+								<BsCheck className="icon" />
+							</p>
+							<p>{item}</p>
+						</Item>
+					))}
 			</div>
 		</div>
 	);
 
+	const breakpoints = {
+		0: {
+			slidesPerView: 1,
+		},
+		767: {
+			slidesPerView: 2,
+		},
+		1100: {
+			slidesPerView: 4,
+		},
+	};
+
 	return (
 		<>
-		{course !== null && 
-		<CourseDetails>
-		<Banner>
-			<div className="bannerImage">
-				<Image src={img7} alt="bg" />
-			</div>
-			<div className="contentContainer">
-				<Content />
-			</div>
-		</Banner>
-		<DetailsContainer>
-			<Details>
-				<Description />
-			</Details>
-			<SimilarCourses>
-				<p className="tag">Details</p>
-				<h1>Similar Courses</h1>
-				<div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5 pt-3">
-					{courses && courses.map((item) => (
-						<CourseCard data={item} key={item.id} />
-					))}
-				</div>
-			</SimilarCourses>
-		</DetailsContainer>
-	</CourseDetails>
-		}
+			{course !== null && (
+				<CourseDetails>
+					<Banner>
+						<div className="bannerImage">
+							<Image src={img7} alt="bg" />
+						</div>
+						<div className="contentContainer">
+							<Content />
+						</div>
+					</Banner>
+					<DetailsContainer>
+						<Details>
+							<Description />
+						</Details>
+						<SimilarCourses>
+							<p className="tag">Remotely</p>
+							<h1>Similar Courses</h1>
+
+							<div className="d-block">
+								<Swiper
+									className="mySwiper"
+									slidesPerView={4}
+									spaceBetween={30}
+									autoplay={{
+										delay: 1500,
+										disableOnInteraction: false,
+									}}
+									loop={true}
+									modules={[Navigation, Pagination, Autoplay, Scrollbar, A11y]}
+									pagination={false}
+									updateOnWindowResize={true}
+									breakpoints={breakpoints}
+									grabCursor={true}
+								>
+									{courses &&
+										courses.map((item) => (
+											<SwiperSlide key={item.id}>
+												<CourseCard data={item} />
+											</SwiperSlide>
+										))}
+								</Swiper>
+							</div>
+						</SimilarCourses>
+					</DetailsContainer>
+				</CourseDetails>
+			)}
 		</>
 	);
 }
@@ -98,16 +125,15 @@ const CourseDetails = styled.div`
 	h1 {
 		font-family: "IM Fell Double Pica", serif;
 		font-size: 45px;
-		font-weight: 500;
+		font-weight: 600;
 		@media (max-width: 700px) {
 			font-size: 27px;
 		}
 	}
 
 	h3 {
-		font-family: "IM Fell Double Pica", serif;
+		font-family: "tiemposBold", serif;
 		font-size: 27px;
-		font-weight: 500;
 		margin-top: 15px;
 		@media (max-width: 700px) {
 			font-size: 1rem;
@@ -115,14 +141,14 @@ const CourseDetails = styled.div`
 	}
 
 	p {
-		font-family: "IM Fell Double Pica", serif;
+		font-family: "tiempos", serif;
 		font-size: 1rem;
 		@media (max-width: 700px) {
 			font-size: 0.8rem;
 		}
 	}
 	span {
-		font-family: "IM Fell Double Pica", serif;
+		font-family: "tiemposBold", serif;
 		font-size: 25px;
 		font-weight: 500;
 		color: var(--primary);
@@ -183,6 +209,7 @@ const DetailsContainer = styled.div`
 	color: #000;
 	padding: 25px 0;
 	.tag {
+		font-family: "tiempos", serif;
 		letter-spacing: 5px;
 		text-transform: uppercase;
 		font-size: 10px;
@@ -204,7 +231,10 @@ const SimilarCourses = styled.div`
 `;
 
 export async function getStaticPaths() {
-	const res = await fetch("http://65.20.75.248:1337/api/courses");
+	// const res = await fetch("http://65.20.75.248:1337/api/courses");
+	const res = await fetch(
+		"http://localhost:1337/api/updated-courses?pagination[pageSize]=10000"
+	);
 	const result = await res.json();
 	const data = result.data.map((item) => ({
 		params: { id: `${item.id}` },
@@ -217,14 +247,28 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const res = await fetch("http://65.20.75.248:1337/api/courses");
+	// const res = await fetch("http://65.20.75.248:1337/api/courses");
+	// const results = await res.json();
+
+	// const course = results.data[params.id - 1];
+	// const otherCourses = results.data.filter((item) => item.id != params.id);
+
+	// Duplicate
+	const res = await fetch(
+		"http://localhost:1337/api/updated-courses?pagination[pageSize]=10000"
+	);
 	const results = await res.json();
 
-	const course = results.data[params.id - 1];
-	const otherCourses = results.data.filter((item) => item.id != params.id);
+	const course = await results.data[params.id - 1];
+	const otherCourses = await results.data.filter(
+		(item) => item.id != params.id
+	);
 
 	return {
-		props: { course: course.attributes, courses: otherCourses },
+		props: {
+			course: course.attributes,
+			courses: otherCourses,
+		},
 
 		revalidate: 1,
 	};

@@ -31,6 +31,15 @@ export default class MyDocument extends Document {
 						integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 						crossOrigin="anonymous"
 					></script>
+					{/* <!-- Start of HubSpot Embed Code --> */}
+					<script
+						type="text/javascript"
+						id="hs-script-loader"
+						async
+						defer
+						src="//js.hs-scripts.com/22134767.js"
+					></script>
+					{/* <!-- End of HubSpot Embed Code --> */}
 				</Head>
 				<body>
 					<Main />

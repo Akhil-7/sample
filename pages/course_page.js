@@ -8,16 +8,16 @@ const sectionToNameMap = {
 	Career: "Career & Shortterm",
 	Accounting: "Basics & Accounting",
 	Designing: "Web & Graphics",
-	Programming: "Programming"
-}
+	Programming: "Programming",
+};
 
 function course_details() {
 	const [currentSection, setCurrentSecion] = useState("Career");
 	const [data, setData] = useState([]);
-	const { courses } = React.useContext(PopularProjectsContext);
+	const { newCourses } = React.useContext(PopularProjectsContext);
 
 	useEffect(() => {
-		const search = courses.filter(
+		const search = newCourses.filter(
 			(item) => item.attributes.category == currentSection
 		);
 		setData(search);
@@ -122,6 +122,7 @@ const SwitchContainer = styled.div`
 	}
 	.button {
 		font-size: 17px;
+		font-family: "tiempos", serif;
 		border: 1px solid black;
 		border-radius: 6px;
 		padding: 10px 25px;
@@ -136,6 +137,7 @@ const SwitchContainer = styled.div`
 	.course-page-title {
 		font-size: 48px;
 		font-family: "IM Fell Double Pica", serif;
+		font-weight: 600;
 		margin: 50px auto !important;
 		text-align: center;
 	}

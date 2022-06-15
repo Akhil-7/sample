@@ -18,7 +18,6 @@ import icon6 from "../public/assets/images/Vector (5).png";
 import icon7 from "../public/assets/images/Vector (6).png";
 
 export default function about() {
-	// dynamicBullets: true,
 	return (
 		<AboutContainer>
 			<div className="home">
@@ -309,6 +308,14 @@ export default function about() {
 	);
 }
 const AboutContainer = styled.div`
+	h1 {
+		font-family: "IM Fell Double Pica", serif;
+		font-weight: 600;
+	}
+	p {
+		font-family: "IM Fell Double Pica", serif;
+		font-family: "tiempos", serif;
+	}
 	.data {
 		position: absolute;
 		left: 5%;
@@ -339,6 +346,7 @@ const AboutContainer = styled.div`
 		background-color: var(--primary);
 	}
 	.Our_story_bottom_div {
+		font-family: "tiempos", serif;
 		margin-top: 50px;
 		background-color: var(--secondary);
 	}

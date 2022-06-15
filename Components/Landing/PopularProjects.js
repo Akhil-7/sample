@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Router from "next/router";
 import React, { useEffect, useState } from "react";
-import { BsFillStarFill } from "react-icons/bs";
 import styled from "styled-components";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -16,10 +15,10 @@ function PopularProjects() {
 	const [section, setSection] = useState("Career");
 	const [swiperData, setSwiperData] = useState([]);
 
-	const { courses } = React.useContext(PopularProjectsContext);
+	const { newCourses } = React.useContext(PopularProjectsContext);
 
 	useEffect(() => {
-		const search = courses.filter(
+		const search = newCourses.filter(
 			(item) => item.attributes.category == section
 		);
 		setSwiperData(search);
@@ -30,8 +29,14 @@ function PopularProjects() {
 			<SwiperCardContainer>
 				<div className="back-card">
 					<div className="back-card-innercontainer">
-						<p className="about-title">About the course</p>
-						<p className="description">{data?.About}</p>
+						<p className="about-title">Key features</p>
+						<div className="description">
+							<ul>
+								{data.key_points.points.slice(0, 4).map((item) => (
+									<li key={item}>{item}</li>
+								))}
+							</ul>
+						</div>
 						<p className="learn-more" onClick={() => Router.push(`/${id}`)}>
 							Learn More
 						</p>
@@ -46,17 +51,12 @@ function PopularProjects() {
 					</div>
 					<div className="footer">
 						<div className="footer-inner">
-							<p className="">Lecture by {data?.teacher_name}</p>
-							<div className="">
-								<p>
-									{data?.total_lectures} lectures ({data?.duration} Hours)
-								</p>
-							</div>
-
-							<p className="rating">
-								<BsFillStarFill />
-								{data?.rating} ({data?.total_ratings})
-							</p>
+							<h6
+								style={{ cursor: "pointer" }}
+								onClick={() => Router.push(`/${id}`)}
+							>
+								{data?.Name}
+							</h6>
 						</div>
 					</div>
 				</div>
@@ -64,13 +64,14 @@ function PopularProjects() {
 		);
 	};
 	const breakpoints = {
-		// when window width is >= 320px
 		0: {
 			slidesPerView: 1,
 		},
-		// when window width is >= 640px
-		1100: {
+		1024: {
 			slidesPerView: 2,
+		},
+		1600: {
+			slidesPerView: 3,
 		},
 	};
 
@@ -152,13 +153,17 @@ function PopularProjects() {
 				<div className="d-block">
 					<Swiper
 						className="mySwiper"
-						slidesPerView={2}
-						centeredSlides={true}
-						modules={[Navigation, Pagination, Scrollbar, A11y]}
+						slidesPerView={3}
+						modules={[Navigation, Pagination, Autoplay, Scrollbar, A11y]}
 						pagination={{ clickable: true }}
 						updateOnWindowResize={true}
 						breakpoints={breakpoints}
 						grabCursor={true}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
+						loop={true}
 					>
 						{swiperData.map((item) => (
 							<SwiperSlide key={item.id}>
@@ -192,14 +197,18 @@ const PopularProjectsContainer = styled.div`
 		font-size: 40px;
 		letter-spacing: 5px;
 		font-family: "IM Fell Double Pica", serif;
+		font-weight: 600;
 	}
 	.subtitle {
 		margin-top: 20px;
 		font-size: 15px;
 		line-height: 20px;
 		max-width: 600px;
-		font-family: tiempos;
+		font-family: "tiempos", serif;
 		letter-spacing: 1px;
+	}
+	p {
+		font-family: "tiempos", serif;
 	}
 `;
 const SliderContainer = styled.div`
@@ -233,6 +242,7 @@ const SliderContainer = styled.div`
 		}
 	}
 	.view-all {
+		font-family: "tiempos", serif;
 		padding: 5px 15px;
 		background-color: var(--secondary);
 		border-radius: 6px;
@@ -244,14 +254,14 @@ const SliderContainer = styled.div`
 	}
 `;
 const SwiperCardContainer = styled.div`
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	@media (max-width: 700px) {
 		width: 100%;
 	}
 	.about-title {
 		font-size: 20px;
-		font-weight: bold;
+		font-family: "tiemposBold", serif;
 	}
 	position: relative;
 	.back-card {
@@ -278,17 +288,21 @@ const SwiperCardContainer = styled.div`
 			//
 			.about-title {
 				padding-top: 20px;
-				font-weight: bold;
+				font-family: "tiemposBold", serif;
 				margin-left: 10px !important;
 			}
 			.description {
 				margin-top: 20px;
-				width: 90%;
-				margin-left: 10px !important;
+				padding-right: 5px;
 				overflow: hidden;
 				display: -webkit-box;
 				-webkit-box-orient: vertical;
 				-webkit-line-clamp: 7;
+			}
+			ul {
+				li {
+					font-family: "tiempos", serif;
+				}
 			}
 			.learn-more {
 				position: absolute;
@@ -329,6 +343,8 @@ const SwiperCardContainer = styled.div`
 				margin-left: 20px !important;
 				text-align: left;
 				font-size: 17px;
+				font-family: "IM Fell Double Pica", serif;
+				font-weight: 600;
 			}
 		}
 		.footer {
@@ -340,6 +356,9 @@ const SwiperCardContainer = styled.div`
 			background-color: var(--dark-secondary);
 			.footer-inner {
 				padding: 10px 20px 20px 10px;
+				h6 {
+					font-family: "tiemposBold", serif;
+				}
 			}
 			.rating {
 				position: absolute;
