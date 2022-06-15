@@ -19,8 +19,8 @@ function CourseDetail({ course, courses }) {
 			left: 0,
 			behavior: 'smooth'
 		});
-	}, []);
-	
+	});
+
 	if (course === undefined || courses === undefined) return null;
 
 	const { Name, About, category, duration, key_points } = course;
