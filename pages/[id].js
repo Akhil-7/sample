@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, {useEffect} from "react";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { BsCheck } from "react-icons/bs";
 import styled from "styled-components";
@@ -16,6 +16,14 @@ function CourseDetail({ course, courses }) {
 	if (course === undefined || courses === undefined) return null;
 
 	const { Name, About, category, duration, key_points } = course;
+
+	useEffect(() => {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		});
+	});
 
 	const Content = () => (
 		<div className="content">
