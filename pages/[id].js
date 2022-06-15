@@ -13,17 +13,17 @@ import CourseCard from "../Components/CourseCard";
 import img7 from "../public/assets/images/course-detials-bg-full.svg";
 
 function CourseDetail({ course, courses }) {
-	if (course === undefined || courses === undefined) return null;
-
-	const { Name, About, category, duration, key_points } = course;
-
 	useEffect(() => {
 		window.scroll({
 			top: 0,
 			left: 0,
 			behavior: 'smooth'
 		});
-	});
+	}, []);
+	
+	if (course === undefined || courses === undefined) return null;
+
+	const { Name, About, category, duration, key_points } = course;
 
 	const Content = () => (
 		<div className="content">
